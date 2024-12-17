@@ -10,7 +10,7 @@
 	},
 	"funding": "https://github.com/directus/directus?sponsor=1",
 	"exports": {
-		".": "./index.js",
+		".": "./dist/index.js",
 		"./package.json": "./package.json",
 		"./oas.yaml": "./dist/oas.yaml",
 		"./oas.json": "./dist/oas.json"
@@ -18,13 +18,15 @@
 	"main": "index.js",
 	"scripts": {
 		"dev": "nodemon --watch './openapi/**/*.yaml' --exec 'redocly bundle ./openapi/index.yaml -o ./dist/index.yaml && pnpm scalar serve ./dist/oas.yaml -p 5001' --ext yaml",
-		"build": "redocly bundle ./openapi/index.yaml -o ./dist/oas.yaml && redocly bundle ./openapi/index.yaml -o ./dist/oas.json --ext json",
+		"build": "redocly bundle ./openapi/index.yaml -o ./dist/oas.yaml && redocly bundle ./openapi/index.yaml -o ./dist/oas.json --ext json && jiti scripts/build-js.ts",
 		"lint": "redocly lint --max-problems=1000 ./openapi/oas.yaml"
 	},
 	"license": "MIT",
 	"devDependencies": {
 		"@redocly/cli": "1.26.0",
 		"@scalar/cli": "0.2.272",
+		"@types/node": "22.10.2",
+		"jiti": "2.4.2",
 		"nodemon": "3.1.9",
 		"openapi3-ts": "4.4.0"
 	}

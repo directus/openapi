@@ -4,6 +4,10 @@ This repo contains the OpenAPI specifications for Directus' API.
 
 The static spec in this repo contains all the system endpoints and a definition for a generic `/items/{collection}` endpoint.
 
+## Usage
+
+The spec is exported in 3 formats: `.yaml`, `.json`, and `.js`. The JS file is just an `export` of the same JSON but parsed into JS for ease of use in JS projects.
+
 ## Requirements
 
 The specification is written to work with OpenAPI version 3 and up.
