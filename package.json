@@ -10,12 +10,13 @@
 	},
 	"funding": "https://github.com/directus/directus?sponsor=1",
 	"exports": {
-		".": "./dist/index.js",
+		".": "./dist/.",
 		"./package.json": "./package.json",
 		"./oas.yaml": "./dist/oas.yaml",
-		"./oas.json": "./dist/oas.json"
+		"./oas.json": "./dist/oas.json",
+		"./index.js": "./dist/index.js"
 	},
-	"main": "index.js",
+	"main": "dist/index.js",
 	"scripts": {
 		"dev": "nodemon --watch './openapi/**/*.yaml' --exec 'redocly bundle ./openapi/index.yaml -o ./dist/index.yaml && pnpm scalar serve ./dist/oas.yaml -p 5001' --ext yaml",
 		"build": "redocly bundle ./openapi/index.yaml -o ./dist/oas.yaml && redocly bundle ./openapi/index.yaml -o ./dist/oas.json --ext json && jiti scripts/build-js.ts",
