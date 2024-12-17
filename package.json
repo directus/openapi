@@ -10,12 +10,12 @@
 	},
 	"funding": "https://github.com/directus/directus?sponsor=1",
 	"exports": {
-		".": "./dist/.",
-		"./package.json": "./package.json",
-		"./oas.yaml": "./dist/oas.yaml",
-		"./oas.json": "./dist/oas.json",
-		"./index.js": "./dist/index.js"
+		".": {
+			"types": "./index.d.ts",
+			"import": "./dist/index.js"
+		}
 	},
+	"files": ["dist", "index.d.ts"],
 	"types": "index.d.ts",
 	"main": "dist/index.js",
 	"scripts": {
