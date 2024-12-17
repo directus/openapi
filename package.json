@@ -16,6 +16,7 @@
 		"./oas.json": "./dist/oas.json",
 		"./index.js": "./dist/index.js"
 	},
+	"types": "index.d.ts",
 	"main": "dist/index.js",
 	"scripts": {
 		"dev": "nodemon --watch './openapi/**/*.yaml' --exec 'redocly bundle ./openapi/index.yaml -o ./dist/index.yaml && pnpm scalar serve ./dist/oas.yaml -p 5001' --ext yaml",
