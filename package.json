@@ -1,0 +1,31 @@
+{
+	"name": "@directus/openapi",
+	"private": false,
+	"version": "0.0.1",
+	"description": "OpenAPI Specification of the Directus API",
+	"homepage": "https://directus.io",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/directus/openapi.git"
+	},
+	"funding": "https://github.com/directus/directus?sponsor=1",
+	"exports": {
+		".": "./index.js",
+		"./package.json": "./package.json",
+		"./oas.yaml": "./dist/oas.yaml",
+		"./oas.json": "./dist/oas.json"
+	},
+	"main": "index.js",
+	"scripts": {
+		"dev": "nodemon --watch './openapi/**/*.yaml' --exec 'redocly bundle ./openapi/index.yaml -o ./dist/index.yaml && pnpm scalar serve ./dist/oas.yaml -p 5001' --ext yaml",
+		"build": "redocly bundle ./openapi/index.yaml -o ./dist/oas.yaml && redocly bundle ./openapi/index.yaml -o ./dist/oas.json --ext json",
+		"lint": "redocly lint --max-problems=1000 ./openapi/oas.yaml"
+	},
+	"license": "MIT",
+	"devDependencies": {
+		"@redocly/cli": "1.26.0",
+		"@scalar/cli": "0.2.272",
+		"nodemon": "3.1.9",
+		"openapi3-ts": "4.4.0"
+	}
+}
