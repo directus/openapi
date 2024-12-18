@@ -23,3 +23,19 @@ Key that maps a system endpoint to its corresponding system collection.
 ### `x-codeSamples`
 
 Examples of how to use the equivalent of the documented REST endpoint in the JS SDK and/or GraphQL endpoint.
+
+## Deploying Releases
+
+> [!NOTE]
+> This requires write access to the `@directus` organization on npm
+
+To deploy a new release to npm:
+
+- `rm -rf dist` if it exists
+- `pnpm lint` to ensure the spec is valid
+- `pnpm build` to build a new `dist` folder
+- `pnpm version <patch | minor>`
+- `git push && git push --tags`
+- `pnpm publish`
+
+This manual process will be replaced with a CD action, but until we set that up, follow the above :) 
