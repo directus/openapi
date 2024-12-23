@@ -1,4 +1,4 @@
-summary: List all items in a collection.
+summary: List all items in a collection
 description: Returns a list of the items in the given collection.
 operationId: getCollectionItems
 parameters:
