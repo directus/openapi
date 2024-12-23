@@ -115,6 +115,8 @@ paths:
     $ref: paths/permissions/me/_collection/_id/index.yaml
   "/policies":
     $ref: paths/policies/index.yaml
+  "/policies‎":
+    $ref: paths/policies/singular/index.yaml
   "/policies/{id}":
     $ref: paths/policies/_id/index.yaml
   "/presets":
