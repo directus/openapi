@@ -169,6 +169,8 @@ paths:
     $ref: paths/shares/info/_id/index.yaml
   "/translations":
     $ref: paths/translations/index.yaml
+  "/translations‎":
+    $ref: paths/translations/singular/index.yaml
   "/translations/{id}":
     $ref: paths/translations/_id/index.yaml
   "/users":
