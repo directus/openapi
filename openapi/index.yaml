@@ -135,6 +135,8 @@ paths:
     $ref: paths/revisions/_id/index.yaml
   "/roles":
     $ref: paths/roles/index.yaml
+  "/roles‎":
+    $ref: paths/roles/singular/index.yaml
   "/roles/{id}":
     $ref: paths/roles/_id/index.yaml
   "/schema/apply":
