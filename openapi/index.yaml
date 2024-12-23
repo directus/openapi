@@ -87,6 +87,8 @@ paths:
     $ref: paths/items/_collection/_id/index.yaml
   "/notifications":
     $ref: paths/notifications/index.yaml
+  "/notifications‎":
+    $ref: paths/notifications/singular/index.yaml
   "/notifications/{id}":
     $ref: paths/notifications/_id/index.yaml
   "/operations":
