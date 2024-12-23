@@ -43,6 +43,8 @@ paths:
     $ref: paths/comments/_id/index.yaml
   "/dashboards":
     $ref: paths/dashboards/index.yaml
+  "/dashboards‎":
+    $ref: paths/dashboards/singular/index.yaml
   "/dashboards/{id}":
     $ref: paths/dashboards/_id/index.yaml
   "/extensions":
