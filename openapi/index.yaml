@@ -73,6 +73,8 @@ paths:
     $ref: paths/flows/trigger/_id/index.yaml
   "/folders":
     $ref: paths/folders/index.yaml
+  "/folders‎":
+    $ref: paths/folders/singular/index.yaml
   "/folders/{id}":
     $ref: paths/folders/_id/index.yaml
   "/items/{collection}":
