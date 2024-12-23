@@ -93,6 +93,8 @@ paths:
     $ref: paths/notifications/_id/index.yaml
   "/operations":
     $ref: paths/operations/index.yaml
+  "/operations‎":
+    $ref: paths/operations/singular/index.yaml
   "/operations/{id}":
     $ref: paths/operations/_id/index.yaml
   "/panels":

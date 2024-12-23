@@ -1,6 +1,6 @@
-summary: Create a Notification
-description: Create a new notification.
-operationId: createNotification
+summary: Create an Operation
+description: Create a new operation.
+operationId: createOperation
 parameters:
 - $ref: ../../../components/parameters.yaml#/Fields
 - $ref: ../../../components/parameters.yaml#/Meta
@@ -9,7 +9,7 @@ requestBody:
     application/json:
       schema:
         anyOf:
-        - $ref: ../../../components/schemas/notifications.yaml
+        - $ref: ../../../components/schemas/operations.yaml
 responses:
   '200':
     description: Successful request
@@ -19,23 +19,27 @@ responses:
           type: object
           properties:
             data:
-              $ref: ../../../components/schemas/notifications.yaml
+              $ref: ../../../components/schemas/operations.yaml
   '401':
     $ref: ../../../components/responses.yaml#/UnauthorizedError
   '404':
     $ref: ../../../components/responses.yaml#/NotFoundError
 tags:
-- Notifications
+- Operations
 x-codeSamples:
   - label: Directus SDK
     lang: JavaScript
     source: |
-      import { createDirectus, rest, createNotification } from '@directus/sdk';
+      import { createDirectus, rest, createOperations } from '@directus/sdk';
+      
       const client = createDirectus('directus_project_url').with(rest());
-      const result = await client.request(createNotification(notification_object));
+      
+      const result = await client.request(createOperations(operations_object_array));
   - label: GraphQL
     lang: GraphQL
     source: |
+      POST /graphql/system
+      
       type Mutation {
-        create_notifications_item(data: create_directus_notifications_input!): directus_notifications
+      	create_operations_items(data: [create_directus_operations_input!]!): [directus_operations]
       }
