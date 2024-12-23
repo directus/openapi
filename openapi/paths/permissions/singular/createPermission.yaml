@@ -62,7 +62,7 @@ requestBody:
             items:
               type: string
             example:
-            - eatured_image
+            - featured_image
           status:
             type: string
             description: What status this permission applies to.
