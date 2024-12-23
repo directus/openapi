@@ -65,6 +65,8 @@ paths:
     $ref: paths/files/_id/index.yaml
   "/flows":
     $ref: paths/flows/index.yaml
+  "/flows‎":
+    $ref: paths/flows/singular/index.yaml
   "/flows/{id}":
     $ref: paths/flows/_id/index.yaml
   "/flows/trigger/{id}":
