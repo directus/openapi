@@ -121,6 +121,8 @@ paths:
     $ref: paths/policies/_id/index.yaml
   "/presets":
     $ref: paths/presets/index.yaml
+  "/presets‎":
+    $ref: paths/presets/singular/index.yaml
   "/presets/{id}":
     $ref: paths/presets/_id/index.yaml
   "/relations":
