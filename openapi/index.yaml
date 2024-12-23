@@ -105,6 +105,8 @@ paths:
     $ref: paths/panels/_id/index.yaml
   "/permissions":
     $ref: paths/permissions/index.yaml
+  "/permissions‎":
+    $ref: paths/permissions/singular/index.yaml
   "/permissions/{id}":
     $ref: paths/permissions/_id/index.yaml
   "/permissions/me":
