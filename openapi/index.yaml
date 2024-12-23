@@ -213,6 +213,8 @@ paths:
     $ref: paths/utils/sort/_collection/index.yaml
   "/versions":
     $ref: paths/versions/index.yaml
+  "/versions‎":
+    $ref: paths/versions/singular/index.yaml
   "/versions/{id}":
     $ref: paths/versions/_id/index.yaml
   "/versions/{id}/compare":
