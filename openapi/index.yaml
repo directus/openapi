@@ -99,6 +99,8 @@ paths:
     $ref: paths/operations/_id/index.yaml
   "/panels":
     $ref: paths/panels/index.yaml
+  "/panels‎":
+    $ref: paths/panels/singular/index.yaml
   "/panels/{id}":
     $ref: paths/panels/_id/index.yaml
   "/permissions":
