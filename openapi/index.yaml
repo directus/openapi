@@ -71,7 +71,7 @@ paths:
     $ref: paths/folders/_id/index.yaml
   "/items/{collection}":
     $ref: paths/items/_collection/index.yaml
-  "/items/{collection}/singleton":
+  "/items/{collection}‎":
     $ref: paths/items/_collection/singleton/index.yaml
   "/items/{collection}/{id}":
     $ref: paths/items/_collection/_id/index.yaml
