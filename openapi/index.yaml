@@ -37,6 +37,8 @@ paths:
     $ref: paths/collections/_id/index.yaml
   "/comments":
     $ref: paths/comments/index.yaml
+  "/comments‎":
+    $ref: paths/comments/singular/index.yaml
   "/comments/{id}":
     $ref: paths/comments/_id/index.yaml
   "/dashboards":
