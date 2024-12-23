@@ -37,10 +37,14 @@ paths:
     $ref: paths/collections/_id/index.yaml
   "/comments":
     $ref: paths/comments/index.yaml
+  "/comments‎":
+    $ref: paths/comments/singular/index.yaml
   "/comments/{id}":
     $ref: paths/comments/_id/index.yaml
   "/dashboards":
     $ref: paths/dashboards/index.yaml
+  "/dashboards‎":
+    $ref: paths/dashboards/singular/index.yaml
   "/dashboards/{id}":
     $ref: paths/dashboards/_id/index.yaml
   "/extensions":
@@ -61,34 +65,48 @@ paths:
     $ref: paths/files/_id/index.yaml
   "/flows":
     $ref: paths/flows/index.yaml
+  "/flows‎":
+    $ref: paths/flows/singular/index.yaml
   "/flows/{id}":
     $ref: paths/flows/_id/index.yaml
   "/flows/trigger/{id}":
     $ref: paths/flows/trigger/_id/index.yaml
   "/folders":
     $ref: paths/folders/index.yaml
+  "/folders‎":
+    $ref: paths/folders/singular/index.yaml
   "/folders/{id}":
     $ref: paths/folders/_id/index.yaml
   "/items/{collection}":
     $ref: paths/items/_collection/index.yaml
   "/items/{collection}‎":
+    $ref: paths/items/_collection/singular/index.yaml
+  "/items/{collection}/singleton":
     $ref: paths/items/_collection/singleton/index.yaml
   "/items/{collection}/{id}":
     $ref: paths/items/_collection/_id/index.yaml
   "/notifications":
     $ref: paths/notifications/index.yaml
+  "/notifications‎":
+    $ref: paths/notifications/singular/index.yaml
   "/notifications/{id}":
     $ref: paths/notifications/_id/index.yaml
   "/operations":
     $ref: paths/operations/index.yaml
+  "/operations‎":
+    $ref: paths/operations/singular/index.yaml
   "/operations/{id}":
     $ref: paths/operations/_id/index.yaml
   "/panels":
     $ref: paths/panels/index.yaml
+  "/panels‎":
+    $ref: paths/panels/singular/index.yaml
   "/panels/{id}":
     $ref: paths/panels/_id/index.yaml
   "/permissions":
     $ref: paths/permissions/index.yaml
+  "/permissions‎":
+    $ref: paths/permissions/singular/index.yaml
   "/permissions/{id}":
     $ref: paths/permissions/_id/index.yaml
   "/permissions/me":
@@ -97,10 +115,14 @@ paths:
     $ref: paths/permissions/me/_collection/_id/index.yaml
   "/policies":
     $ref: paths/policies/index.yaml
+  "/policies‎":
+    $ref: paths/policies/singular/index.yaml
   "/policies/{id}":
     $ref: paths/policies/_id/index.yaml
   "/presets":
     $ref: paths/presets/index.yaml
+  "/presets‎":
+    $ref: paths/presets/singular/index.yaml
   "/presets/{id}":
     $ref: paths/presets/_id/index.yaml
   "/relations":
@@ -113,6 +135,8 @@ paths:
     $ref: paths/revisions/_id/index.yaml
   "/roles":
     $ref: paths/roles/index.yaml
+  "/roles‎":
+    $ref: paths/roles/singular/index.yaml
   "/roles/{id}":
     $ref: paths/roles/_id/index.yaml
   "/schema/apply":
@@ -135,6 +159,8 @@ paths:
     $ref: paths/settings/index.yaml
   "/shares":
     $ref: paths/shares/index.yaml
+  "/shares‎":
+    $ref: paths/shares/singular/index.yaml
   "/shares/{id}":
     $ref: paths/shares/_id/index.yaml
   "/shares/auth":
@@ -143,10 +169,14 @@ paths:
     $ref: paths/shares/info/_id/index.yaml
   "/translations":
     $ref: paths/translations/index.yaml
+  "/translations‎":
+    $ref: paths/translations/singular/index.yaml
   "/translations/{id}":
     $ref: paths/translations/_id/index.yaml
   "/users":
     $ref: paths/users/index.yaml
+  "/users‎":
+    $ref: paths/users/singular/index.yaml
   "/users/{id}":
     $ref: paths/users/_id/index.yaml
   "/users/invite":
@@ -183,6 +213,8 @@ paths:
     $ref: paths/utils/sort/_collection/index.yaml
   "/versions":
     $ref: paths/versions/index.yaml
+  "/versions‎":
+    $ref: paths/versions/singular/index.yaml
   "/versions/{id}":
     $ref: paths/versions/_id/index.yaml
   "/versions/{id}/compare":
