@@ -175,6 +175,8 @@ paths:
     $ref: paths/translations/_id/index.yaml
   "/users":
     $ref: paths/users/index.yaml
+  "/users‎":
+    $ref: paths/users/singular/index.yaml
   "/users/{id}":
     $ref: paths/users/_id/index.yaml
   "/users/invite":
