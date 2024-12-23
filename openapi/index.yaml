@@ -159,6 +159,8 @@ paths:
     $ref: paths/settings/index.yaml
   "/shares":
     $ref: paths/shares/index.yaml
+  "/shares‎":
+    $ref: paths/shares/singular/index.yaml
   "/shares/{id}":
     $ref: paths/shares/_id/index.yaml
   "/shares/auth":
