@@ -32,8 +32,8 @@ Examples of how to use the equivalent of the documented REST endpoint in the JS 
 To deploy a new release to npm:
 
 - `rm -rf dist` if it exists
-- `pnpm lint` to ensure the spec is valid
 - `pnpm build` to build a new `dist` folder
+- `pnpm lint` to ensure the built spec is valid
 - `pnpm version <patch | minor>`
 - `git push && git push --tags`
 - `pnpm publish`
