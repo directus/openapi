@@ -37,7 +37,7 @@ responses:
   '404':
     $ref: ../../../components/responses.yaml#/NotFoundError
 tags:
-- Activity
+- Comments
 x-codeSamples:
 - label: Directus SDK
   lang: JavaScript
