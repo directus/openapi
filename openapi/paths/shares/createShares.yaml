@@ -1,4 +1,4 @@
-summary: Create Multiple shares
+summary: Create Multiple Shares
 description: Create multiple new shares.
 operationId: createShares
 parameters:

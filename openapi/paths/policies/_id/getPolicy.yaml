@@ -1,4 +1,4 @@
-summary: Retrieve a policy
+summary: Retrieve a Policy
 description: List an existing policy by primary key.
 operationId: getPolicy
 parameters:

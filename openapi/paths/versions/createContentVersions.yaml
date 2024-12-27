@@ -1,5 +1,5 @@
 summary: Create Multiple Content Versions
-description: Create multiple new Content Versions.
+description: Create multiple new content versions.
 operationId: createContentVersions
 parameters:
 - $ref: ../../components/parameters.yaml#/Fields

@@ -1,5 +1,5 @@
 summary: Promote a Content Version
-description: Promote an existing Content Version to become the new main version of the item.
+description: Promote an existing content version to become the new main version of the item.
 operationId: promoteContentVersion
 parameters:
 - $ref: ../../../../components/parameters.yaml#/UUId

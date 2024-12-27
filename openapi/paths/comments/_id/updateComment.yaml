@@ -1,5 +1,5 @@
 summary: Update a Comment
-description: Update the content of an existing comment.
+description: Update an existing comment. This action is only available to authenticated users.
 operationId: updateComment
 parameters:
 - $ref: ../../../components/parameters.yaml#/Id

@@ -1,5 +1,5 @@
 summary: Delete a Role
-description: Delete an existing role
+description: Delete an existing role.
 operationId: deleteRole
 responses:
   '204':

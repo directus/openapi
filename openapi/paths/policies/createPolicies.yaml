@@ -1,4 +1,4 @@
-summary: Create Multiple policies
+summary: Create Multiple Policies
 description: Create multiple new policies.
 operationId: createPolicies
 parameters:

@@ -1,4 +1,4 @@
-summary: Update a policy
+summary: Update a Policy
 description: Update an existing policy.
 operationId: updatePolicy
 parameters:

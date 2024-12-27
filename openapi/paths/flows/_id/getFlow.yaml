@@ -1,5 +1,5 @@
 summary: Retrieve a Flow
-description: Retrieve a single flow by unique identifier.
+description: Retrieve a single flow by primary key.
 operationId: getFlow
 responses:
   '200':

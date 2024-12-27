@@ -1,4 +1,4 @@
-summary: Update Multiple policies
+summary: Update Multiple Policies
 description: Update multiple existing policies.
 operationId: updatePolicies
 parameters:

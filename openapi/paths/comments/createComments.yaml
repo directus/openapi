@@ -1,5 +1,5 @@
 summary: Create Multiple comments
-description: Create multiple new comments.
+description: Create multiple new comments. This action is only available to authenticated users.
 operationId: createComments
 parameters:
 - $ref: ../../components/parameters.yaml#/Fields

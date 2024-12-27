@@ -1,5 +1,5 @@
 
-summary: Delete an share
+summary: Delete a Share
 description: Delete an existing share.
 operationId: deleteShare
 parameters:

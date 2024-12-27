@@ -1,5 +1,5 @@
 summary: Update a Relation
-description: Update an existing relation
+description: Update an existing relation.
 operationId: updateRelation
 parameters:
 - $ref: ../../../components/parameters.yaml#/Id

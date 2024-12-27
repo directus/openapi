@@ -1,5 +1,5 @@
 summary: Update a Role
-description: Update an existing role
+description: Update an existing role.
 operationId: updateRole
 parameters:
 - $ref: ../../../components/parameters.yaml#/UUId

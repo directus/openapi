@@ -1,5 +1,5 @@
 
-summary: List shares
+summary: List Shares
 description: List all shares that exist in Directus.
 operationId: getShares
 parameters:

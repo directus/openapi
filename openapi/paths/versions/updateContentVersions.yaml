@@ -1,5 +1,5 @@
 summary: Update Multiple Content Versions
-description: Update multiple Content Versions at the same time.
+description: Update multiple content versions at the same time.
 operationId: updateContentVersions
 parameters:
 - $ref: ../../components/parameters.yaml#/Fields

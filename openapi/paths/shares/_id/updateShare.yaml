@@ -1,4 +1,4 @@
-summary: Update a share
+summary: Update a Share
 description: Update an existing share.
 operationId: updateShare
 parameters:

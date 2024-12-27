@@ -1,5 +1,5 @@
 summary: Retrieve Settings
-description: List the settings.
+description: List the project settings.
 operationId: getSettings
 parameters:
 - $ref: ../../components/parameters.yaml#/Limit

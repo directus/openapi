@@ -1,5 +1,5 @@
 summary: Update a Field
-description: Update an existing field.
+description: Updates the given field in the given collection.
 operationId: updateField
 requestBody:
   content:

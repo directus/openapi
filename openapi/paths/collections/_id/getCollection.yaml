@@ -1,5 +1,5 @@
 summary: Retrieve a Collection
-description: Retrieves the details of a single collection.
+description: Retrieves the details of a single collection by its table name.
 operationId: getCollection
 parameters:
 - name: id

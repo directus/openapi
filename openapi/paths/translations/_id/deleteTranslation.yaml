@@ -1,6 +1,6 @@
 
-summary: Delete an Translation
-description: Delete an existing Translation.
+summary: Delete a Translation
+description: Delete an existing translation.
 operationId: deleteTranslation
 parameters:
 - name: id

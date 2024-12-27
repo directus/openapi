@@ -1,5 +1,5 @@
 summary: Delete a Content Version
-description: Delete an existing Content Version.
+description: Delete an existing content version.
 operationId: deleteContentVersion
 responses:
   '204':

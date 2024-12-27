@@ -1,6 +1,6 @@
 
 summary: Delete Multiple Comments
-description: Delete multiple existing Comments.
+description: Delete multiple existing comments. This action is only available to authenticated users.
 operationId: deleteComments
 requestBody:
   description: An array of comment primary keys.

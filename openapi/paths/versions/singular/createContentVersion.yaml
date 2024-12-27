@@ -1,5 +1,5 @@
 summary: Create a Content Versions
-description: Create a new Content Version for an item.
+description: Create a new content version for an item.
 operationId: createContentVersion
 parameters:
 - $ref: ../../../components/parameters.yaml#/Fields

@@ -1,5 +1,5 @@
 summary: Update a Translation
-description: Update an existing Translation.
+description: Update an existing translation.
 operationId: updateTranslation
 parameters:
 - name: id

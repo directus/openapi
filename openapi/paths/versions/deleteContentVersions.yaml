@@ -1,5 +1,5 @@
 summary: Delete Multiple Content Versions
-description: Delete multiple existing Content Versions.
+description: Delete multiple existing content versions.
 operationId: deleteContentVersions
 requestBody:
   description: An array of content version primary keys.

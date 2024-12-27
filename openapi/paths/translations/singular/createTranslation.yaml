@@ -1,6 +1,6 @@
 
 summary: Create a Translation
-description: Create a new Translation.
+description: Create a new translation.
 operationId: createTranslation
 parameters:
 - $ref: ../../../components/parameters.yaml#/Fields

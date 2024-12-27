@@ -1,5 +1,5 @@
 summary: Delete a User
-description: Delete an existing user
+description: Delete an existing user.
 operationId: deleteUser
 responses:
   '204':
