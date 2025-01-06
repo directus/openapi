@@ -1,5 +1,5 @@
 summary: Update a Content Version
-description: Update an existing Content Version.
+description: Update an existing content version.
 operationId: updateContentVersion
 parameters:
 - $ref: ../../../components/parameters.yaml#/UUId

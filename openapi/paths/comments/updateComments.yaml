@@ -1,6 +1,6 @@
 
 summary: Update Multiple comments
-description: Update multiple existing comments.
+description: Update multiple existing comments. This action is only available to authenticated users.
 operationId: updateComments
 parameters:
 - $ref: ../../components/parameters.yaml#/Fields

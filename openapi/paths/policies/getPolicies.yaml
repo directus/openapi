@@ -1,5 +1,5 @@
 
-summary: List policies
+summary: List Policies
 description: List all policies that exist in Directus.
 operationId: getPolicies
 parameters:

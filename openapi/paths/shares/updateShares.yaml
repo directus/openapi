@@ -1,5 +1,5 @@
 
-summary: Update Multiple shares
+summary: Update Multiple Shares
 description: Update multiple shares at the same time.
 operationId: updatesShares
 parameters:

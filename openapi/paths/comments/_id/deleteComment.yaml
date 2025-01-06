@@ -1,5 +1,5 @@
 summary: Delete a Comment
-description: Delete an existing comment. Deleted comments can not be retrieved.
+description: Delete an existing comment. This action is only available to authenticated users.
 operationId: deleteComment
 parameters:
 - $ref: ../../../components/parameters.yaml#/Id

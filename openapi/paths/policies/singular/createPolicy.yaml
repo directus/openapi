@@ -1,5 +1,5 @@
 
-summary: Create a policy
+summary: Create a Policy
 description: Create a new policy.
 operationId: createPolicy
 parameters:

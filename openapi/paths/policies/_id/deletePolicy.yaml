@@ -1,5 +1,5 @@
 
-summary: Delete a policy
+summary: Delete a Policy
 description: Delete an existing policy.
 operationId: deletePolicy
 parameters:

@@ -1,5 +1,5 @@
 summary: Compare a Content Version
-description: Compare an existing Content Version with the main version of the item.
+description: Compare an existing content version with the main version of the item.
 operationId: compareContentVersion
 parameters:
 - $ref: ../../../../components/parameters.yaml#/UUId

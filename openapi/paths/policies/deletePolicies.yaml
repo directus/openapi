@@ -1,5 +1,5 @@
 
-summary: Delete Multiple policies
+summary: Delete Multiple Policies
 description: Delete multiple existing policies.
 operationId: deletePolicies
 requestBody:

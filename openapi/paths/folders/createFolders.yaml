@@ -1,5 +1,5 @@
 summary: Create Multiple Folders
-description: Create multiple new folders.
+description: Create multiple new (virtual) folders.
 operationId: createFolders
 parameters:
 - $ref: ../../components/parameters.yaml#/Fields

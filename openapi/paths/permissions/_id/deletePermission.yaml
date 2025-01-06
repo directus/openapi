@@ -1,5 +1,5 @@
-summary: Delete a Permission
-description: Delete an existing permission
+summary: Delete a Permission Rule
+description: Delete an existing permission rule.
 operationId: deletePermission
 responses:
   '204':

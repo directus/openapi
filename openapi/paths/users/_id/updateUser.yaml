@@ -1,5 +1,5 @@
 summary: Update a User
-description: Update an existing user
+description: Update an existing user.
 operationId: updateUser
 parameters:
 - $ref: ../../../components/parameters.yaml#/UUId

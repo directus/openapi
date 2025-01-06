@@ -1,5 +1,5 @@
 summary: Retrieve a Content Version
-description: Retrieve a single Content Version by unique identifier.
+description: Retrieve a single content version by unique identifier.
 operationId: getContentVersion
 parameters:
 - $ref: ../../../components/parameters.yaml#/UUId

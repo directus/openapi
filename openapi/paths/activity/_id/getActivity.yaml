@@ -1,5 +1,5 @@
 summary: Retrieve an Activity Action
-description: Retrieves the details of an existing activity action.
+description: Returns a single activity action by primary key.
 operationId: getActivity
 parameters:
 - $ref: ../../../components/parameters.yaml#/Id

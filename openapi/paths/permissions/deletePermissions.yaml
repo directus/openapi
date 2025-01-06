@@ -1,4 +1,4 @@
-summary: Delete Multiple Permission Ruless
+summary: Delete Multiple Permission Rules
 description: Delete multiple existing permission rules.
 operationId: deletePermissions
 requestBody:

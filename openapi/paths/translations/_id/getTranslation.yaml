@@ -1,5 +1,5 @@
 summary: Retrieve a Translation
-description: List an existing Translation by primary key.
+description: List an existing translation by primary key.
 operationId: getTranslation
 parameters:
 - name: id

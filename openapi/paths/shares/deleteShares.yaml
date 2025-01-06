@@ -1,5 +1,5 @@
 
-summary: Delete Multiple shares
+summary: Delete Multiple Shares
 description: Delete multiple existing shares.
 operationId: deleteShares
 requestBody:

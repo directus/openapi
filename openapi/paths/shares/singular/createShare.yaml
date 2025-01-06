@@ -1,5 +1,5 @@
 
-summary: Create a share
+summary: Create a Share
 description: Create a new share.
 operationId: createShare
 parameters:

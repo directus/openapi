@@ -1,5 +1,5 @@
 summary: Save to a Content Version
-description: Save item changes to an existing Content Version.
+description: Save item changes to an existing content version.
 operationId: saveContentVersion
 parameters:
 - $ref: ../../../../components/parameters.yaml#/UUId

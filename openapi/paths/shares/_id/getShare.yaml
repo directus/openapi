@@ -1,4 +1,4 @@
-summary: Retrieve a share
+summary: Retrieve a Share
 description: List an existing share by primary key.
 operationId: getShare
 parameters:
