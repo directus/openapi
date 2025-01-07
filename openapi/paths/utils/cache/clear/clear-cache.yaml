@@ -1,6 +1,12 @@
 summary: Clear the Internal Cache
 description: Resets the data cache of Directus. Optionally, can also clear system cache. This endpoint is only available to admin users.
 operationId: clear-cache
+parameters:
+- description: Clear the system cache as well
+  in: query
+  name: system
+  schema:
+    type: boolean
 responses:
   '200':
     description: Successful request
