@@ -12,8 +12,8 @@ requestBody:
           url:
             type: string
             description: The URL to download the file from.
-          anyOf:
-            - $ref: ../../components/schemas/Files.yaml
+          data:
+            $ref: ../../../components/schemas/Files.yaml
 responses:
   '200':
     description: Successful request
@@ -23,9 +23,9 @@ responses:
           type: object
           properties:
             data:
-              $ref: ../../components/schemas/Files.yaml
+              $ref: ../../../components/schemas/Files.yaml
   '401':
-    $ref: ../../components/responses.yaml#/UnauthorizedError
+    $ref: ../../../components/responses.yaml#/UnauthorizedError
 security: []
 tags:
 - Files
