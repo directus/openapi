@@ -9,14 +9,14 @@ importers:
   .:
     devDependencies:
       '@redocly/cli':
-        specifier: 1.26.0
-        version: 1.26.0(enzyme@3.11.0)
+        specifier: 1.27.1
+        version: 1.27.1(enzyme@3.11.0)
       '@scalar/cli':
-        specifier: 0.2.272
-        version: 0.2.272(@hyperjump/browser@1.1.6)(tailwindcss@3.4.17)
+        specifier: 0.2.283
+        version: 0.2.283(@hyperjump/browser@1.1.6)(tailwindcss@3.4.17)
       '@types/node':
-        specifier: 22.10.2
-        version: 22.10.2
+        specifier: 22.10.5
+        version: 22.10.5
       jiti:
         specifier: 2.4.2
         version: 2.4.2
@@ -330,16 +330,16 @@ packages:
   '@redocly/ajv@8.11.2':
     resolution: {integrity: sha512-io1JpnwtIcvojV7QKDUSIuMN/ikdOUd1ReEnUnMKGfDVridQZ31J0MmIuqwuRjWDZfmvr+Q0MqCcfHM2gTivOg==}
 
-  '@redocly/cli@1.26.0':
-    resolution: {integrity: sha512-yUsrTmEPHaBDQf16jSFGi2n+AJabHacLpr7La92Dseo0tRkgLKsUWiaVEEyqm79POBytD87mVTi3THitqnSyZQ==}
+  '@redocly/cli@1.27.1':
+    resolution: {integrity: sha512-IgFzIKgWDaGY8jOlWYVp7VyIwElIjqrVLvZWzdDS/vdQlJ0DdISQ1nRy/YSh0Rqw69hJOpgn5cXMH/SS/qO33Q==}
     engines: {node: '>=14.19.0', npm: '>=7.0.0'}
     hasBin: true
 
   '@redocly/config@0.17.1':
     resolution: {integrity: sha512-CEmvaJuG7pm2ylQg53emPmtgm4nW2nxBgwXzbVEHpGas/lGnMyN8Zlkgiz6rPw0unASg6VW3wlz27SOL5XFHYQ==}
 
-  '@redocly/openapi-core@1.26.0':
-    resolution: {integrity: sha512-8Ofu6WpBp7eoLmf1qQ4+T0W4LRr8es+4Drw/RJG+acPXmaT2TmHk2B2v+3+1R9GqSIj6kx3N7JmQkxAPCnvDLw==}
+  '@redocly/openapi-core@1.27.1':
+    resolution: {integrity: sha512-zQ47/A+Drk2Y75/af69MD3Oad4H9LxkUDzcm7XBkyLNDKIWQrDKDnS5476oDq77+zciymNxgMVtxxVXlnGS8kw==}
     engines: {node: '>=14.19.0', npm: '>=7.0.0'}
 
   '@replit/codemirror-css-color-picker@6.3.0':
@@ -349,16 +349,16 @@ packages:
       '@codemirror/state': ^6.0.0
       '@codemirror/view': ^6.0.0
 
-  '@scalar/api-client@2.2.18':
-    resolution: {integrity: sha512-oTwBhhl1TZyZdLvMVieIk1Gu8YAYQwNfs8wr9w9n4RdFr+4S36BeL/5rzWOv4zzsv0GHANIzZ6dxSFFCqJbWDw==}
+  '@scalar/api-client@2.2.29':
+    resolution: {integrity: sha512-5q5t84m9qaMV4QiAd2KNdmFN14rYGZY2EOdNYOBgfA7+wFO9d1mTboGoZCiORzsVBgzWk0Xsnaect0FjVa+R4w==}
     engines: {node: '>=18'}
 
-  '@scalar/api-reference@1.25.89':
-    resolution: {integrity: sha512-DfWeHyDFsrw6guI8ixUxsq5Xz/H7cT7daRjQQwer8A48eyBrpYFCngfAXY7cexzHy5Us2GsWMZo/d2dkJ3kwsA==}
+  '@scalar/api-reference@1.25.100':
+    resolution: {integrity: sha512-R5y1A6xiviiW9o4jlwwysfCjgVGYIUDNcB6ObBaPgUZFfldj8+vsbge+nnLZFeo3rLEY6aQ3m8R64ghUdRjD8A==}
     engines: {node: '>=18'}
 
-  '@scalar/cli@0.2.272':
-    resolution: {integrity: sha512-f9ZoV3uQl+pOMucdShkX7BghH/KS+TaDlpIybwHk5HzsKTdUagh/SnzdXyl+MAmMjgw+dYj+uYKH8qUzihxeDA==}
+  '@scalar/cli@0.2.283':
+    resolution: {integrity: sha512-FFRRllA2dDT7+R5mZvd42K2hrt1cZ7K08zhofBuGo5+B1bSZCX1Mta0bmke7+vw/3WhCfu8u21AP65rlETFQoA==}
     engines: {node: '>=18'}
     hasBin: true
 
@@ -366,32 +366,32 @@ packages:
     resolution: {integrity: sha512-m0gY6A3/YehX+owlpV0rwIzf7MzDE3wpZOTiDXAwsn5gbLuJCcW6PtiXnNuP04bYzBErYS8LndceSwGoSTEiww==}
     engines: {node: '>=18'}
 
-  '@scalar/components@0.13.9':
-    resolution: {integrity: sha512-f0pCauFvhiUQ3FAKLY9+iVKYoPdzm+PFAEtNdQJcPgzzb69dUuwNj+en2lF9QN+q3L78rhusgdizXRDQdMzB4g==}
+  '@scalar/components@0.13.12':
+    resolution: {integrity: sha512-qwPI7RTFwgCKgIArL7VUFh7ekR06ozU1tAE9S3DtMG6qNd5fLGo9heE87j8WyDnb7zR2sTApD1j6usjq037Hfg==}
     engines: {node: '>=18'}
 
   '@scalar/config@0.1.1':
     resolution: {integrity: sha512-qk7iv7JpBxZKwc6dvXMiB2ECygH1/AMJ7cz1h0RhuDHdJFBg10KTRtsTAqOzLt754B2R3rpt4HG8Zk3bpFMdsA==}
     engines: {node: '>=18'}
 
-  '@scalar/draggable@0.1.7':
-    resolution: {integrity: sha512-PnMmUvlxgs5MeMVvmWBrfScvi2zrR0G+wBghVzFazLYQnvM3tczs2CZd8xOzBzScvH13W7BhdvQRM276zszODQ==}
+  '@scalar/draggable@0.1.8':
+    resolution: {integrity: sha512-awax9QsYW+GgQD5tumjFdZJO68a+OFmq6OloMBYNkLD+k1758Izpi/gqf0mdDRknCITISEAaLjWEoZC87AtIAQ==}
     engines: {node: '>=18'}
 
   '@scalar/icons@0.1.2':
     resolution: {integrity: sha512-aGcqLZGIdHjyLo4wloD0RGSXwVqLVXaK9NX5W/oUuK1G9o7SV9wph9eib6VnpqP6x7UN98hy9TBe7VC1ELmlKQ==}
     engines: {node: '>=18'}
 
-  '@scalar/import@0.2.11':
-    resolution: {integrity: sha512-pKBdDCfol25RYPgFoRmfVYs4nu6l0uOoekzEJEw45TZwSlA7QwrQI8O/fL719AB64MGP1Or6NQ+4Oh44RpW2hg==}
+  '@scalar/import@0.2.15':
+    resolution: {integrity: sha512-1YETTTkTkOjhFHyd/dkAU3tLkqfjOsMizeOMuYpZK4fuCZVYGs1MMLvNs6D/97yRRsZuJklL7JXbSHT/7AQy8w==}
     engines: {node: '>=18'}
 
-  '@scalar/mock-server@0.2.97':
-    resolution: {integrity: sha512-iM7ZH5VceksPwJ4gL/BvVMV84xt59l8MiitOV3mOp9MZVCnKIDQF3jHLg68Z68I11QOQfZXyYQABCOlFS9mNwA==}
+  '@scalar/mock-server@0.2.101':
+    resolution: {integrity: sha512-ujO7M66Y6n0gAcHPxVahUw0nFcnOyW9m9UKwPrZEJhWwKg72q7HeMiZdajkrMd075XlyF37hSDejR9ycJjLJCw==}
     engines: {node: '>=18'}
 
-  '@scalar/oas-utils@0.2.91':
-    resolution: {integrity: sha512-/fpUOOWQ3Iwcnx6wMX/Kp4H+OWE4iq0hhx17Jbux5FzXUXyuw3nK6lmcpu07IsUxPCt5HPGv6YxKB81G2eRnZw==}
+  '@scalar/oas-utils@0.2.95':
+    resolution: {integrity: sha512-Y9yFpNFVYrmdiYaDHNxuKhnMBlq6GtI18O5wdvVXVaskPfNRTMvrRFtcA1NKVO1TCgjHcIDl7IfGcQBMRgDbtw==}
     engines: {node: '>=18'}
 
   '@scalar/object-utils@1.1.12':
@@ -406,8 +406,8 @@ packages:
     resolution: {integrity: sha512-6geH9ehvQ/sG/xUyy3e0lyOw3BaY5s6nn22wHjEJhcobdmWyFER0O6m7AU0ZN4QTjle/gYvFJOjj552l/rsNSw==}
     engines: {node: '>=18'}
 
-  '@scalar/postman-to-openapi@0.1.14':
-    resolution: {integrity: sha512-INj++P9x0MMxRM2k2+ufV+XErRtRnAnSWBM+rw8Dh/4S0wIOI7oa+/8Ftfc+69n7wTXgN2vVcJB5/Vys8Wk7JA==}
+  '@scalar/postman-to-openapi@0.1.18':
+    resolution: {integrity: sha512-AerVq2Qt0dT4a8EXmZVQMGUiPW4qjU0u1r3u6V1/tAt2AxvWd9jMMYCpsMcuSU+6QD52sFTEJf6SmHnqjx8R2w==}
     engines: {node: '>=18'}
 
   '@scalar/snippetz@0.2.9':
@@ -422,20 +422,20 @@ packages:
     resolution: {integrity: sha512-sGnOFnfiSn4o23rklU/jrg81hO+630bsFIdHg8MZ/w2Nc6IoUwARA2hbe4d4Fg+D0KBu40Tan/L+WAYDXkTJQg==}
     engines: {node: '>=18'}
 
-  '@scalar/use-codemirror@0.11.53':
-    resolution: {integrity: sha512-0HPMRjo07awWPOSGgIOKn1unFRuVRCsB+Of2IWx9fVqGZ9ahcrC+cJDPsZr2u4LLX8j20yAwzyOl43kSjmr+kg==}
+  '@scalar/use-codemirror@0.11.56':
+    resolution: {integrity: sha512-uyIclgsmZLKz4HzzkchjFOQ7+JtvXuWTXw5CTR8+Zj9ZQSX9VRlrKnd7fUu+z0TbMcAHmG/55dquy+9hEjJ91Q==}
     engines: {node: '>=18'}
 
-  '@scalar/use-hooks@0.1.11':
-    resolution: {integrity: sha512-PlsnNG8GcttpUd989153LKy1Wrk1eZfJBMiLMItXlbK1dMEPY5fWHrpB5fc+rBwxWRzQAHkKzLUkUAHM00gpuQ==}
+  '@scalar/use-hooks@0.1.12':
+    resolution: {integrity: sha512-GLhomuUfNL9GZTOx+m726yuC/3GbexYwd03+6OR9fgppuCUrilIl26rak0v5z6rvVlON38BRlycE3A3Mqgj+/w==}
     engines: {node: '>=18'}
 
-  '@scalar/use-toasts@0.7.7':
-    resolution: {integrity: sha512-eIJugwMswR9kP75uYR4SxK1vRBfL8Zqb/XmzNMqM3o7d1jnyOd4fA5Efs95QzCvpwlB3VaYkNq1HThi9hzLTow==}
+  '@scalar/use-toasts@0.7.8':
+    resolution: {integrity: sha512-znJ/zM2dKdwNyAIPkX0zwaizt8JjVN4Wb7PCHHk6Z0wh9kvp39gdGUkyHsp+c4pCfXPhfUtFRxe6iHmsXA+cqQ==}
     engines: {node: '>=18'}
 
-  '@scalar/use-tooltip@1.0.4':
-    resolution: {integrity: sha512-QGlg24TJoZEiYJNCdgbclCQDb0mKdKbxZgILNfoADhbX+qHgIhyOHfgLct+OHxXJdE1vix7pvjnAUBR63a2CLw==}
+  '@scalar/use-tooltip@1.0.5':
+    resolution: {integrity: sha512-24xNvFEuh82AeTkeOug9Skr/WsREh4Qja78GCpPFZokrlgpZ1qDW6yLT0MZJ1S41ITLWRRAWToLzQVq4BiwTPQ==}
     engines: {node: '>=18'}
 
   '@scalar/void-server@2.0.14':
@@ -471,8 +471,8 @@ packages:
   '@types/ms@0.7.34':
     resolution: {integrity: sha512-nG96G3Wp6acyAgJqGasjODb+acrI7KltPiRxzHPXnP3NgI28bpQDRv53olbqGXbfcgF5aiiHmO3xpwEpS5Ld9g==}
 
-  '@types/node@22.10.2':
-    resolution: {integrity: sha512-Xxr6BBRCAOQixvonOye19wnzyDiUtTeqldOOmj3CkeblonbccA12PFwlufvRdrpjXxqnmUaeiU5EOA+7s5diUQ==}
+  '@types/node@22.10.5':
+    resolution: {integrity: sha512-F8Q+SeGimwOo86fiovQh8qiXfFEh2/ocYv7tU5pJ3EXMSSxk1Joj5wefpFK2fHTf/N6HKGSxIDBT9f3gCxXPkQ==}
 
   '@types/stylis@4.2.5':
     resolution: {integrity: sha512-1Xve+NMN7FWjY14vLoY5tL3BVEQ/n42YLwaqJIPYhotZ9uBHt87VceMwWQpzmdEt2TNXIorIFG+YeCUUW7RInw==}
@@ -2920,9 +2920,9 @@ snapshots:
       require-from-string: 2.0.2
       uri-js-replace: 1.0.1
 
-  '@redocly/cli@1.26.0(enzyme@3.11.0)':
+  '@redocly/cli@1.27.1(enzyme@3.11.0)':
     dependencies:
-      '@redocly/openapi-core': 1.26.0
+      '@redocly/openapi-core': 1.27.1
       abort-controller: 3.0.0
       chokidar: 3.6.0
       colorette: 1.4.0
@@ -2951,7 +2951,7 @@ snapshots:
 
   '@redocly/config@0.17.1': {}
 
-  '@redocly/openapi-core@1.26.0':
+  '@redocly/openapi-core@1.27.1':
     dependencies:
       '@redocly/ajv': 8.11.2
       '@redocly/config': 0.17.1
@@ -2959,7 +2959,6 @@ snapshots:
       https-proxy-agent: 7.0.6
       js-levenshtein: 1.1.6
       js-yaml: 4.1.0
-      lodash.isequal: 4.5.0
       minimatch: 5.1.6
       node-fetch: 2.7.0
       pluralize: 8.0.0
@@ -2974,25 +2973,25 @@ snapshots:
       '@codemirror/state': 6.5.0
       '@codemirror/view': 6.36.0
 
-  '@scalar/api-client@2.2.18(@hyperjump/browser@1.1.6)(tailwindcss@3.4.17)':
+  '@scalar/api-client@2.2.29(@hyperjump/browser@1.1.6)(tailwindcss@3.4.17)':
     dependencies:
       '@headlessui/tailwindcss': 0.2.1(tailwindcss@3.4.17)
       '@headlessui/vue': 1.7.23(vue@3.5.13)
-      '@scalar/components': 0.13.9
-      '@scalar/draggable': 0.1.7
+      '@scalar/components': 0.13.12
+      '@scalar/draggable': 0.1.8
       '@scalar/icons': 0.1.2
-      '@scalar/import': 0.2.11(@hyperjump/browser@1.1.6)
-      '@scalar/oas-utils': 0.2.91(@hyperjump/browser@1.1.6)
+      '@scalar/import': 0.2.15(@hyperjump/browser@1.1.6)
+      '@scalar/oas-utils': 0.2.95(@hyperjump/browser@1.1.6)
       '@scalar/object-utils': 1.1.12
       '@scalar/openapi-parser': 0.10.2
       '@scalar/openapi-types': 0.1.5
-      '@scalar/postman-to-openapi': 0.1.14(@hyperjump/browser@1.1.6)
+      '@scalar/postman-to-openapi': 0.1.18(@hyperjump/browser@1.1.6)
       '@scalar/themes': 0.9.58
       '@scalar/types': 0.0.25
-      '@scalar/use-codemirror': 0.11.53
-      '@scalar/use-hooks': 0.1.11
-      '@scalar/use-toasts': 0.7.7
-      '@scalar/use-tooltip': 1.0.4
+      '@scalar/use-codemirror': 0.11.56
+      '@scalar/use-hooks': 0.1.12
+      '@scalar/use-toasts': 0.7.8
+      '@scalar/use-tooltip': 1.0.5
       '@vueuse/core': 10.11.1(vue@3.5.13)
       '@vueuse/integrations': 11.3.0(focus-trap@7.6.2)(fuse.js@7.0.0)(vue@3.5.13)
       focus-trap: 7.6.2
@@ -3025,21 +3024,21 @@ snapshots:
       - typescript
       - universal-cookie
 
-  '@scalar/api-reference@1.25.89(@hyperjump/browser@1.1.6)(tailwindcss@3.4.17)':
+  '@scalar/api-reference@1.25.100(@hyperjump/browser@1.1.6)(tailwindcss@3.4.17)':
     dependencies:
       '@floating-ui/vue': 1.1.5(vue@3.5.13)
       '@headlessui/vue': 1.7.23(vue@3.5.13)
-      '@scalar/api-client': 2.2.18(@hyperjump/browser@1.1.6)(tailwindcss@3.4.17)
+      '@scalar/api-client': 2.2.29(@hyperjump/browser@1.1.6)(tailwindcss@3.4.17)
       '@scalar/code-highlight': 0.0.19
-      '@scalar/components': 0.13.9
-      '@scalar/oas-utils': 0.2.91(@hyperjump/browser@1.1.6)
+      '@scalar/components': 0.13.12
+      '@scalar/oas-utils': 0.2.95(@hyperjump/browser@1.1.6)
       '@scalar/openapi-parser': 0.10.2
       '@scalar/openapi-types': 0.1.5
       '@scalar/snippetz': 0.2.9
       '@scalar/themes': 0.9.58
       '@scalar/types': 0.0.25
-      '@scalar/use-hooks': 0.1.11
-      '@scalar/use-toasts': 0.7.7
+      '@scalar/use-hooks': 0.1.12
+      '@scalar/use-toasts': 0.7.8
       '@unhead/vue': 1.11.14(vue@3.5.13)
       '@vueuse/core': 10.11.1(vue@3.5.13)
       fuse.js: 7.0.0
@@ -3063,15 +3062,15 @@ snapshots:
       - typescript
       - universal-cookie
 
-  '@scalar/cli@0.2.272(@hyperjump/browser@1.1.6)(tailwindcss@3.4.17)':
+  '@scalar/cli@0.2.283(@hyperjump/browser@1.1.6)(tailwindcss@3.4.17)':
     dependencies:
       '@clack/prompts': 0.7.0
       '@hono/node-server': 1.13.7(hono@4.6.14)
       '@parcel/watcher': 2.5.0
-      '@scalar/api-reference': 1.25.89(@hyperjump/browser@1.1.6)(tailwindcss@3.4.17)
+      '@scalar/api-reference': 1.25.100(@hyperjump/browser@1.1.6)(tailwindcss@3.4.17)
       '@scalar/config': 0.1.1
-      '@scalar/mock-server': 0.2.97(@hyperjump/browser@1.1.6)
-      '@scalar/oas-utils': 0.2.91(@hyperjump/browser@1.1.6)
+      '@scalar/mock-server': 0.2.101(@hyperjump/browser@1.1.6)
+      '@scalar/oas-utils': 0.2.95(@hyperjump/browser@1.1.6)
       '@scalar/openapi-parser': 0.10.2
       '@scalar/openapi-types': 0.1.5
       '@scalar/void-server': 2.0.14
@@ -3120,15 +3119,15 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@scalar/components@0.13.9':
+  '@scalar/components@0.13.12':
     dependencies:
       '@floating-ui/utils': 0.2.8
       '@floating-ui/vue': 1.1.5(vue@3.5.13)
       '@headlessui/vue': 1.7.23(vue@3.5.13)
       '@scalar/code-highlight': 0.0.19
       '@scalar/themes': 0.9.58
-      '@scalar/use-hooks': 0.1.11
-      '@scalar/use-toasts': 0.7.7
+      '@scalar/use-hooks': 0.1.12
+      '@scalar/use-toasts': 0.7.8
       '@vueuse/core': 10.11.1(vue@3.5.13)
       cva: 1.0.0-beta.2
       nanoid: 5.0.9
@@ -3144,7 +3143,7 @@ snapshots:
     dependencies:
       '@sinclair/typebox': 0.33.22
 
-  '@scalar/draggable@0.1.7':
+  '@scalar/draggable@0.1.8':
     dependencies:
       vue: 3.5.13
     transitivePeerDependencies:
@@ -3156,17 +3155,17 @@ snapshots:
     transitivePeerDependencies:
       - typescript
 
-  '@scalar/import@0.2.11(@hyperjump/browser@1.1.6)':
+  '@scalar/import@0.2.15(@hyperjump/browser@1.1.6)':
     dependencies:
-      '@scalar/oas-utils': 0.2.91(@hyperjump/browser@1.1.6)
+      '@scalar/oas-utils': 0.2.95(@hyperjump/browser@1.1.6)
       '@scalar/openapi-parser': 0.10.2
       yaml: 2.6.1
     transitivePeerDependencies:
       - '@hyperjump/browser'
 
-  '@scalar/mock-server@0.2.97(@hyperjump/browser@1.1.6)':
+  '@scalar/mock-server@0.2.101(@hyperjump/browser@1.1.6)':
     dependencies:
-      '@scalar/oas-utils': 0.2.91(@hyperjump/browser@1.1.6)
+      '@scalar/oas-utils': 0.2.95(@hyperjump/browser@1.1.6)
       '@scalar/openapi-parser': 0.10.2
       '@scalar/openapi-types': 0.1.5
       hono: 4.6.14
@@ -3174,7 +3173,7 @@ snapshots:
     transitivePeerDependencies:
       - '@hyperjump/browser'
 
-  '@scalar/oas-utils@0.2.91(@hyperjump/browser@1.1.6)':
+  '@scalar/oas-utils@0.2.95(@hyperjump/browser@1.1.6)':
     dependencies:
       '@hyperjump/json-schema': 1.9.9(@hyperjump/browser@1.1.6)
       '@scalar/object-utils': 1.1.12
@@ -3206,9 +3205,9 @@ snapshots:
 
   '@scalar/openapi-types@0.1.5': {}
 
-  '@scalar/postman-to-openapi@0.1.14(@hyperjump/browser@1.1.6)':
+  '@scalar/postman-to-openapi@0.1.18(@hyperjump/browser@1.1.6)':
     dependencies:
-      '@scalar/oas-utils': 0.2.91(@hyperjump/browser@1.1.6)
+      '@scalar/oas-utils': 0.2.95(@hyperjump/browser@1.1.6)
       '@scalar/openapi-types': 0.1.5
     transitivePeerDependencies:
       - '@hyperjump/browser'
@@ -3226,7 +3225,7 @@ snapshots:
       '@scalar/openapi-types': 0.1.5
       '@unhead/schema': 1.11.14
 
-  '@scalar/use-codemirror@0.11.53':
+  '@scalar/use-codemirror@0.11.56':
     dependencies:
       '@codemirror/autocomplete': 6.18.4
       '@codemirror/commands': 6.7.1
@@ -3243,7 +3242,7 @@ snapshots:
       '@lezer/highlight': 1.2.1
       '@lezer/lr': 1.4.2
       '@replit/codemirror-css-color-picker': 6.3.0(@codemirror/language@6.10.7)(@codemirror/state@6.5.0)(@codemirror/view@6.36.0)
-      '@scalar/components': 0.13.9
+      '@scalar/components': 0.13.12
       '@uiw/codemirror-themes': 4.23.7(@codemirror/language@6.10.7)(@codemirror/state@6.5.0)(@codemirror/view@6.36.0)
       codemirror: 6.0.1
       vue: 3.5.13
@@ -3255,10 +3254,10 @@ snapshots:
       - supports-color
       - typescript
 
-  '@scalar/use-hooks@0.1.11':
+  '@scalar/use-hooks@0.1.12':
     dependencies:
       '@scalar/themes': 0.9.58
-      '@scalar/use-toasts': 0.7.7
+      '@scalar/use-toasts': 0.7.8
       '@vueuse/core': 10.11.1(vue@3.5.13)
       vue: 3.5.13
       zod: 3.24.1
@@ -3266,7 +3265,7 @@ snapshots:
       - '@vue/composition-api'
       - typescript
 
-  '@scalar/use-toasts@0.7.7':
+  '@scalar/use-toasts@0.7.8':
     dependencies:
       nanoid: 5.0.9
       vue: 3.5.13
@@ -3274,7 +3273,7 @@ snapshots:
     transitivePeerDependencies:
       - typescript
 
-  '@scalar/use-tooltip@1.0.4':
+  '@scalar/use-tooltip@1.0.5':
     dependencies:
       tippy.js: 6.3.7
       vue: 3.5.13
@@ -3316,7 +3315,7 @@ snapshots:
 
   '@types/ms@0.7.34': {}
 
-  '@types/node@22.10.2':
+  '@types/node@22.10.5':
     dependencies:
       undici-types: 6.20.0
 
@@ -3510,7 +3509,7 @@ snapshots:
 
   aria-hidden@1.2.4:
     dependencies:
-      tslib: 2.6.2
+      tslib: 2.8.1
 
   array-buffer-byte-length@1.0.1:
     dependencies:
@@ -5181,7 +5180,7 @@ snapshots:
   redoc@2.2.0(core-js@3.39.0)(enzyme@3.11.0)(mobx@6.13.5)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@6.1.13(react-dom@18.3.1(react@18.3.1))(react@18.3.1)):
     dependencies:
       '@cfaester/enzyme-adapter-react-18': 0.8.0(enzyme@3.11.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@redocly/openapi-core': 1.26.0
+      '@redocly/openapi-core': 1.27.1
       classnames: 2.5.1
       core-js: 3.39.0
       decko: 1.2.0

@@ -28,9 +28,9 @@
 	},
 	"license": "MIT",
 	"devDependencies": {
-		"@redocly/cli": "1.26.0",
-		"@scalar/cli": "0.2.272",
-		"@types/node": "22.10.2",
+		"@redocly/cli": "1.27.1",
+		"@scalar/cli": "0.2.283",
+		"@types/node": "22.10.5",
 		"jiti": "2.4.2",
 		"nodemon": "3.1.9",
 		"openapi3-ts": "4.4.0"
