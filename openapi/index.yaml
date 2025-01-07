@@ -61,6 +61,8 @@ paths:
     $ref: paths/fields/_collection/_id/index.yaml
   "/files":
     $ref: paths/files/index.yaml
+  "/files/import":
+    $ref: paths/files/import/index.yaml
   "/files/{id}":
     $ref: paths/files/_id/index.yaml
   "/flows":
