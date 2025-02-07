@@ -1,0 +1,16 @@
+summary: Get Metrics
+description: List the generated metrics for the enabled services
+operationId: getMetrics
+responses:
+  "200":
+    content:
+      application/text:
+        schema:
+          type: string
+          example:
+    description: Successful request
+  "401":
+    $ref: ../../components/responses.yaml#/UnauthorizedError
+security: []
+tags:
+  - Metrics
