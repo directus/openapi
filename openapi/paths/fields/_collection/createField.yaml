@@ -142,6 +142,10 @@ requestBody:
                 type: boolean
                 description: Prevents the user from editing the value in the field.
                 example: false
+              required:
+                type: boolean
+                description: If this field should be required.
+                example: false
               hidden:
                 type: boolean
                 description: If this field should be hidden.
