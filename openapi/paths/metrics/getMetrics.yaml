@@ -39,6 +39,15 @@ responses:
     description: Successful request
   "401":
     $ref: ../../components/responses.yaml#/UnauthorizedError
-security: []
+
+components:
+  securitySchemes:
+    metricsAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: Metrics <token>
+
+security:
+  - metricsAuth: []
 tags:
   - Metrics
