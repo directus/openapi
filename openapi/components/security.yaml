@@ -1,3 +1,7 @@
+MetricsAuth:
+  type: http
+  scheme: bearer
+  bearerFormat: Metrics <token>
 KeyAuth:
   type: apiKey
   in: query

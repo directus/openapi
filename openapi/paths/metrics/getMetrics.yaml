@@ -16,7 +16,7 @@ responses:
           type: string
           example: |
             # HELP directus_db_sqlite3_response_time_ms sqlite3 Database connection response time
-            # TYPE directus_db_sqlite3_response_time_ms histogram 
+            # TYPE directus_db_sqlite3_response_time_ms histogram
             directus_db_sqlite3_response_time_ms_bucket{le="1"} 134
             directus_db_sqlite3_response_time_ms_bucket{le="10"} 138
             directus_db_sqlite3_response_time_ms_bucket{le="20"} 138
@@ -47,15 +47,8 @@ responses:
   "401":
     $ref: ../../components/responses.yaml#/UnauthorizedError
 
-components:
-  securitySchemes:
-    metricsAuth:
-      type: http
-      scheme: bearer
-      bearerFormat: Metrics <token>
-
 security:
-  - metricsAuth: []
+  - MetricsAuth: []
   - Auth: []
   - KeyAuth: []
 tags:
