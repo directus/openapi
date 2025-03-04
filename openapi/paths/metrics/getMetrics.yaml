@@ -1,4 +1,4 @@
-summary: Get Metrics
+summary: List Metrics
 description: |
   Retrieve monitored metrics for connected services.
 
@@ -7,7 +7,7 @@ description: |
 
   The output is based on Prometheus "Time Series Data Model":
   [Prometheus Time Series Data Model](https://prometheus.io/docs/concepts/data_model)
-operationId: getMetrics
+operationId: listMetrics
 responses:
   "200":
     content:
