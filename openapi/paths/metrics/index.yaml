@@ -1,2 +1,2 @@
 get:
-  $ref: listMetrics.yaml
+  $ref: getMetrics.yaml
