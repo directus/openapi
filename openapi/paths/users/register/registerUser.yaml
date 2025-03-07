@@ -1,5 +1,5 @@
 summary: Register a new User
-description: Register a new user.
+description: Register a new user. The user registration feature is disabled by default. To make use of it, it must first be enabled via project settings. By enabling user registration, it is open to anyone via the Data Studio or via API. Once enabled, all users who register will receive the role configured in project settings.
 operationId: registerUser
 parameters:
 - $ref: ../../../components/parameters.yaml#/Fields
