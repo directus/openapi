@@ -1,6 +1,13 @@
 summary: List relations in collection
 description: List all relations that exist in a given collection.
 operationId: getRelationByCollection
+parameters:
+- description: Unique identifier of the collection the relations reside in.
+  in: path
+  name: collection
+  required: true
+  schema:
+    type: string
 responses:
   '200':
     description: Successful request
@@ -12,11 +19,11 @@ responses:
             data:
               type: array
               items:
-                $ref: ../../components/schemas/Relations.yaml
+                $ref: ../../../components/schemas/Relations.yaml
   '401':
-    $ref: ../../components/responses.yaml#/UnauthorizedError
+    $ref: ../../../components/responses.yaml#/UnauthorizedError
   '404':
-    $ref: ../../components/responses.yaml#/NotFoundError
+    $ref: ../../../components/responses.yaml#/NotFoundError
 security: []
 tags:
 - Relations

@@ -131,6 +131,8 @@ paths:
     $ref: paths/presets/_id/index.yaml
   "/relations":
     $ref: paths/relations/index.yaml
+  "/relations‎/{collection}":
+    $ref: paths/relations/_collection/index.yaml
   "/relations/{id}":
     $ref: paths/relations/_id/index.yaml
   "/revisions":
