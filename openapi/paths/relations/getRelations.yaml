@@ -20,11 +20,31 @@ responses:
       application/json:
         schema:
           type: object
-          properties:
-            data:
-              type: array
-              items:
-                $ref: ../../components/schemas/Relations.yaml
+          example:
+            success:
+              value:
+                - collection: directus_collections
+                  field: group
+                  related_collection: directus_collections
+                  schema:
+                    table: directus_collections
+                    column: group
+                    foreign_key_table: directus_collections
+                    foreign_key_column: collection
+                    on_update: NO ACTION
+                    on_delete: NO ACTION
+                    constraint_name:
+                  meta:
+                    many_collection: directus_collections
+                    many_field: group
+                    one_collection: directus_collections
+                    one_field:
+                    one_allowed_collections:
+                    one_collection_field:
+                    one_deselect_action: nullify
+                    junction_field:
+                    sort_field:
+                    system: true
   '401':
     $ref: ../../components/responses.yaml#/UnauthorizedError
   '404':

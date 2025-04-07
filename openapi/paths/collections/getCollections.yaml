@@ -11,11 +11,37 @@ responses:
       application/json:
         schema:
           type: object
-          properties:
-            data:
-              type: array
-              items:
-                $ref: ../../components/schemas/Collections.yaml
+          example:
+            success:
+              value:
+                - collection: messages
+                  meta:
+                    collection: messages
+                    icon:
+                    note:
+                    display_template:
+                    hidden: false
+                    singleton: false
+                    translations:
+                    archive_field:
+                    archive_app_filter: true
+                    archive_value:
+                    unarchive_value:
+                    sort_field:
+                    accountability: all
+                    color:
+                    item_duplication_fields:
+                    sort:
+                    group:
+                    collapse: open
+                    preview_url:
+                    versioning: false
+                  schema:
+                    name: messages
+                    sql: CREATE TABLE "messages" (`id` integer PRIMARY KEY AUTOINCREMENT NOT NULL,
+                      `user_created` char(36) NULL, `date_created` datetime NULL, `content` text null,
+                      CONSTRAINT `messages_user_created_foreign` FOREIGN KEY (`user_created`) REFERENCES
+                      `directus_users` (`id`))
   '401':
     $ref: ../../components/responses.yaml#/UnauthorizedError
   '404':
