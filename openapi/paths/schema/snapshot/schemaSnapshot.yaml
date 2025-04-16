@@ -10,10 +10,7 @@ responses:
     content:
       application/json:
         schema:
-          type: object
-          properties:
-            data:
-              $ref: ../../../components/schemas/Schema.yaml
+          $ref: ../../../components/schemas/Schema.yaml
       text/yaml:
         schema:
           type: string
