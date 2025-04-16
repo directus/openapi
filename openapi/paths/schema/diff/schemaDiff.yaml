@@ -34,7 +34,9 @@ responses:
       application/json:
         schema:
           type: object
-          $ref: ../../../components/schemas/Diff.yaml
+          properties:
+            data:
+              $ref: ../../../components/schemas/Diff.yaml
   '204':
     description: No schema difference.
   '403':
