@@ -10,6 +10,7 @@ responses:
     content:
       application/json:
         schema:
+          type: object
           $ref: ../../../components/schemas/Schema.yaml
       text/yaml:
         schema:

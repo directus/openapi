@@ -8,6 +8,7 @@ requestBody:
   content:
     application/json:
       schema:
+        type: object
         $ref: ../../../components/schemas/Diff.yaml
     multipart/form-data:
       schema:
