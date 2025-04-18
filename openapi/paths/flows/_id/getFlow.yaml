@@ -10,7 +10,7 @@ responses:
           type: object
           properties:
             data:
-              $ref: ../../../components/schemas/Flows.yaml
+              $ref: ../../../components/schemas/flows.yaml
   '401':
     $ref: ../../../components/responses.yaml#/UnauthorizedError
   '404':

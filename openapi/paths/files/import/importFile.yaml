@@ -13,7 +13,7 @@ requestBody:
             type: string
             description: The URL to download the file from.
           data:
-            $ref: ../../../components/schemas/Files.yaml
+            $ref: ../../../components/schemas/files.yaml
 responses:
   '200':
     description: Successful request
@@ -23,7 +23,7 @@ responses:
           type: object
           properties:
             data:
-              $ref: ../../../components/schemas/Files.yaml
+              $ref: ../../../components/schemas/files.yaml
   '401':
     $ref: ../../../components/responses.yaml#/UnauthorizedError
 security: []
