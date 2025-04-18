@@ -11,7 +11,7 @@ responses:
       application/json:
         schema:
           type: object
-          $ref: ../../../components/schemas/Schema.yaml
+          $ref: ../../../components/schemas/schema.yaml
       text/yaml:
         schema:
           type: string

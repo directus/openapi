@@ -24,7 +24,8 @@
 	"scripts": {
 		"dev": "nodemon --watch './openapi/**/*.yaml' --exec 'redocly bundle ./openapi/index.yaml -o ./dist/index.yaml && pnpm scalar serve ./dist/oas.yaml -p 5001' --ext yaml",
 		"build": "redocly bundle ./openapi/index.yaml -o ./dist/oas.yaml && redocly bundle ./openapi/index.yaml -o ./dist/oas.json --ext json && jiti scripts/build-js.ts",
-		"lint": "redocly lint --max-problems=1000 ./dist/oas.yaml"
+		"lint": "redocly lint --max-problems=1000 ./dist/oas.yaml",
+		"fix-casing": "npx tsx scripts/fix-casing.ts"
 	},
 	"license": "MIT",
 	"devDependencies": {

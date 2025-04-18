@@ -30,7 +30,7 @@ responses:
           type: object
           properties:
             data:
-              $ref: ../../../components/schemas/Extensions.yaml
+              $ref: ../../../components/schemas/extensions.yaml
     description: Successful request
   '401':
     $ref: ../../../components/responses.yaml#/UnauthorizedError
