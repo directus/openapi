@@ -14,8 +14,7 @@ requestBody:
   content:
     application/json:
       schema:
-        anyOf:
-        - $ref: ../../../components/schemas/Dashboards.yaml
+        $ref: ../../../components/schemas/Dashboards.yaml
 responses:
   '200':
     description: Successful request

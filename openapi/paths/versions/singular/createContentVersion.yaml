@@ -1,4 +1,4 @@
-summary: Create a Content Versions
+summary: Create a Content Version
 description: Create a new content version for an item.
 operationId: createContentVersion
 parameters:
@@ -8,8 +8,7 @@ requestBody:
   content:
     application/json:
       schema:
-        anyOf:
-        - $ref: ../../../components/schemas/versions.yaml
+        $ref: ../../../components/schemas/versions.yaml
 responses:
   '200':
     description: Successful request
