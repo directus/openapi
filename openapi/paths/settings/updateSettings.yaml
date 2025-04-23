@@ -8,8 +8,7 @@ requestBody:
   content:
     application/json:
       schema:
-        anyOf:
-        - $ref: ../../components/schemas/Settings.yaml
+        $ref: ../../components/schemas/Settings.yaml
 responses:
   '200':
     description: Successful request

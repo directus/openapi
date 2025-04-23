@@ -5,8 +5,7 @@ requestBody:
   content:
     application/json:
       schema:
-        anyOf:
-        - $ref: ../../components/schemas/Files.yaml
+        $ref: ../../components/schemas/Files.yaml
 responses:
   '200':
     description: Successful request
