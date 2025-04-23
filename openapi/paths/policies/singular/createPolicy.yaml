@@ -9,7 +9,8 @@ requestBody:
   content:
     application/json:
       schema:
-        $ref: ../../../components/schemas/policies.yaml
+        anyOf:
+        - $ref: ../../../components/schemas/policies.yaml
 responses:
   '200':
     description: Successful request

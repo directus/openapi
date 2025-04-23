@@ -14,7 +14,8 @@ requestBody:
   content:
     application/json:
       schema:
-        $ref: ../../../components/schemas/Shares.yaml
+        anyOf:
+        - $ref: ../../../components/schemas/Shares.yaml
 responses:
   '200':
     description: Successful request

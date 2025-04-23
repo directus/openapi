@@ -21,7 +21,8 @@ requestBody:
             format: binary
     application/json:
       schema:
-        $ref: ../../../components/schemas/Items.yaml
+        anyOf:
+        - $ref: ../../../components/schemas/Items.yaml
 responses:
   '200':
     description: Successful request

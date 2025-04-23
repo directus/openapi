@@ -12,7 +12,8 @@ requestBody:
         required:
           - email
           - password
-        $ref: ../../../components/schemas/users.yaml
+        anyOf:
+          - $ref: ../../../components/schemas/users.yaml
 responses:
   '200':
     description: Successful request
