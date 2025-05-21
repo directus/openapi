@@ -1,4 +1,4 @@
-summary: Create an User
+summary: Create a User
 description: Create a new user.
 operationId: createUser
 parameters:
