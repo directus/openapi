@@ -111,7 +111,7 @@ Version:
 Backlink:
   name: backlink
   description: >-
-    Retrieve relational item's excluding reverse relations when using wildcard fields.
+    Retrieve relational items excluding reverse relations when using wildcard fields.
   in: query
   required: false
   schema:
