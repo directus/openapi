@@ -38,3 +38,7 @@ properties:
     example:
       related_articles:
         _limit: 3
+  backlink:
+    type: boolean
+    description: >-
+      Retrieve relational item's excluding reverse relations when using wildcard fields.
