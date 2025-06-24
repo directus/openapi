@@ -41,4 +41,4 @@ properties:
   backlink:
     type: boolean
     description: >-
-      Retrieve relational item's excluding reverse relations when using wildcard fields.
+      Retrieve relational items excluding reverse relations when using wildcard fields.
