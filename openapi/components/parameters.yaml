@@ -108,3 +108,12 @@ Version:
   required: false
   schema:
     type: string
+Backlink:
+  name: backlink
+  description: >-
+    Retrieve relational items excluding reverse relations when using wildcard fields.
+  in: query
+  required: false
+  schema:
+    type: boolean
+    default: true
