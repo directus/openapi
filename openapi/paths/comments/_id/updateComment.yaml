@@ -2,7 +2,7 @@ summary: Update a Comment
 description: Update an existing comment. This action is only available to authenticated users.
 operationId: updateComment
 parameters:
-- $ref: ../../../components/parameters.yaml#/Id
+- $ref: ../../../components/parameters.yaml#/UUId
 - $ref: ../../../components/parameters.yaml#/Meta
 requestBody:
   content:
