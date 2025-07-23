@@ -116,3 +116,12 @@ ConcurrentIndexCreation:
   schema:
     type: boolean
     default: false
+Backlink:
+  name: backlink
+  description: >-
+    Retrieve relational items excluding reverse relations when using wildcard fields.
+  in: query
+  required: false
+  schema:
+    type: boolean
+    default: true
