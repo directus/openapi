@@ -8,6 +8,7 @@ description: |
 operationId: createCollection
 parameters:
 - $ref: ../../components/parameters.yaml#/Meta
+- $ref: ../../components/parameters.yaml#/ConcurrentIndexCreation
 requestBody:
   content:
     application/json:
