@@ -210,6 +210,7 @@ parameters:
   required: true
   schema:
     type: string
+- $ref: ../../../components/parameters.yaml#/ConcurrentIndexCreation
 x-codeSamples:
 - label: Directus SDK
   lang: JavaScript
