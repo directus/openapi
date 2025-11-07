@@ -177,8 +177,7 @@ Aggregate:
           sum: ['price']
           avg: ['rating']
 Deep:
-  description: >-
-    Deep allows you to set any of the other query parameters on a nested relational dataset.
+  description: Deep allows you to set any of the other query parameters on a nested relational dataset. Use underscore-prefixed parameter names.
   name: deep
   in: query
   required: false
@@ -186,11 +185,43 @@ Deep:
     application/json:
       schema:
         type: object
+        additionalProperties:
+          type: object
+          description: Query parameters for the related field (prefixed with underscore).
+          properties:
+            _fields:
+              type: array
+              items:
+                type: string
+            _sort:
+              type: array
+              items:
+                type: string
+            _filter:
+              type: object
+            _limit:
+              type: integer
+            _offset:
+              type: integer
+            _page:
+              type: integer
+            _search:
+              type: string
+            _group:
+              type: array
+              items:
+                type: string
+            _aggregate:
+              type: object
         example:
           related_articles:
             _limit: 3
+            _sort: ['-date_created']
+            _filter:
+              status:
+                _eq: 'published'
 Alias:
-  description: Alias allows you to rename fields in the response payload.
+  description: Alias allows you to rename fields in the response payload. The key is the new name, the value is the original field name.
   name: alias
   in: query
   required: false
@@ -198,8 +229,11 @@ Alias:
     application/json:
       schema:
         type: object
+        additionalProperties:
+          type: string
         example:
-          new_field_name: original_field_name
+          display_name: full_name
+          creation_date: date_created
 Group:
   description: >-
     Grouping allows for running the aggregation functions based on a shared value. Accepts an array of field names.
