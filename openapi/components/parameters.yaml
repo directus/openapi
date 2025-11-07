@@ -102,14 +102,14 @@ Export:
     - yaml
 Version:
   name: version
-  description: >-
-    Retrieve an item's state from a specific Content Version. The value corresponds to the "key" of the Content Version.
+  description: Retrieve an item's state from a specific Content Version. The value corresponds to the "key" of the Content Version.
   in: query
   required: false
   schema:
     type: string
 Backlink:
-  description: Retrieve relational items excluding reverse relations when using wildcard fields.
+  description: >-
+    Retrieve relational items excluding reverse relations when using wildcard fields.
   name: backlink
   in: query
   required: false
@@ -117,7 +117,8 @@ Backlink:
     type: boolean
     default: true
 Aggregate:
-  description: Aggregate functions allow you to perform calculations on a set of values. Accepts one or more of `count`, `countDistinct`, `countAll`, `sum`, `sumDistinct`, `avg`, `avgDistinct`, `min`, `max`.
+  description: >-
+    Aggregate functions allow you to perform calculations on a set of values. Accepts one or more of `count`, `countDistinct`, `countAll`, `sum`, `sumDistinct`, `avg`, `avgDistinct`, `min`, `max`.
   name: aggregate
   in: query
   required: false
@@ -176,7 +177,8 @@ Aggregate:
           sum: ['price']
           avg: ['rating']
 Deep:
-  description: Deep allows you to set any of the other query parameters on a nested relational dataset.
+  description: >-
+    Deep allows you to set any of the other query parameters on a nested relational dataset.
   name: deep
   in: query
   required: false
@@ -199,7 +201,8 @@ Alias:
         example:
           new_field_name: original_field_name
 Group:
-  description: Grouping allows for running the aggregation functions based on a shared value. Accepts an array of field names.
+  description: >-
+    Grouping allows for running the aggregation functions based on a shared value. Accepts an array of field names.
   name: group
   in: query
   required: false
