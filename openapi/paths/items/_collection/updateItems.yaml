@@ -72,5 +72,9 @@ x-codeSamples:
   lang: GraphQL
   source: |
     type Mutation {
-      update_<collection>_items(ids: [ID!]!, data: [update_<collection>_input]): [<collection>]
+      # For regular collections
+      update_<collection>_items(ids: [ID!]!, data: update_<collection>_input!): [<collection>]
+      
+      # For singleton collections
+      update_<collection>(data: update_<collection>_input!): <collection>
     }
