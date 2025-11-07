@@ -109,11 +109,110 @@ Version:
   schema:
     type: string
 Backlink:
+  description: Retrieve relational items excluding reverse relations when using wildcard fields.
   name: backlink
-  description: >-
-    Retrieve relational items excluding reverse relations when using wildcard fields.
   in: query
   required: false
   schema:
     type: boolean
     default: true
+Aggregate:
+  description: Aggregate functions allow you to perform calculations on a set of values. Accepts one or more of `count`, `countDistinct`, `countAll`, `sum`, `sumDistinct`, `avg`, `avgDistinct`, `min`, `max`.
+  name: aggregate
+  in: query
+  required: false
+  content:
+    application/json:
+      schema:
+        type: object
+        properties:
+          count:
+            type: array
+            items:
+              type: string
+            description: Count the number of items. Use `['*']` to count all items.
+          countDistinct:
+            type: array
+            items:
+              type: string
+            description: Count the number of unique values in the specified fields.
+          countAll:
+            type: array
+            items:
+              type: string
+            description: Count all items including related items (used with groupBy).
+          sum:
+            type: array
+            items:
+              type: string
+            description: Sum the values of the specified fields.
+          sumDistinct:
+            type: array
+            items:
+              type: string
+            description: Sum the unique values of the specified fields.
+          avg:
+            type: array
+            items:
+              type: string
+            description: Calculate the average of the specified fields.
+          avgDistinct:
+            type: array
+            items:
+              type: string
+            description: Calculate the average of unique values in the specified fields.
+          min:
+            type: array
+            items:
+              type: string
+            description: Find the minimum value of the specified fields.
+          max:
+            type: array
+            items:
+              type: string
+            description: Find the maximum value of the specified fields.
+        example:
+          count: ['*']
+          sum: ['price']
+          avg: ['rating']
+Deep:
+  description: Deep allows you to set any of the other query parameters on a nested relational dataset.
+  name: deep
+  in: query
+  required: false
+  content:
+    application/json:
+      schema:
+        type: object
+        example:
+          related_articles:
+            _limit: 3
+Alias:
+  description: Alias allows you to rename fields in the response payload.
+  name: alias
+  in: query
+  required: false
+  content:
+    application/json:
+      schema:
+        type: object
+        example:
+          new_field_name: original_field_name
+Group:
+  description: Grouping allows for running the aggregation functions based on a shared value. Accepts an array of field names.
+  name: group
+  in: query
+  required: false
+  explode: false
+  schema:
+    type: array
+    items:
+      type: string
+VersionRaw:
+  description: Retrieve the raw delta of a Content Version item instead of the full merged item.
+  name: versionRaw
+  in: query
+  required: false
+  schema:
+    type: boolean
+    default: false

@@ -1,6 +1,6 @@
 
-summary: Update Multiple Items
-description: Update multiple items at the same time.
+summary: Update Items
+description: Update multiple items in a collection or update the singleton item.
 operationId: updateItems
 parameters:
 - $ref: ../../../components/parameters.yaml#/Collection
@@ -15,17 +15,21 @@ requestBody:
   content:
     application/json:
       schema:
-        type: object
-        required:
-          - data
-          - keys
-        properties:
-          data:
-            $ref: ../../../components/schemas/items.yaml
-          keys:
-            type: array
-            items:
-              type: string
+        oneOf:
+          - type: object
+            description: Update multiple items (regular collections)
+            required:
+              - data
+              - keys
+            properties:
+              data:
+                $ref: ../../../components/schemas/items.yaml
+              keys:
+                type: array
+                items:
+                  type: string
+          - $ref: ../../../components/schemas/items.yaml
+            description: Update single item (singleton collections)
 responses:
   '200':
     description: Successful request
@@ -35,9 +39,13 @@ responses:
           type: object
           properties:
             data:
-              type: array
-              items:
-                $ref: ../../../components/schemas/items.yaml
+              oneOf:
+                - type: array
+                  items:
+                    $ref: ../../../components/schemas/items.yaml
+                  description: Array of updated items
+                - $ref: ../../../components/schemas/items.yaml
+                  description: Singleton updated item
             meta:
               $ref: ../../../components/schemas/x-metadata.yaml
   '401':
@@ -51,11 +59,15 @@ x-codeSamples:
 - label: Directus SDK
   lang: JavaScript
   source: |
-    import { createDirectus, rest, updateItems } from '@directus/sdk';
+    import { createDirectus, rest, updateItems, updateSingleton } from '@directus/sdk';
 
     const client = createDirectus('directus_project_url').with(rest());
 
+    // For regular collections
     const result = await client.request(updateItems(collection_name, item_id_array, partial_item_object));
+    
+    // For singleton collections
+    const singleton = await client.request(updateSingleton(collection_name, partial_item_object));
 - label: GraphQL
   lang: GraphQL
   source: |
