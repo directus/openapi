@@ -220,7 +220,7 @@ x-codeSamples:
 
       const client = createDirectus('directus_project_url').with(rest());
 
-      const result = await client.request(updateField(collection_name, partial_field_object));
+      const result = await client.request(updateField(collection_name, field_name, partial_field_object));
   - label: GraphQL
     lang: GraphQL
     source: |
