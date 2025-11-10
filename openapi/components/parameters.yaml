@@ -108,6 +108,14 @@ Version:
   required: false
   schema:
     type: string
+ConcurrentIndexCreation:
+  name: concurrentIndexCreation
+  description: Attempts to concurrently create a field index if supported
+  in: query
+  required: false
+  schema:
+    type: boolean
+    default: false
 Backlink:
   name: backlink
   description: >-
