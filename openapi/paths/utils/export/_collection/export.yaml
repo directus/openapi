@@ -15,11 +15,13 @@ requestBody:
         properties:
           format:
             type: string
-            description: 'What file format to save the export to. One of `csv`, `xml`,`json`'
+            description: 'What file format to save the export to. One of `csv`, `csv_utf8`, `xml`, `json`, `yaml`'
             enum:
               - csv
+              - csv_utf8
               - xml
               - json
+              - yaml
           query:
             $ref: ../../../../components/schemas/query.yaml
           file:
