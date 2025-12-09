@@ -24,11 +24,11 @@ x-codeSamples:
   - label: Directus SDK
     lang: JavaScript
     source: |
-      import { createDirectus, rest, zipFolder } from '@directus/sdk';
+      import { createDirectus, rest, downloadFolderZip } from '@directus/sdk';
 
       const client = createDirectus('directus_project_url').with(rest());
 
-      const result = await client.request(zipFolder('<folder-id>'));
+      const result = await client.request(downloadFolderZip('<folder-id>'));
   - label: GraphQL
     lang: GraphQL
     source: Not available in Directus SDK/GraphQL
