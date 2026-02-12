@@ -21,7 +21,7 @@ paths:
     $ref: paths/auth/login/index.yaml
   "/auth/logout":
     $ref: paths/auth/logout/index.yaml
-  "/auth/oauth":
+  "/auth":
     $ref: paths/auth/oauth/index.yaml
   "/auth/oauth/{provider}":
     $ref: paths/auth/oauth/_provider/index.yaml
