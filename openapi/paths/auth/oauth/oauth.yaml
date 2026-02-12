@@ -15,12 +15,23 @@ responses:
             public:
               type: boolean
             data:
-              type: array
-              example:
-              - github
-              - facebook
-              items:
-                type: string
+              type: object
+              properties:
+                name:
+                  type: string
+                  example: google
+                label:
+                  type: string
+                  example: Google
+                driver:
+                  type: string
+                  example: openid
+                icon:
+                  type: string
+                  example: google
+'401':
+$ref: ../../../components/responses.yaml#/UnauthorizedError
+x-codeSamples:
   '401':
     $ref: ../../../components/responses.yaml#/UnauthorizedError
 x-codeSamples:
