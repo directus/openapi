@@ -217,6 +217,8 @@ paths:
     $ref: paths/utils/random/string/index.yaml
   "/utils/sort/{collection}":
     $ref: paths/utils/sort/_collection/index.yaml
+  "/utils/translations/generate":
+    $ref: paths/utils/translations/generate/index.yaml
   "/versions":
     $ref: paths/versions/index.yaml
   "/versions‎":

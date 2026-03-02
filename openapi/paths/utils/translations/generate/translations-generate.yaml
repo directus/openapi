@@ -1,0 +1,104 @@
+summary: Generate Translations Collection
+description: Creates the full translations infrastructure (collections, fields, relationships) for a given source collection. Requires administrator access.
+operationId: translations-generate
+requestBody:
+  content:
+    application/json:
+      schema:
+        type: object
+        properties:
+          collection:
+            type: string
+            description: The source collection to enable translations for.
+            example: articles
+          fields:
+            type: array
+            items:
+              type: string
+            minItems: 1
+            description: Field names from the source collection to make translatable.
+            example:
+              - title
+              - content
+          translationsCollection:
+            type: string
+            description: Custom name for the translations junction collection. Defaults to `{collection}_translations`.
+          languagesCollection:
+            type: string
+            description: Name of the languages collection to use or create. Defaults to `languages`.
+          parentFkField:
+            type: string
+            description: Custom name for the foreign key field referencing the source collection.
+          languageFkField:
+            type: string
+            description: Custom name for the foreign key field referencing the languages collection.
+          createLanguagesCollection:
+            type: boolean
+            default: true
+            description: Whether to create the languages collection if it does not exist.
+          seedLanguages:
+            type: boolean
+            default: true
+            description: Whether to seed the languages collection with common languages when creating it.
+        required:
+          - collection
+          - fields
+responses:
+  '200':
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            data:
+              oneOf:
+                - type: object
+                  title: Created
+                  description: Returned when a new translations collection is created.
+                  properties:
+                    created:
+                      type: boolean
+                      enum:
+                        - true
+                    translationsCollection:
+                      type: string
+                      example: articles_translations
+                    languagesCollection:
+                      type: string
+                      example: languages
+                    fields:
+                      type: array
+                      items:
+                        type: string
+                      example:
+                        - title
+                        - content
+                  required:
+                    - created
+                    - translationsCollection
+                    - languagesCollection
+                    - fields
+                - type: object
+                  title: Fields Added
+                  description: Returned when fields are added to an existing translations collection.
+                  properties:
+                    created:
+                      type: boolean
+                      enum:
+                        - false
+                    translationsCollection:
+                      type: string
+                      example: articles_translations
+                    fields:
+                      type: array
+                      items:
+                        type: string
+                      example:
+                        - summary
+                  required:
+                    - created
+                    - translationsCollection
+                    - fields
+    description: Successful request
+tags:
+  - Utilities
