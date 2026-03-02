@@ -43,5 +43,5 @@ x-codeSamples:
     POST /graphql/system
 
     type Query {
-    	files: directus_files
+    	files: [directus_files]
     }
