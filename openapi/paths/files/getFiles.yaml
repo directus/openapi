@@ -36,12 +36,12 @@ x-codeSamples:
 
     const client = createDirectus('directus_project_url').with(rest());
 
-    const result = await client.request(readFile(file_id, query_object));
+    const result = await client.request(readFiles());
 - label: GraphQL
   lang: GraphQL
   source: |
     POST /graphql/system
 
     type Query {
-    	files_by_id(id: ID!): directus_files
+    	files: [directus_files]
     }
