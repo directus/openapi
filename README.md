@@ -28,4 +28,5 @@ Examples of how to use the equivalent of the documented REST endpoint in the JS 
 
 To deploy a new release to npm:
 
-- Run the [release workflow](https://github.com/directus/openapi/actions/workflows/release.yml)
+1. Bump the version in `package.json` via a PR and merge it into `main`
+2. Run the [release workflow](https://github.com/directus/openapi/actions/workflows/release.yml)
