@@ -1,34 +1,18 @@
 # Based on https://github.com/directus/eslint-config/blob/main/.github/workflows/release.yml
+# Version must already be bumped in package.json via a PR before running this workflow
 
 name: Release
 
 on:
-  workflow_dispatch:
-    inputs:
-      version:
-        description: SemVer for the release, for example "1.0.0"
-        required: true
-        type: string
+  workflow_dispatch: {}
 
 jobs:
-  check-version:
-    name: Check Version
+  validate:
+    name: Validate
     runs-on: ubuntu-latest
     outputs:
       version: ${{ steps.version.outputs.release }}
       is-prerelease: ${{ steps.version.outputs.prerelease && true || false }}
-    steps:
-      - name: Check version
-        uses: madhead/semver-utils@v4
-        id: version
-        with:
-          version: ${{ inputs.version }}
-          lenient: false
-
-  validate:
-    name: Validate
-    needs: check-version
-    runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -36,14 +20,23 @@ jobs:
       - name: Setup env
         uses: ./.github/actions/setup
 
+      - name: Read version from package.json
+        id: pkg-version
+        run: echo "version=$(node -p 'require("./package.json").version')" >> "$GITHUB_OUTPUT"
+
+      - name: Check version
+        uses: madhead/semver-utils@v4
+        id: version
+        with:
+          version: ${{ steps.pkg-version.outputs.version }}
+          lenient: false
+
       - name: Build
         run: pnpm run build
 
-  create-version:
-    name: Create Version
-    needs:
-      - check-version
-      - validate
+  create-tag:
+    name: Create Tag
+    needs: validate
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -51,32 +44,22 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Setup env
-        uses: ./.github/actions/setup
-
-      - name: Bump version
-        run: pnpm version --no-git-tag-version '${{ needs.check-version.outputs.version }}'
-
-      - name: Create version commit & tag
+      - name: Create tag
         run: |
-          author='${{ github.actor }} <${{ github.actor_id }}+${{ github.actor }}@users.noreply.github.com>'
-          version='v${{ needs.check-version.outputs.version }}'
-          branch='${{ github.ref }}'
+          version='v${{ needs.validate.outputs.version }}'
 
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
 
-          git commit --all --author "$author" --message "$version"
-
           git tag --annotate "$version" --message "$version"
 
-          git push --atomic origin "$branch" "refs/tags/${version}"
+          git push origin "refs/tags/${version}"
 
   create-release:
     name: Create Release
     needs:
-      - check-version
-      - create-version
+      - validate
+      - create-tag
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -89,16 +72,16 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           gh release create \
-            'v${{ needs.check-version.outputs.version }}' \
+            'v${{ needs.validate.outputs.version }}' \
             --verify-tag \
             --generate-notes \
-            ${{ needs.check-version.outputs.is-prerelease == 'true' && '--prerelease' || '' }}
+            ${{ needs.validate.outputs.is-prerelease == 'true' && '--prerelease' || '' }}
 
   publish-npm:
     name: Publish to NPM
     needs:
-      - check-version
-      - create-version
+      - validate
+      - create-tag
     runs-on: ubuntu-latest
     permissions:
       id-token: write
@@ -106,7 +89,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          ref: refs/tags/v${{ needs.check-version.outputs.version }}
+          ref: refs/tags/v${{ needs.validate.outputs.version }}
 
       - name: Setup env
         uses: ./.github/actions/setup
@@ -123,4 +106,4 @@ jobs:
           pnpm publish \
             --access=public \
             --no-git-checks \
-            --tag ${{ needs.check-version.outputs.is-prerelease == 'true' && 'canary'  || 'latest' }}
+            --tag ${{ needs.validate.outputs.is-prerelease == 'true' && 'canary' || 'latest' }}
