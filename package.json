@@ -35,5 +35,8 @@
 		"jiti": "2.4.2",
 		"nodemon": "3.1.9",
 		"openapi3-ts": "4.4.0"
+	},
+	"engines": {
+		"node": ">=22"
 	}
 }
