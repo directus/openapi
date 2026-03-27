@@ -25,9 +25,25 @@ jobs:
           version: ${{ inputs.version }}
           lenient: false
 
+  validate:
+    name: Validate
+    needs: check-version
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup env
+        uses: ./.github/actions/setup
+
+      - name: Build
+        run: pnpm run build
+
   create-version:
     name: Create Version
-    needs: check-version
+    needs:
+      - check-version
+      - validate
     runs-on: ubuntu-latest
     permissions:
       contents: write
