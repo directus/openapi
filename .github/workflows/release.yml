@@ -10,6 +10,7 @@ jobs:
   validate:
     name: Validate
     runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
     outputs:
       version: ${{ steps.version.outputs.release }}
       is-prerelease: ${{ steps.version.outputs.prerelease && true || false }}
