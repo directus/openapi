@@ -3,6 +3,13 @@ description: Update the instance's schema by passing the diff previously retriev
   via `/schema/diff` endpoint in the JSON request body or a JSON/YAML file. This endpoint
   is only available to admin users.
 operationId: schemaApply
+parameters:
+- name: force
+  description: Bypass hash restrictions.
+  in: query
+  required: false
+  schema:
+    type: boolean
 requestBody:
   required: true
   content:
