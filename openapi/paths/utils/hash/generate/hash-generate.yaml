@@ -5,6 +5,7 @@ requestBody:
   content:
     application/json:
       schema:
+        type: object
         properties:
           string:
             type: string
