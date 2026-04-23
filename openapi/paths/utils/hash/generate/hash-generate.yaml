@@ -1,4 +1,4 @@
-summary: Generate a Hash.
+summary: Generate a Hash
 description: Generate a hash for a given string.
 operationId: hash-generate
 requestBody:
