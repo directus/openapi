@@ -1,7 +1,7 @@
 {
 	"name": "@directus/openapi",
 	"private": false,
-	"version": "0.2.2",
+	"version": "0.3.0",
 	"description": "OpenAPI Specification of the Directus API",
 	"homepage": "https://directus.io",
 	"repository": {
@@ -35,5 +35,10 @@
 		"jiti": "2.4.2",
 		"nodemon": "3.1.9",
 		"openapi3-ts": "4.4.0"
+	},
+	"packageManager": "pnpm@10.27.0",
+	"engines": {
+		"node": ">=22",
+		"pnpm": ">=10 <11"
 	}
 }
