@@ -1,0 +1,6 @@
+get:
+  $ref: getAccessRule.yaml
+patch:
+  $ref: updateAccessRule.yaml
+delete:
+  $ref: deleteAccessRule.yaml

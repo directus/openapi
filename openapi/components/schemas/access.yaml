@@ -1,0 +1,36 @@
+type: object
+properties:
+  id:
+    description: Primary key of the access rule.
+    example: 8cbb43fe-4cdf-4991-8352-c461779cec02
+    type: string
+    format: uuid
+  role:
+    description: The role this access rule applies to. Nullable if the rule applies directly to a user. Many-to-one to roles.
+    example: 8b4474c0-288d-4bb8-b62e-8330646bb6aa
+    nullable: true
+    oneOf:
+      - type: string
+        format: uuid
+      - $ref: roles.yaml
+  user:
+    description: The user this access rule applies to. Nullable if the rule applies to a role. Many-to-one to users.
+    example: 0bc7b36a-9ba9-4ce0-83f0-0a526f354e07
+    nullable: true
+    oneOf:
+      - type: string
+        format: uuid
+      - $ref: users.yaml
+  policy:
+    description: The policy associated with this access rule. Many-to-one to policies.
+    example: 22640672-eef0-4ee9-ab04-591f3afb2886
+    oneOf:
+      - type: string
+        format: uuid
+      - $ref: policies.yaml
+  sort:
+    description: Sort order of this access rule.
+    example: 1
+    nullable: true
+    type: integer
+x-collection: directus_access

@@ -1,5 +1,7 @@
 x-metadata:
   $ref: x-metadata.yaml
+Access:
+  $ref: access.yaml
 Activity:
   $ref: activity.yaml
 Collections:

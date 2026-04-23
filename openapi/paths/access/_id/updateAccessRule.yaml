@@ -1,0 +1,57 @@
+summary: Update an Access Rule
+description: Update an existing access rule.
+operationId: updateAccessRule
+parameters:
+- $ref: ../../../components/parameters.yaml#/UUId
+- $ref: ../../../components/parameters.yaml#/Fields
+- $ref: ../../../components/parameters.yaml#/Meta
+requestBody:
+  content:
+    application/json:
+      schema:
+        type: object
+        properties:
+          role:
+            type: string
+            format: uuid
+            nullable: true
+            description: The role this access rule applies to.
+          user:
+            type: string
+            format: uuid
+            nullable: true
+            description: The user this access rule applies to.
+          policy:
+            type: string
+            format: uuid
+            description: The policy associated with this access rule.
+          sort:
+            type: integer
+            nullable: true
+            description: Sort order of this access rule.
+responses:
+  '200':
+    description: Successful request
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            data:
+              $ref: ../../../components/schemas/access.yaml
+  '401':
+    $ref: ../../../components/responses.yaml#/UnauthorizedError
+  '404':
+    $ref: ../../../components/responses.yaml#/NotFoundError
+security: []
+tags:
+- Access
+x-codeSamples:
+- label: Directus SDK
+  lang: JavaScript
+  source: |
+    // Not supported in Directus SDK
+- label: GraphQL
+  lang: GraphQL
+  source: |
+    // Not supported in GraphQL

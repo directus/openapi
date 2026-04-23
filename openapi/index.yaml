@@ -11,6 +11,12 @@ servers:
     description: Your current Directus project.
 
 paths:
+  "/access":
+    $ref: paths/access/index.yaml
+  "/access‎":
+    $ref: paths/access/singular/index.yaml
+  "/access/{id}":
+    $ref: paths/access/_id/index.yaml
   "/activity":
     $ref: paths/activity/index.yaml
   "/activity/{id}":
@@ -240,6 +246,9 @@ components:
     $ref: components/schemas/_index.yaml
 security: []
 tags:
+  - name: Access
+    description: Access rules define which policies are assigned to a role or user. They are the junction between policies and the roles or users they apply to.
+    x-collection: directus_access
   - name: Activity
     description: All events that happen within Directus are tracked and stored in the activities collection. This gives you full accountability over everything that happens.
     x-collection: directus_activity
