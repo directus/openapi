@@ -99,7 +99,7 @@ x-codeSamples:
   source: |
     import { createDirectus, rest, readDeploymentRuns } from '@directus/sdk';
 
-    const client = createDirectus('https://directus.example.com').with(rest());
+    const client = createDirectus('directus_project_url').with(rest());
 
     const result = await client.request(
       readDeploymentRuns('vercel', '8cbb43fe-4cdf-4991-8352-c461779cec02')
