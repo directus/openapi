@@ -29,9 +29,6 @@ responses:
                 icon:
                   type: string
                   example: google
-'401':
-$ref: ../../../components/responses.yaml#/UnauthorizedError
-x-codeSamples:
   '401':
     $ref: ../../../components/responses.yaml#/UnauthorizedError
 x-codeSamples:
