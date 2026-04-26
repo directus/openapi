@@ -1,0 +1,54 @@
+summary: Get Deployment Dashboard
+description: Retrieve dashboard stats for all selected projects of a deployment provider. Includes latest run status per project. Defaults to the last 24 hours.
+operationId: getDeploymentDashboard
+parameters:
+- name: provider
+  in: path
+  description: The deployment provider name (e.g. `vercel`, `netlify`).
+  required: true
+  schema:
+    type: string
+    enum:
+      - vercel
+      - netlify
+- name: range
+  in: query
+  description: >-
+    Time range for statistics. Accepts a duration string (e.g. `24h`, `7d`, `30m`).
+    Defaults to `24h`.
+  required: false
+  schema:
+    type: string
+    pattern: '^\d+(ms|s|m|h|d|w|y)$'
+    example: 24h
+responses:
+  '200':
+    description: Successful request
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            data:
+              type: object
+              description: Dashboard stats keyed by project, including latest deployment status and run history.
+  '401':
+    $ref: ../../../../components/responses.yaml#/UnauthorizedError
+  '404':
+    $ref: ../../../../components/responses.yaml#/NotFoundError
+security: []
+tags:
+- Deployments
+x-codeSamples:
+- label: Directus SDK
+  lang: JavaScript
+  source: |
+    import { createDirectus, rest, readDeploymentDashboard } from '@directus/sdk';
+
+    const client = createDirectus('https://directus.example.com').with(rest());
+
+    const result = await client.request(readDeploymentDashboard('vercel', { range: '24h' }));
+- label: GraphQL
+  lang: GraphQL
+  source: |
+    // Not supported in GraphQL

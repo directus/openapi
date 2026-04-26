@@ -10,6 +10,8 @@ Comments:
   $ref: comments.yaml
 Dashboards:
   $ref: dashboards.yaml
+Deployments:
+  $ref: deployments.yaml
 Diff:
   $ref: diff.yaml
 Extensions:

@@ -1,0 +1,77 @@
+summary: List Deployment Projects
+description: List all projects available from the deployment provider, merged with locally tracked project data.
+operationId: getDeploymentProjects
+parameters:
+- name: provider
+  in: path
+  description: The deployment provider name (e.g. `vercel`, `netlify`).
+  required: true
+  schema:
+    type: string
+    enum:
+      - vercel
+      - netlify
+responses:
+  '200':
+    description: Successful request
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            data:
+              type: array
+              items:
+                type: object
+                properties:
+                  id:
+                    description: Internal project UUID (null if not yet tracked).
+                    type: string
+                    format: uuid
+                    nullable: true
+                  external_id:
+                    description: Project ID from the deployment provider.
+                    type: string
+                    example: prj_abc123
+                  name:
+                    description: Project name from the provider.
+                    type: string
+                    example: my-directus-app
+                  url:
+                    description: Production URL for the project.
+                    type: string
+                    nullable: true
+                    example: https://my-directus-app.vercel.app
+                  framework:
+                    description: Framework detected by the provider.
+                    type: string
+                    nullable: true
+                    example: nextjs
+                  deployable:
+                    description: Whether the project has a Git source and can trigger deployments.
+                    type: boolean
+                    example: true
+                  selected:
+                    description: Whether this project is currently tracked in Directus.
+                    type: boolean
+                    example: false
+  '401':
+    $ref: ../../../../components/responses.yaml#/UnauthorizedError
+  '404':
+    $ref: ../../../../components/responses.yaml#/NotFoundError
+security: []
+tags:
+- Deployments
+x-codeSamples:
+- label: Directus SDK
+  lang: JavaScript
+  source: |
+    import { createDirectus, rest, readDeploymentProjects } from '@directus/sdk';
+
+    const client = createDirectus('https://directus.example.com').with(rest());
+
+    const result = await client.request(readDeploymentProjects('vercel'));
+- label: GraphQL
+  lang: GraphQL
+  source: |
+    // Not supported in GraphQL

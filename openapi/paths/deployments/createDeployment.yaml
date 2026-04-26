@@ -1,0 +1,64 @@
+summary: Create Deployment Configuration
+description: Create a new deployment provider configuration.
+operationId: createDeployment
+parameters:
+- $ref: ../../components/parameters.yaml#/Fields
+- $ref: ../../components/parameters.yaml#/Meta
+requestBody:
+  content:
+    application/json:
+      schema:
+        type: object
+        required:
+          - provider
+          - credentials
+        properties:
+          provider:
+            description: The deployment provider. One of `vercel` or `netlify`.
+            type: string
+            enum:
+              - vercel
+              - netlify
+            example: vercel
+          credentials:
+            description: Provider-specific credentials (e.g. API token).
+            type: object
+            example:
+              token: abc123
+          options:
+            description: Provider-specific configuration options.
+            type: object
+            example:
+              team_id: team_abc123
+responses:
+  '200':
+    description: Successful request
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            data:
+              $ref: ../../components/schemas/deployments.yaml
+  '401':
+    $ref: ../../components/responses.yaml#/UnauthorizedError
+  '404':
+    $ref: ../../components/responses.yaml#/NotFoundError
+security: []
+tags:
+- Deployments
+x-codeSamples:
+- label: Directus SDK
+  lang: JavaScript
+  source: |
+    import { createDirectus, rest, createDeployment } from '@directus/sdk';
+
+    const client = createDirectus('https://directus.example.com').with(rest());
+
+    const result = await client.request(
+      createDeployment({ provider: 'vercel', credentials: { token: 'abc123' } })
+    );
+- label: GraphQL
+  lang: GraphQL
+  source: |
+    // Not supported in GraphQL

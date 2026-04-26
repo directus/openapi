@@ -1,0 +1,110 @@
+summary: List Deployment Runs
+description: List deployment runs for a tracked project, sorted by most recent first. Defaults to the 10 most recent runs.
+operationId: getDeploymentRuns
+parameters:
+- name: provider
+  in: path
+  description: The deployment provider name (e.g. `vercel`, `netlify`).
+  required: true
+  schema:
+    type: string
+    enum:
+      - vercel
+      - netlify
+- name: id
+  in: path
+  description: Unique identifier of the tracked project.
+  required: true
+  schema:
+    type: string
+    format: uuid
+- $ref: ../../../../../../components/parameters.yaml#/Limit
+- $ref: ../../../../../../components/parameters.yaml#/Offset
+- $ref: ../../../../../../components/parameters.yaml#/Meta
+responses:
+  '200':
+    description: Successful request
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            data:
+              type: array
+              items:
+                type: object
+                properties:
+                  id:
+                    type: string
+                    format: uuid
+                  project:
+                    type: string
+                    format: uuid
+                  external_id:
+                    type: string
+                    example: dpl_abc123
+                  status:
+                    type: string
+                    enum:
+                      - building
+                      - ready
+                      - error
+                      - canceled
+                    example: ready
+                  target:
+                    description: Deployment target (e.g. `production`, `preview`).
+                    type: string
+                    example: production
+                  url:
+                    type: string
+                    nullable: true
+                    example: https://my-directus-app.vercel.app
+                  date_created:
+                    type: string
+                    format: date-time
+                  started_at:
+                    type: string
+                    format: date-time
+                    nullable: true
+                  completed_at:
+                    type: string
+                    format: date-time
+                    nullable: true
+                  user_created:
+                    description: User who triggered the deployment (if triggered from Directus).
+                    nullable: true
+                    type: object
+                    properties:
+                      first_name:
+                        type: string
+                        nullable: true
+                      last_name:
+                        type: string
+                        nullable: true
+                      email:
+                        type: string
+                        nullable: true
+            meta:
+              $ref: ../../../../../../components/schemas/x-metadata.yaml
+  '401':
+    $ref: ../../../../../../components/responses.yaml#/UnauthorizedError
+  '404':
+    $ref: ../../../../../../components/responses.yaml#/NotFoundError
+security: []
+tags:
+- Deployments
+x-codeSamples:
+- label: Directus SDK
+  lang: JavaScript
+  source: |
+    import { createDirectus, rest, readDeploymentRuns } from '@directus/sdk';
+
+    const client = createDirectus('https://directus.example.com').with(rest());
+
+    const result = await client.request(
+      readDeploymentRuns('vercel', '8cbb43fe-4cdf-4991-8352-c461779cec02')
+    );
+- label: GraphQL
+  lang: GraphQL
+  source: |
+    // Not supported in GraphQL

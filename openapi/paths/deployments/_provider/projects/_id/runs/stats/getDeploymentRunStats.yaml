@@ -1,0 +1,63 @@
+summary: Get Deployment Run Statistics
+description: Retrieve aggregated statistics for deployment runs of a tracked project within a time range (defaults to last 7 days).
+operationId: getDeploymentRunStats
+parameters:
+- name: provider
+  in: path
+  description: The deployment provider name (e.g. `vercel`, `netlify`).
+  required: true
+  schema:
+    type: string
+    enum:
+      - vercel
+      - netlify
+- name: id
+  in: path
+  description: Unique identifier of the tracked project.
+  required: true
+  schema:
+    type: string
+    format: uuid
+- name: range
+  in: query
+  description: >-
+    Time range for statistics. Accepts a duration string (e.g. `7d`, `24h`, `30m`).
+    Defaults to `7d`.
+  required: false
+  schema:
+    type: string
+    pattern: '^\d+(ms|s|m|h|d|w|y)$'
+    example: 7d
+responses:
+  '200':
+    description: Successful request
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            data:
+              type: object
+              description: Aggregated run statistics for the given time range.
+  '401':
+    $ref: ../../../../../../../components/responses.yaml#/UnauthorizedError
+  '404':
+    $ref: ../../../../../../../components/responses.yaml#/NotFoundError
+security: []
+tags:
+- Deployments
+x-codeSamples:
+- label: Directus SDK
+  lang: JavaScript
+  source: |
+    import { createDirectus, rest, readDeploymentRunStats } from '@directus/sdk';
+
+    const client = createDirectus('https://directus.example.com').with(rest());
+
+    const result = await client.request(
+      readDeploymentRunStats('vercel', '8cbb43fe-4cdf-4991-8352-c461779cec02', { range: '7d' })
+    );
+- label: GraphQL
+  lang: GraphQL
+  source: |
+    // Not supported in GraphQL

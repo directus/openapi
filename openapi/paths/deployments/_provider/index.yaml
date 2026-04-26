@@ -1,0 +1,6 @@
+get:
+  $ref: getDeployment.yaml
+patch:
+  $ref: updateDeployment.yaml
+delete:
+  $ref: deleteDeployment.yaml

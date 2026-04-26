@@ -49,6 +49,28 @@ paths:
     $ref: paths/comments/_id/index.yaml
   "/dashboards":
     $ref: paths/dashboards/index.yaml
+  "/deployments":
+    $ref: paths/deployments/index.yaml
+  "/deployments/{provider}":
+    $ref: paths/deployments/_provider/index.yaml
+  "/deployments/{provider}/dashboard":
+    $ref: paths/deployments/_provider/dashboard/index.yaml
+  "/deployments/{provider}/projects":
+    $ref: paths/deployments/_provider/projects/index.yaml
+  "/deployments/{provider}/projects/{id}":
+    $ref: paths/deployments/_provider/projects/_id/index.yaml
+  "/deployments/{provider}/projects/{id}/deploy":
+    $ref: paths/deployments/_provider/projects/_id/deploy/index.yaml
+  "/deployments/{provider}/projects/{id}/runs":
+    $ref: paths/deployments/_provider/projects/_id/runs/index.yaml
+  "/deployments/{provider}/projects/{id}/runs/stats":
+    $ref: paths/deployments/_provider/projects/_id/runs/stats/index.yaml
+  "/deployments/{provider}/runs/{id}":
+    $ref: paths/deployments/_provider/runs/_id/index.yaml
+  "/deployments/{provider}/runs/{id}/cancel":
+    $ref: paths/deployments/_provider/runs/_id/cancel/index.yaml
+  "/deployments/webhooks/{provider}‎":
+    $ref: paths/deployments/webhooks/_provider/index.yaml
   "/dashboards‎":
     $ref: paths/dashboards/singular/index.yaml
   "/dashboards/{id}":
@@ -264,6 +286,9 @@ tags:
     x-collection: directus_comments
   - name: Dashboards
     description: Dashboards within the Insights module organize different Panels into an at-a-glance view. They can be used to group data based on department, objective, business process or anything you choose.
+  - name: Deployments
+    description: Manage deployment provider configurations (Vercel, Netlify) and trigger deployments directly from Directus. Requires the deployment provider to be configured with valid credentials.
+    x-collection: directus_deployments
   - name: Extensions
     description: Directus can easily be extended through the addition of several types of extensions, including layouts, interfaces, and modules.
     x-collection: directus_extensions

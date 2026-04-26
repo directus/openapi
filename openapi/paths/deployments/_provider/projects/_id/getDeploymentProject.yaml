@@ -1,0 +1,94 @@
+summary: Retrieve Deployment Project
+description: Retrieve details of a single tracked deployment project, including latest deployment info fetched from the provider.
+operationId: getDeploymentProject
+parameters:
+- name: provider
+  in: path
+  description: The deployment provider name (e.g. `vercel`, `netlify`).
+  required: true
+  schema:
+    type: string
+    enum:
+      - vercel
+      - netlify
+- name: id
+  in: path
+  description: Unique identifier of the tracked project.
+  required: true
+  schema:
+    type: string
+    format: uuid
+responses:
+  '200':
+    description: Successful request
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            data:
+              type: object
+              properties:
+                id:
+                  type: string
+                  format: uuid
+                  example: 8cbb43fe-4cdf-4991-8352-c461779cec02
+                external_id:
+                  type: string
+                  example: prj_abc123
+                name:
+                  type: string
+                  example: my-directus-app
+                url:
+                  type: string
+                  nullable: true
+                  example: https://my-directus-app.vercel.app
+                framework:
+                  type: string
+                  nullable: true
+                  example: nextjs
+                deployable:
+                  type: boolean
+                  example: true
+                latest_deployment:
+                  description: Most recent deployment summary.
+                  nullable: true
+                  type: object
+                  properties:
+                    status:
+                      type: string
+                      enum:
+                        - building
+                        - ready
+                        - error
+                        - canceled
+                      example: ready
+                    created_at:
+                      type: string
+                      format: date-time
+                    finished_at:
+                      type: string
+                      format: date-time
+                      nullable: true
+  '401':
+    $ref: ../../../../../components/responses.yaml#/UnauthorizedError
+  '404':
+    $ref: ../../../../../components/responses.yaml#/NotFoundError
+security: []
+tags:
+- Deployments
+x-codeSamples:
+- label: Directus SDK
+  lang: JavaScript
+  source: |
+    import { createDirectus, rest, readDeploymentProject } from '@directus/sdk';
+
+    const client = createDirectus('https://directus.example.com').with(rest());
+
+    const result = await client.request(
+      readDeploymentProject('vercel', '8cbb43fe-4cdf-4991-8352-c461779cec02')
+    );
+- label: GraphQL
+  lang: GraphQL
+  source: |
+    // Not supported in GraphQL
