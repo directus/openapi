@@ -39,7 +39,7 @@ paths:
     $ref: paths/auth/logout/index.yaml
   "/auth":
     $ref: paths/auth/oauth/index.yaml
-  "/auth/oauth/{provider}":
+  "/auth/login/{provider}":
     $ref: paths/auth/oauth/_provider/index.yaml
   "/auth/password/request":
     $ref: paths/auth/password/request/index.yaml
