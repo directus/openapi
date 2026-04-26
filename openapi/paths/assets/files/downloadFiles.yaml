@@ -1,0 +1,61 @@
+summary: Download Files as ZIP
+description: Download multiple files as a ZIP archive.
+operationId: downloadFiles
+requestBody:
+  required: true
+  content:
+    application/json:
+      schema:
+        type: object
+        required:
+          - ids
+        properties:
+          ids:
+            description: File UUIDs to include in the archive.
+            type: array
+            minItems: 1
+            items:
+              type: string
+              format: uuid
+            example:
+              - 8cbb43fe-4cdf-4991-8352-c461779cec02
+              - b6ac6b72-3c6d-4bd8-9f0f-3e29b6e8b321
+responses:
+  '200':
+    description: ZIP archive of the requested files.
+    headers:
+      Content-Disposition:
+        description: Attachment filename for the ZIP archive.
+        schema:
+          type: string
+          example: attachment; filename="files-2024-01-15_12-00-00.zip"
+    content:
+      application/zip:
+        schema:
+          type: string
+          format: binary
+  '401':
+    $ref: ../../../components/responses.yaml#/UnauthorizedError
+  '404':
+    $ref: ../../../components/responses.yaml#/NotFoundError
+security: []
+tags:
+- Assets
+x-codeSamples:
+- label: Directus SDK
+  lang: JavaScript
+  source: |
+    import { createDirectus, rest, downloadFilesZip } from '@directus/sdk';
+
+    const client = createDirectus('https://directus.example.com').with(rest());
+
+    const result = await client.request(
+      downloadFilesZip([
+        '8cbb43fe-4cdf-4991-8352-c461779cec02',
+        'b6ac6b72-3c6d-4bd8-9f0f-3e29b6e8b321',
+      ])
+    );
+- label: GraphQL
+  lang: GraphQL
+  source: |
+    // Not supported in GraphQL

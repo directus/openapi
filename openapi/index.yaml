@@ -21,6 +21,10 @@ paths:
     $ref: paths/activity/index.yaml
   "/activity/{id}":
     $ref: paths/activity/_id/index.yaml
+  "/assets/files":
+    $ref: paths/assets/files/index.yaml
+  "/assets/folder/{id}":
+    $ref: paths/assets/folder/_id/index.yaml
   "/assets/{id}":
     $ref: paths/assets/_id/index.yaml
   "/auth/login":
@@ -91,6 +95,10 @@ paths:
     $ref: paths/files/index.yaml
   "/files/import":
     $ref: paths/files/import/index.yaml
+  "/files/tus":
+    $ref: paths/files/tus/index.yaml
+  "/files/tus/{id}":
+    $ref: paths/files/tus/_id/index.yaml
   "/files/{id}":
     $ref: paths/files/_id/index.yaml
   "/flows":
