@@ -9,6 +9,7 @@ properties:
     description: The role this access rule applies to. Nullable if the rule applies directly to a user. Many-to-one to roles.
     example: 8b4474c0-288d-4bb8-b62e-8330646bb6aa
     nullable: true
+    type: string
     oneOf:
       - type: string
         format: uuid
@@ -17,6 +18,7 @@ properties:
     description: The user this access rule applies to. Nullable if the rule applies to a role. Many-to-one to users.
     example: 0bc7b36a-9ba9-4ce0-83f0-0a526f354e07
     nullable: true
+    type: string
     oneOf:
       - type: string
         format: uuid
