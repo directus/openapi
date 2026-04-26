@@ -1,0 +1,50 @@
+summary: Retrieve a Singleton Item
+description: |
+  Retrieve the singleton item from the given collection.
+
+  Unlike regular collections, a singleton returns a plain item object rather than an array of items.
+operationId: getSingleton
+parameters:
+- $ref: ../../../../components/parameters.yaml#/Collection
+- $ref: ../../../../components/parameters.yaml#/Fields
+- $ref: ../../../../components/parameters.yaml#/Meta
+- $ref: ../../../../components/parameters.yaml#/Version
+- $ref: ../../../../components/parameters.yaml#/VersionRaw
+- $ref: ../../../../components/parameters.yaml#/Deep
+- $ref: ../../../../components/parameters.yaml#/Alias
+responses:
+  '200':
+    description: Successful request
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            data:
+              $ref: ../../../../components/schemas/items.yaml
+  '401':
+    $ref: ../../../../components/responses.yaml#/UnauthorizedError
+  '404':
+    $ref: ../../../../components/responses.yaml#/NotFoundError
+security: []
+tags:
+- Items
+x-codeSamples:
+  - label: Directus SDK
+    lang: JavaScript
+    source: |
+      import { createDirectus, rest, readSingleton } from '@directus/sdk';
+
+      const client = createDirectus('directus_project_url').with(rest());
+
+      const result = await client.request(readSingleton('collection_name', query_object));
+  - label: GraphQL
+    lang: GraphQL
+    source: |
+      type Query {
+        <collection>(version: String): <collection>
+      }
+
+      type Query {
+        <collection>_by_version(version: String!): <collection_version_raw>
+      }

@@ -133,6 +133,8 @@ paths:
     $ref: paths/items/_collection/singular/index.yaml
   "/items/{collection}/{id}":
     $ref: paths/items/_collection/_id/index.yaml
+  "/items/{collection}‏":
+    $ref: paths/items/_collection/singleton/index.yaml
   "/mcp":
     $ref: paths/mcp/index.yaml
   "/metrics":
