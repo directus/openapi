@@ -135,6 +135,8 @@ paths:
     $ref: paths/items/_collection/singleton/index.yaml
   "/items/{collection}/{id}":
     $ref: paths/items/_collection/_id/index.yaml
+  "/mcp":
+    $ref: paths/mcp/index.yaml
   "/metrics":
     $ref: paths/metrics/index.yaml
   "/notifications":
@@ -335,6 +337,10 @@ tags:
   - name: Items
     description: Items are individual pieces of data in your database. They can be anything, from articles, to IoT status checks.
     x-collection: directus_items
+  - name: MCP
+    description: >-
+      The Model Context Protocol (MCP) endpoint exposes Directus data and tools to AI assistants via JSON-RPC 2.0 over HTTP.
+      Requires both `MCP_ENABLED=true` and `mcp_enabled: true` in project settings.
   - name: Metrics
     description: To enable performance and error measurement of connected services, Directus can provide Prometheus metrics.
   - name: Operations

@@ -26,6 +26,10 @@ Folders:
   $ref: folders.yaml
 Items:
   $ref: items.yaml
+JsonRpcRequest:
+  $ref: jsonrpc-request.yaml
+JsonRpcResponse:
+  $ref: jsonrpc-response.yaml
 Notifications:
   $ref: notifications.yaml
 Operations:
