@@ -11,6 +11,12 @@ servers:
     description: Your current Directus project.
 
 paths:
+  "/ai/chat":
+    $ref: paths/ai/chat/index.yaml
+  "/ai/object":
+    $ref: paths/ai/object/index.yaml
+  "/ai/files":
+    $ref: paths/ai/files/index.yaml
   "/access":
     $ref: paths/access/index.yaml
   "/access‎":
@@ -286,6 +292,10 @@ components:
     $ref: components/schemas/_index.yaml
 security: []
 tags:
+  - name: AI
+    description: >-
+      AI endpoints provide access to language model capabilities including chat, structured object extraction,
+      and file uploads for multimodal models. All endpoints require `AI_ENABLED=true` and app-level authentication.
   - name: Access
     description: Access rules define which policies are assigned to a role or user. They are the junction between policies and the roles or users they apply to.
     x-collection: directus_access
