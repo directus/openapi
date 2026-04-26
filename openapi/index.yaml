@@ -2,7 +2,7 @@ openapi: '3.0.1'
 info:
   title: Directus API Reference
   description: This is a dynamically generated API specification for all endpoints existing on the current project!
-  version: '11.1.0'
+  version: '11.17.3'
   license:
     name: Business Source License 1.1 (BUSL-1.1)
     url: https://github.com/directus/directus/blob/main/license
