@@ -34,4 +34,5 @@ x-codeSamples:
       const result = await client.request(readProviders());
   - label: GraphQL
     lang: GraphQL
-    source: Not available in GraphQL
+    source: |
+      // Not supported in GraphQL
