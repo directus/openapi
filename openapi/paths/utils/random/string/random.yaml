@@ -19,6 +19,8 @@ responses:
               type: string
               example: 1>M3+4oh.S
     description: Successful request
+  '400':
+    $ref: ../../../../components/responses.yaml#/BadRequestError
 security: []
 tags:
 - Utilities

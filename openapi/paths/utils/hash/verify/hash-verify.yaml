@@ -27,6 +27,8 @@ responses:
               type: boolean
               example: true
     description: Successful request
+  '400':
+    $ref: ../../../../components/responses.yaml#/BadRequestError
 security: []
 tags:
 - Utilities

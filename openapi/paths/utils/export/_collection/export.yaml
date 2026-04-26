@@ -34,6 +34,10 @@ requestBody:
 responses:
   '200':
     description: Successful request
+  '400':
+    $ref: ../../../../components/responses.yaml#/BadRequestError
+  '403':
+    $ref: ../../../../components/responses.yaml#/ForbiddenError
 security: []
 tags:
 - Utilities

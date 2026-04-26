@@ -24,6 +24,8 @@ responses:
               example:
                 $argon2i$v=19$m=4096,t=3,p=1$pOyIa/zmRAjCVLb2f7kOyg$DasoO6LzMM+6iKfzCDq6JbsYsZWLSm33p7i9NxL9mDc
     description: Successful request
+  '400':
+    $ref: ../../../../components/responses.yaml#/BadRequestError
 security: []
 tags:
 - Utilities
