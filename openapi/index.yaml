@@ -81,10 +81,16 @@ paths:
     $ref: paths/dashboards/_id/index.yaml
   "/extensions":
     $ref: paths/extensions/index.yaml
-  "/extensions/{bundle}/{name}":
-    $ref: paths/extensions/_bundle/_name/index.yaml
-  "/extensions/{name}":
-    $ref: paths/extensions/_name/index.yaml
+  "/extensions/{id}":
+    $ref: paths/extensions/_id/index.yaml
+  "/extensions/registry":
+    $ref: paths/extensions/registry/index.yaml
+  "/extensions/registry/install":
+    $ref: paths/extensions/registry/install/index.yaml
+  "/extensions/registry/reinstall":
+    $ref: paths/extensions/registry/reinstall/index.yaml
+  "/extensions/registry/uninstall/{id}":
+    $ref: paths/extensions/registry/uninstall/_id/index.yaml
   "/fields":
     $ref: paths/fields/index.yaml
   "/fields/{collection}":

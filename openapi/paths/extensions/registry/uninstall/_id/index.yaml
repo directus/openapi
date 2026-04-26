@@ -1,0 +1,2 @@
+delete:
+  $ref: uninstallRegistryExtension.yaml
