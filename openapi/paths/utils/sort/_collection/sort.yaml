@@ -12,6 +12,7 @@ requestBody:
   content:
     application/json:
       schema:
+        type: object
         properties:
           item:
             type: number
