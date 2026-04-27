@@ -1,0 +1,40 @@
+summary: Reinstall Extension from Registry
+description: Reinstall a previously installed registry extension, fetching the latest files for its current version. Admin only.
+operationId: reinstallRegistryExtension
+requestBody:
+  required: true
+  content:
+    application/json:
+      schema:
+        type: object
+        required:
+          - extension
+        properties:
+          extension:
+            description: Registry extension UUID.
+            type: string
+            format: uuid
+            example: 8cbb43fe-4cdf-4991-8352-c461779cec02
+responses:
+  "200":
+    description: Extension reinstalled successfully.
+  "401":
+    $ref: ../../../../components/responses.yaml#/UnauthorizedError
+  "404":
+    $ref: ../../../../components/responses.yaml#/NotFoundError
+security: []
+tags:
+  - Extensions
+x-codeSamples:
+  - label: Directus SDK
+    lang: JavaScript
+    source: |
+      import { createDirectus, rest, reinstallRegistryExtension } from '@directus/sdk';
+
+      const client = createDirectus('directus_project_url').with(rest());
+
+      await client.request(reinstallRegistryExtension('extension_id'));
+  - label: GraphQL
+    lang: GraphQL
+    source: |
+      // Not supported in GraphQL

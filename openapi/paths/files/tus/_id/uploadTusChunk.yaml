@@ -1,0 +1,70 @@
+summary: Upload TUS Chunk
+description: >-
+  Upload a chunk of a file as part of a resumable TUS upload session. Requires `TUS_ENABLED=true`.
+  Send chunks sequentially using the `Upload-Offset` from the previous response.
+operationId: uploadTusChunk
+parameters:
+- name: id
+  in: path
+  description: TUS upload session identifier.
+  required: true
+  schema:
+    type: string
+- name: Upload-Offset
+  in: header
+  description: Byte offset at which this chunk begins within the file.
+  required: true
+  schema:
+    type: integer
+    example: 0
+- name: Tus-Resumable
+  in: header
+  description: TUS protocol version. Must be `1.0.0`.
+  required: true
+  schema:
+    type: string
+    enum:
+      - 1.0.0
+- name: Content-Type
+  in: header
+  description: Must be `application/offset+octet-stream`.
+  required: true
+  schema:
+    type: string
+    enum:
+      - application/offset+octet-stream
+requestBody:
+  description: Raw binary chunk of the file.
+  required: true
+  content:
+    application/offset+octet-stream:
+      schema:
+        type: string
+        format: binary
+responses:
+  '204':
+    description: Chunk accepted. The `Upload-Offset` header reflects the new byte position.
+    headers:
+      Upload-Offset:
+        description: New byte offset after this chunk.
+        schema:
+          type: integer
+      Tus-Resumable:
+        schema:
+          type: string
+  '401':
+    $ref: ../../../../components/responses.yaml#/UnauthorizedError
+  '404':
+    $ref: ../../../../components/responses.yaml#/NotFoundError
+security: []
+tags:
+- Files
+x-codeSamples:
+- label: Directus SDK
+  lang: JavaScript
+  source: |
+    // Not supported in Directus SDK
+- label: GraphQL
+  lang: GraphQL
+  source: |
+    // Not supported in GraphQL

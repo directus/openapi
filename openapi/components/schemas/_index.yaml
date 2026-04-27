@@ -1,5 +1,7 @@
 x-metadata:
   $ref: x-metadata.yaml
+Access:
+  $ref: access.yaml
 Activity:
   $ref: activity.yaml
 Collections:
@@ -8,6 +10,8 @@ Comments:
   $ref: comments.yaml
 Dashboards:
   $ref: dashboards.yaml
+Deployments:
+  $ref: deployments.yaml
 Diff:
   $ref: diff.yaml
 Extensions:
@@ -22,6 +26,10 @@ Folders:
   $ref: folders.yaml
 Items:
   $ref: items.yaml
+JsonRpcRequest:
+  $ref: jsonrpc-request.yaml
+JsonRpcResponse:
+  $ref: jsonrpc-response.yaml
 Notifications:
   $ref: notifications.yaml
 Operations:

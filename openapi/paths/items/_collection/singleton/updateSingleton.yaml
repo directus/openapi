@@ -1,8 +1,8 @@
-summary: Update Singleton
+summary: Update a Singleton Item
 description: |
-  Update a singleton item.
+  Update the singleton item in the given collection.
 
-  The REST and GraphQL requests for singletons are the same as those used to Update Multiple Items but in contrast the request should consist of the plain item object.
+  Unlike batch updates for regular collections, the request body should be a plain item object rather than a keyed batch payload.
 operationId: updateSingleton
 parameters:
 - $ref: ../../../../components/parameters.yaml#/Collection
@@ -12,8 +12,7 @@ requestBody:
   content:
     application/json:
       schema:
-        anyOf:
-        - $ref: ../../../../components/schemas/items.yaml
+        $ref: ../../../../components/schemas/items.yaml
 responses:
   '200':
     description: Successful request
@@ -32,17 +31,17 @@ security: []
 tags:
 - Items
 x-codeSamples:
-- label: Directus SDK
-  lang: JavaScript
-  source: |
-    import { createDirectus, rest, updateSingleton } from '@directus/sdk';
+  - label: Directus SDK
+    lang: JavaScript
+    source: |
+      import { createDirectus, rest, updateSingleton } from '@directus/sdk';
 
-    const client = createDirectus('directus_project_url').with(rest());
+      const client = createDirectus('directus_project_url').with(rest());
 
-    const result = await client.request(updateSingleton(collection_name, partial_item_object));
-- label: GraphQL
-  lang: GraphQL
-  source: |
-    type Mutation {
-      update_<collection>_items(data: [update_<collection>_input]): [<collection>]
-    }
+      const result = await client.request(updateSingleton('collection_name', partial_item_object));
+  - label: GraphQL
+    lang: GraphQL
+    source: |
+      type Mutation {
+        update_<collection>(data: update_<collection>_input!): <collection>
+      }

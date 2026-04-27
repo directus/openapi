@@ -1,12 +1,8 @@
 summary: Update an Extension
-description: Update an existing extension.
-operationId: updateExtensions
+description: Update the configuration of an installed extension (e.g. enable or disable it).
+operationId: updateExtension
 parameters:
-- in: path
-  name: name
-  required: true
-  schema:
-    type: string
+  - $ref: ../../../components/parameters.yaml#/UUId
 requestBody:
   content:
     application/json:
@@ -15,15 +11,15 @@ requestBody:
         properties:
           meta:
             type: object
-            description: Directus metadata for the extension. Where the configuration
-              for the extension in the current project is stored.
+            description: Directus metadata for the extension. Where the configuration for the extension in the current project is stored.
             properties:
               enabled:
                 type: boolean
                 description: Whether or not the extension is enabled.
                 example: true
 responses:
-  '200':
+  "200":
+    description: Successful request
     content:
       application/json:
         schema:
@@ -31,14 +27,13 @@ responses:
           properties:
             data:
               $ref: ../../../components/schemas/extensions.yaml
-    description: Successful request
-  '401':
+  "401":
     $ref: ../../../components/responses.yaml#/UnauthorizedError
-  '404':
+  "404":
     $ref: ../../../components/responses.yaml#/NotFoundError
 security: []
 tags:
-- Extensions
+  - Extensions
 x-codeSamples:
   - label: Directus SDK
     lang: JavaScript
@@ -47,12 +42,8 @@ x-codeSamples:
 
       const client = createDirectus('directus_project_url').with(rest());
 
-      const result = await client.request(updateExtension(bundle, name, partial_extension_object));
+      const result = await client.request(updateExtension('extension_id', { meta: { enabled: true } }));
   - label: GraphQL
     lang: GraphQL
     source: |
-      POST /graphql/system
-
-      type Mutation {
-      	update_extensions_item(bundle: String, name: String!, data: update_directus_extensions_input!): directus_extensions
-      }
+      // Not supported in GraphQL
