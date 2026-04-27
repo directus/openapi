@@ -1,8 +1,8 @@
 summary: Health
 description: |
-  Shows you a general health status for the server and all connected (third party) services. 
+  Shows you a general health status for the server and all connected (third party) services.
 
-  By default, the endpoint only returns a status of ok, warn or error. 
+  By default, the endpoint only returns a status of ok, warn or error.
 
   By authenticating as an admin, it will return more in-depth information about the current health status of the system.
 operationId: serverHealth
@@ -19,7 +19,10 @@ responses:
             status:
               description: One of ok, warn, error.
               type: string
-              enum: [ok, warn, error]
+              enum:
+                - ok
+                - warn
+                - error
               example: warn
             releaseId:
               description: Directus version in use. Only returned when authenticated as admin.
@@ -43,17 +46,18 @@ responses:
                     componentType:
                       type: string
                       enum:
-                        [
-                          system,
-                          datastore,
-                          objectstore,
-                          email,
-                          cache,
-                          ratelimiter,
-                        ]
+                        - system
+                        - datastore
+                        - objectstore
+                        - email
+                        - cache
+                        - ratelimiter
                     status:
                       type: string
-                      enum: [ok, warn, error]
+                      enum:
+                        - ok
+                        - warn
+                        - error
                     observedValue:
                       oneOf:
                         - type: number
