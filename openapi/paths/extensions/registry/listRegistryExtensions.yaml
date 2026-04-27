@@ -2,13 +2,13 @@ summary: List Registry Extensions
 description: Search the Directus extension marketplace registry. Admin only.
 operationId: listRegistryExtensions
 parameters:
-- $ref: ../../../components/parameters.yaml#/Search
-- $ref: ../../../components/parameters.yaml#/Limit
-- $ref: ../../../components/parameters.yaml#/Offset
-- $ref: ../../../components/parameters.yaml#/Sort
-- $ref: ../../../components/parameters.yaml#/Filter
+  - $ref: ../../../components/parameters.yaml#/Search
+  - $ref: ../../../components/parameters.yaml#/Limit
+  - $ref: ../../../components/parameters.yaml#/Offset
+  - $ref: ../../../components/parameters.yaml#/Sort
+  - $ref: ../../../components/parameters.yaml#/Filter
 responses:
-  '200':
+  "200":
     description: Successful request
     content:
       application/json:
@@ -20,17 +20,21 @@ responses:
               items:
                 type: object
                 description: Registry extension listing.
-  '401':
+  "401":
     $ref: ../../../components/responses.yaml#/UnauthorizedError
 security: []
 tags:
-- Extensions
+  - Extensions
 x-codeSamples:
-- label: Directus SDK
-  lang: JavaScript
-  source: |
-    // Not supported in Directus SDK
-- label: GraphQL
-  lang: GraphQL
-  source: |
-    // Not supported in GraphQL
+  - label: Directus SDK
+    lang: JavaScript
+    source: |
+      import { createDirectus, rest, readRegistryExtensions } from '@directus/sdk';
+
+      const client = createDirectus('directus_project_url').with(rest());
+
+      const result = await client.request(readRegistryExtensions({ search: 'charts', limit: 10 }));
+  - label: GraphQL
+    lang: GraphQL
+    source: |
+      // Not supported in GraphQL
