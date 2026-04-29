@@ -79,7 +79,7 @@ paths:
     $ref: paths/deployments/_provider/runs/_id/index.yaml
   "/deployments/{provider}/runs/{id}/cancel":
     $ref: paths/deployments/_provider/runs/_id/cancel/index.yaml
-  "/deployments/webhooks/{provider}‎":
+  "/deployments/webhooks/{provider}":
     $ref: paths/deployments/webhooks/_provider/index.yaml
   "/dashboards‎":
     $ref: paths/dashboards/singular/index.yaml
