@@ -1,0 +1,60 @@
+summary: AI Object Extraction
+description: >-
+  Generate a structured object from a prompt using an AI language model.
+  Requires `AI_ENABLED=true` and app-level authentication.
+  Streams a JSON object matching the provided output schema.
+operationId: aiObject
+requestBody:
+  required: true
+  content:
+    application/json:
+      schema:
+        type: object
+        required:
+          - provider
+          - model
+          - prompt
+          - outputSchema
+        properties:
+          provider:
+            description: AI provider to use.
+            type: string
+            enum:
+              - openai
+              - anthropic
+              - google
+              - openai-compatible
+          model:
+            description: Model ID for the selected provider.
+            type: string
+          prompt:
+            description: Prompt describing the object to generate.
+            type: string
+          outputSchema:
+            description: JSON Schema 7 definition for the output object.
+            type: object
+          maxOutputTokens:
+            description: Maximum number of tokens in the model output. Minimum 256.
+            type: integer
+            minimum: 256
+responses:
+  '200':
+    description: Successful request
+    content:
+      text/plain:
+        schema:
+          type: string
+  '403':
+    $ref: ../../../components/responses.yaml#/UnauthorizedError
+security: []
+tags:
+  - AI
+x-codeSamples:
+  - label: Directus SDK
+    lang: JavaScript
+    source: |
+      // Not supported in Directus SDK
+  - label: GraphQL
+    lang: GraphQL
+    source: |
+      // Not supported in GraphQL

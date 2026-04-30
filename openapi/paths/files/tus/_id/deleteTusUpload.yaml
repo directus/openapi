@@ -1,0 +1,37 @@
+summary: Cancel TUS Upload
+description: Cancel an in-progress TUS upload session. Requires `TUS_ENABLED=true`.
+operationId: deleteTusUpload
+parameters:
+- name: id
+  in: path
+  description: TUS upload session identifier.
+  required: true
+  schema:
+    type: string
+- name: Tus-Resumable
+  in: header
+  description: TUS protocol version. Must be `1.0.0`.
+  required: true
+  schema:
+    type: string
+    enum:
+      - 1.0.0
+responses:
+  '204':
+    description: Upload session deleted.
+  '401':
+    $ref: ../../../../components/responses.yaml#/UnauthorizedError
+  '404':
+    $ref: ../../../../components/responses.yaml#/NotFoundError
+security: []
+tags:
+- Files
+x-codeSamples:
+- label: Directus SDK
+  lang: JavaScript
+  source: |
+    // Not supported in Directus SDK
+- label: GraphQL
+  lang: GraphQL
+  source: |
+    // Not supported in GraphQL

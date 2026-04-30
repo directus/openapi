@@ -1,0 +1,48 @@
+summary: Download Folder as ZIP
+description: Download a folder's contents as a ZIP archive.
+operationId: downloadFolder
+parameters:
+- name: id
+  in: path
+  description: Unique identifier of the folder to download.
+  required: true
+  schema:
+    type: string
+    format: uuid
+    example: 8cbb43fe-4cdf-4991-8352-c461779cec02
+responses:
+  '200':
+    description: ZIP archive of the folder contents.
+    headers:
+      Content-Disposition:
+        description: Attachment filename for the ZIP archive.
+        schema:
+          type: string
+          example: attachment; filename="folder-my-assets-2024-01-15_12-00-00.zip"
+    content:
+      application/zip:
+        schema:
+          type: string
+          format: binary
+  '401':
+    $ref: ../../../../components/responses.yaml#/UnauthorizedError
+  '404':
+    $ref: ../../../../components/responses.yaml#/NotFoundError
+security: []
+tags:
+- Assets
+x-codeSamples:
+- label: Directus SDK
+  lang: JavaScript
+  source: |
+    import { createDirectus, rest, downloadFolderZip } from '@directus/sdk';
+
+    const client = createDirectus('directus_project_url').with(rest());
+
+    const result = await client.request(
+      downloadFolderZip('8cbb43fe-4cdf-4991-8352-c461779cec02')
+    );
+- label: GraphQL
+  lang: GraphQL
+  source: |
+    // Not supported in GraphQL

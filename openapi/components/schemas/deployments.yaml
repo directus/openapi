@@ -1,0 +1,45 @@
+type: object
+properties:
+  id:
+    description: Unique identifier for the deployment configuration.
+    example: 8cbb43fe-4cdf-4991-8352-c461779cec02
+    type: string
+    format: uuid
+  provider:
+    description: The deployment provider. One of `vercel` or `netlify`.
+    example: vercel
+    type: string
+    enum:
+      - vercel
+      - netlify
+  credentials:
+    description: Provider-specific credentials (e.g. API token). Stored encrypted.
+    type: object
+    example:
+      token: abc123
+  options:
+    description: Provider-specific configuration options.
+    nullable: true
+    type: object
+    example:
+      team_id: team_abc123
+  webhook_ids:
+    description: IDs of webhooks registered with the provider for this config.
+    nullable: true
+    type: array
+    items:
+      type: string
+  webhook_secret:
+    description: Secret used to verify webhook payloads from the provider.
+    nullable: true
+    type: string
+  last_synced_at:
+    description: Timestamp of the last provider sync.
+    nullable: true
+    type: string
+    format: date-time
+  date_created:
+    description: When this deployment config was created.
+    type: string
+    format: date-time
+x-collection: directus_deployments

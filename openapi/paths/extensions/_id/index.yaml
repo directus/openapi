@@ -1,0 +1,4 @@
+patch:
+  $ref: updateExtension.yaml
+delete:
+  $ref: deleteExtension.yaml

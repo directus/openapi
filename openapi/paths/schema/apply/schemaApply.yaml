@@ -3,6 +3,13 @@ description: Update the instance's schema by passing the diff previously retriev
   via `/schema/diff` endpoint in the JSON request body or a JSON/YAML file. This endpoint
   is only available to admin users.
 operationId: schemaApply
+parameters:
+- name: force
+  in: query
+  description: When `true`, bypasses the hash check and applies the diff regardless of whether the current schema matches the snapshot it was generated from.
+  required: false
+  schema:
+    type: boolean
 requestBody:
   required: true
   content:
@@ -31,7 +38,7 @@ x-codeSamples:
     source: |
       import { createDirectus, rest, schemaApply } from '@directus/sdk';
 
-      const client = createDirectus('https://directus.example.com').with(rest());
+      const client = createDirectus('directus_project_url').with(rest());
 
       const result = await client.request(
         schemaApply({

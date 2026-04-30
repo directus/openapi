@@ -227,4 +227,85 @@ properties:
     description: Link to the feature request page.
     nullable: true
     type: string
+  ai_openai_api_key:
+    description: OpenAI API key used for AI features. Stored hashed.
+    nullable: true
+    type: string
+  ai_openai_allowed_models:
+    description: List of OpenAI model IDs permitted for use in the AI assistant.
+    nullable: true
+    type: array
+    items:
+      type: string
+  ai_anthropic_api_key:
+    description: Anthropic API key used for AI features. Stored hashed.
+    nullable: true
+    type: string
+  ai_anthropic_allowed_models:
+    description: List of Anthropic model IDs permitted for use in the AI assistant.
+    nullable: true
+    type: array
+    items:
+      type: string
+  ai_google_api_key:
+    description: Google AI API key used for AI features. Stored hashed.
+    nullable: true
+    type: string
+  ai_google_allowed_models:
+    description: List of Google model IDs permitted for use in the AI assistant.
+    nullable: true
+    type: array
+    items:
+      type: string
+  ai_system_prompt:
+    description: Custom system prompt prepended to all AI assistant conversations.
+    nullable: true
+    type: string
+  ai_openai_compatible_name:
+    description: Display name for a custom OpenAI-compatible provider.
+    nullable: true
+    type: string
+  ai_openai_compatible_base_url:
+    description: Base URL for a custom OpenAI-compatible API endpoint.
+    nullable: true
+    type: string
+  ai_openai_compatible_api_key:
+    description: API key for the custom OpenAI-compatible provider. Stored hashed.
+    nullable: true
+    type: string
+  ai_openai_compatible_headers:
+    description: Additional HTTP headers to include when calling the custom OpenAI-compatible provider.
+    nullable: true
+    type: array
+    items:
+      type: object
+  ai_openai_compatible_models:
+    description: List of model definitions available from the custom OpenAI-compatible provider.
+    nullable: true
+    type: array
+    items:
+      type: object
+      properties:
+        name:
+          type: string
+  mcp_enabled:
+    description: Whether the MCP (Model Context Protocol) endpoint is enabled.
+    nullable: true
+    type: boolean
+  mcp_allow_deletes:
+    description: Whether MCP clients are permitted to perform delete operations.
+    nullable: true
+    type: boolean
+  mcp_prompts_collection:
+    description: Collection used to store MCP prompt definitions.
+    nullable: true
+    type: string
+  mcp_system_prompt_enabled:
+    description: Whether the custom MCP system prompt is enabled.
+    nullable: true
+    type: boolean
+  mcp_system_prompt:
+    description: Custom system prompt injected into MCP sessions.
+    nullable: true
+    type: string
 x-collection: directus_settings

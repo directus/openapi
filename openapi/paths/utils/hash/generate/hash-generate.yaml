@@ -1,10 +1,11 @@
-summary: Generate a Hash.
+summary: Generate a Hash
 description: Generate a hash for a given string.
 operationId: hash-generate
 requestBody:
   content:
     application/json:
       schema:
+        type: object
         properties:
           string:
             type: string
@@ -23,6 +24,8 @@ responses:
               example:
                 $argon2i$v=19$m=4096,t=3,p=1$pOyIa/zmRAjCVLb2f7kOyg$DasoO6LzMM+6iKfzCDq6JbsYsZWLSm33p7i9NxL9mDc
     description: Successful request
+  '400':
+    $ref: ../../../../components/responses.yaml#/BadRequestError
 security: []
 tags:
 - Utilities

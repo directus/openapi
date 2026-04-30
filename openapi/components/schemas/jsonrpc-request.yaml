@@ -1,0 +1,23 @@
+type: object
+description: A JSON-RPC 2.0 request or notification message.
+required:
+  - jsonrpc
+  - method
+properties:
+  jsonrpc:
+    description: JSON-RPC protocol version. Must be `"2.0"`.
+    type: string
+    enum:
+      - '2.0'
+  id:
+    description: >-
+      Request identifier. May be a string, integer, or null; omit for notifications.
+    oneOf:
+      - type: string
+      - type: integer
+  method:
+    description: MCP method name (e.g. `tools/list`, `tools/call`, `prompts/list`, `prompts/get`, `notifications/initialized`).
+    type: string
+  params:
+    description: Method-specific parameters.
+    type: object

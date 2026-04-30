@@ -1,37 +1,77 @@
 summary: Health
 description: |
-  Shows you a general health status for the server and all connected (third party) services. 
+  Shows you a general health status for the server and all connected (third party) services.
 
-  By default, the endpoint only returns a status of ok, warn or error. 
+  By default, the endpoint only returns a status of ok, warn or error.
 
   By authenticating as an admin, it will return more in-depth information about the current health status of the system.
 operationId: serverHealth
 responses:
-  '200':
+  "200":
     description: Successful request
     content:
       application/json:
         schema:
           type: object
+          required:
+            - status
           properties:
             status:
               description: One of ok, warn, error.
               type: string
+              enum:
+                - ok
+                - warn
+                - error
               example: warn
             releaseId:
-              description: Directus version in use.
+              description: Directus version in use. Only returned when authenticated as admin.
               type: string
-              example: '10.0.0'
+              example: "10.0.0"
             serviceId:
-              description: Public URL of the current Directus instance.
+              description: Public URL of the current Directus instance. Only returned when authenticated as admin.
               type: string
               example: https://directus.example.com
             checks:
-              description: Array with the status of all individually connected services.
-              type: array
+              description: Object keyed by service name (e.g. "pg:responseTime"), each containing an array of health check results for that service. Only returned when authenticated as admin.
+              type: object
+              additionalProperties:
+                type: array
+                items:
+                  type: object
+                  required:
+                    - componentType
+                    - status
+                  properties:
+                    componentType:
+                      type: string
+                      enum:
+                        - system
+                        - datastore
+                        - objectstore
+                        - email
+                        - cache
+                        - ratelimiter
+                    status:
+                      type: string
+                      enum:
+                        - ok
+                        - warn
+                        - error
+                    observedValue:
+                      oneOf:
+                        - type: number
+                        - type: string
+                        - type: boolean
+                    observedUnit:
+                      type: string
+                    threshold:
+                      type: number
+                    output:
+                      description: Error or warning message when status is not ok.
 security: []
 tags:
-- Server
+  - Server
 x-codeSamples:
   - label: Directus SDK
     lang: JavaScript

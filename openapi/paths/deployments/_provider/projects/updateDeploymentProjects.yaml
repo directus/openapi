@@ -1,0 +1,95 @@
+summary: Update Selected Deployment Projects
+description: Add or remove projects from the tracked set for this deployment provider. Automatically syncs webhooks with the updated selection.
+operationId: updateDeploymentProjects
+parameters:
+- name: provider
+  in: path
+  description: The deployment provider name (e.g. `vercel`, `netlify`).
+  required: true
+  schema:
+    type: string
+    enum:
+      - vercel
+      - netlify
+requestBody:
+  content:
+    application/json:
+      schema:
+        type: object
+        properties:
+          create:
+            description: Projects to add to the tracked set.
+            type: array
+            items:
+              type: object
+              required:
+                - external_id
+                - name
+              properties:
+                external_id:
+                  description: Project ID from the provider.
+                  type: string
+                  example: prj_abc123
+                name:
+                  description: Project name.
+                  type: string
+                  example: my-directus-app
+          delete:
+            description: Internal project UUIDs to remove from the tracked set.
+            type: array
+            items:
+              type: string
+              format: uuid
+responses:
+  '200':
+    description: Successful request
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            data:
+              type: array
+              items:
+                type: object
+                properties:
+                  id:
+                    type: string
+                    format: uuid
+                  external_id:
+                    type: string
+                  name:
+                    type: string
+                  url:
+                    type: string
+                    nullable: true
+                  framework:
+                    type: string
+                    nullable: true
+                  deployable:
+                    type: boolean
+  '401':
+    $ref: ../../../../components/responses.yaml#/UnauthorizedError
+  '404':
+    $ref: ../../../../components/responses.yaml#/NotFoundError
+security: []
+tags:
+- Deployments
+x-codeSamples:
+- label: Directus SDK
+  lang: JavaScript
+  source: |
+    import { createDirectus, rest, updateDeploymentProjects } from '@directus/sdk';
+
+    const client = createDirectus('directus_project_url').with(rest());
+
+    const result = await client.request(
+      updateDeploymentProjects('vercel', {
+        create: [{ external_id: 'prj_abc123', name: 'my-app' }],
+        delete: ['8cbb43fe-4cdf-4991-8352-c461779cec02'],
+      })
+    );
+- label: GraphQL
+  lang: GraphQL
+  source: |
+    // Not supported in GraphQL

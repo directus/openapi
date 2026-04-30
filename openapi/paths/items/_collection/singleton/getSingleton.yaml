@@ -1,14 +1,17 @@
-summary: Retrieve a Singleton
+summary: Retrieve a Singleton Item
 description: |
-  Retrieves a singleton of a given collection.
+  Retrieve the singleton item from the given collection.
 
-  The REST and GraphQL requests for singletons are the same as those used to Get Items but in contrast the response consists of a plain item object (the singleton) instead of an array of items.
+  Unlike regular collections, a singleton returns a plain item object rather than an array of items.
 operationId: getSingleton
 parameters:
 - $ref: ../../../../components/parameters.yaml#/Collection
-- $ref: ../../../../components/parameters.yaml#/Version
 - $ref: ../../../../components/parameters.yaml#/Fields
 - $ref: ../../../../components/parameters.yaml#/Meta
+- $ref: ../../../../components/parameters.yaml#/Version
+- $ref: ../../../../components/parameters.yaml#/VersionRaw
+- $ref: ../../../../components/parameters.yaml#/Deep
+- $ref: ../../../../components/parameters.yaml#/Alias
 responses:
   '200':
     description: Successful request
@@ -34,7 +37,7 @@ x-codeSamples:
 
       const client = createDirectus('directus_project_url').with(rest());
 
-      const result = await client.request(readSingleton(collection_name));
+      const result = await client.request(readSingleton('collection_name', query_object));
   - label: GraphQL
     lang: GraphQL
     source: |

@@ -1,0 +1,103 @@
+summary: Retrieve Deployment Run
+description: Retrieve details and logs for a single deployment run. Supports incremental log polling via the `since` parameter.
+operationId: getDeploymentRun
+parameters:
+- name: provider
+  in: path
+  description: The deployment provider name (e.g. `vercel`, `netlify`).
+  required: true
+  schema:
+    type: string
+    enum:
+      - vercel
+      - netlify
+- name: id
+  in: path
+  description: Unique identifier of the deployment run.
+  required: true
+  schema:
+    type: string
+    format: uuid
+- name: since
+  in: query
+  description: ISO 8601 timestamp. When provided, only log entries after this time are returned (for incremental polling).
+  required: false
+  schema:
+    type: string
+    format: date-time
+responses:
+  '200':
+    description: Successful request
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            data:
+              type: object
+              properties:
+                id:
+                  type: string
+                  format: uuid
+                project_id:
+                  type: string
+                  format: uuid
+                status:
+                  type: string
+                  enum:
+                    - building
+                    - ready
+                    - error
+                    - canceled
+                  example: building
+                url:
+                  type: string
+                  nullable: true
+                created_at:
+                  type: string
+                  format: date-time
+                finished_at:
+                  type: string
+                  format: date-time
+                  nullable: true
+                error_message:
+                  type: string
+                  nullable: true
+                logs:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      timestamp:
+                        type: string
+                        format: date-time
+                      type:
+                        type: string
+                        enum:
+                          - stdout
+                          - stderr
+                          - info
+                      message:
+                        type: string
+  '401':
+    $ref: ../../../../../components/responses.yaml#/UnauthorizedError
+  '404':
+    $ref: ../../../../../components/responses.yaml#/NotFoundError
+security: []
+tags:
+- Deployments
+x-codeSamples:
+- label: Directus SDK
+  lang: JavaScript
+  source: |
+    import { createDirectus, rest, readDeploymentRun } from '@directus/sdk';
+
+    const client = createDirectus('directus_project_url').with(rest());
+
+    const result = await client.request(
+      readDeploymentRun('vercel', '8cbb43fe-4cdf-4991-8352-c461779cec02')
+    );
+- label: GraphQL
+  lang: GraphQL
+  source: |
+    // Not supported in GraphQL

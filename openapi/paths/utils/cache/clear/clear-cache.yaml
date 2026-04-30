@@ -10,6 +10,8 @@ parameters:
 responses:
   '200':
     description: Successful request
+  '403':
+    $ref: ../../../../components/responses.yaml#/ForbiddenError
 security: []
 tags:
 - Utilities

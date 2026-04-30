@@ -1,0 +1,45 @@
+summary: Update an Extension
+description: Update the configuration of an installed extension (e.g. enable or disable it).
+operationId: updateExtension
+parameters:
+- $ref: ../../../components/parameters.yaml#/UUId
+requestBody:
+  content:
+    application/json:
+      schema:
+        type: object
+        properties:
+          meta:
+            type: object
+            description: Directus metadata for the extension. Where the configuration for the extension in the current project is stored.
+            properties:
+              enabled:
+                type: boolean
+                description: Whether or not the extension is enabled.
+                example: true
+responses:
+  '200':
+    description: Successful request
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            data:
+              $ref: ../../../components/schemas/extensions.yaml
+  '401':
+    $ref: ../../../components/responses.yaml#/UnauthorizedError
+  '404':
+    $ref: ../../../components/responses.yaml#/NotFoundError
+security: []
+tags:
+- Extensions
+x-codeSamples:
+- label: Directus SDK
+  lang: JavaScript
+  source: |
+    // Not supported in Directus SDK
+- label: GraphQL
+  lang: GraphQL
+  source: |
+    // Not supported in GraphQL

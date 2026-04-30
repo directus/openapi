@@ -1,0 +1,57 @@
+summary: Create TUS Upload
+description: >-
+  Initiate a resumable file upload session using the TUS protocol. Returns an upload URL
+  in the `Location` response header. Requires `TUS_ENABLED=true`.
+operationId: createTusUpload
+parameters:
+- name: Upload-Length
+  in: header
+  description: Total size of the file in bytes. Required unless the server supports deferred length.
+  required: true
+  schema:
+    type: integer
+    example: 1048576
+- name: Upload-Metadata
+  in: header
+  description: >-
+    Comma-separated key-value pairs of file metadata, base64-encoded. Supported keys include
+    `filename`, `filetype`, and any `directus_files` field name (e.g. `title`, `folder`).
+    To replace an existing file, include `id` with the existing file UUID.
+  required: false
+  schema:
+    type: string
+    example: filename dGVzdC50eHQ=,filetype dGV4dC9wbGFpbg==
+- name: Tus-Resumable
+  in: header
+  description: TUS protocol version. Must be `1.0.0`.
+  required: true
+  schema:
+    type: string
+    enum:
+      - 1.0.0
+responses:
+  '201':
+    description: Upload session created. The `Location` header contains the URL for uploading chunks.
+    headers:
+      Location:
+        description: URL for subsequent chunk uploads.
+        schema:
+          type: string
+      Tus-Resumable:
+        description: Confirmed TUS protocol version.
+        schema:
+          type: string
+  '401':
+    $ref: ../../../components/responses.yaml#/UnauthorizedError
+security: []
+tags:
+- Files
+x-codeSamples:
+- label: Directus SDK
+  lang: JavaScript
+  source: |
+    // Not supported in Directus SDK
+- label: GraphQL
+  lang: GraphQL
+  source: |
+    // Not supported in GraphQL

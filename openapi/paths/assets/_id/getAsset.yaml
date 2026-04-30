@@ -47,4 +47,5 @@ x-codeSamples:
       const result = await client.request(readAssetRaw('<file-id>', { key: '<key>' }));
   - label: GraphQL
     lang: GraphQL
-    source: Not available in Directus SDK/GraphQL
+    source: |
+      // Not supported in GraphQL
