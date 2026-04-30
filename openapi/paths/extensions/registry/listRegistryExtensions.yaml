@@ -14,12 +14,74 @@ responses:
       application/json:
         schema:
           type: object
+          required:
+            - meta
+            - data
           properties:
+            meta:
+              type: object
+              required:
+                - filter_count
+              properties:
+                filter_count:
+                  type: integer
+                  description: Total number of registry extensions matching the query.
             data:
               type: array
               items:
                 type: object
-                description: Registry extension listing.
+                required:
+                  - id
+                  - name
+                  - description
+                  - total_downloads
+                  - verified
+                  - type
+                  - last_updated
+                  - host_version
+                  - sandbox
+                  - license
+                  - publisher
+                properties:
+                  id:
+                    type: string
+                  name:
+                    type: string
+                  description:
+                    type: string
+                    nullable: true
+                  total_downloads:
+                    type: integer
+                  verified:
+                    type: boolean
+                  type:
+                    type: string
+                    description: Extension type.
+                  last_updated:
+                    type: string
+                    format: date-time
+                  host_version:
+                    type: string
+                    description: Directus version range the extension supports.
+                  sandbox:
+                    type: boolean
+                  license:
+                    type: string
+                    nullable: true
+                  publisher:
+                    type: object
+                    required:
+                      - username
+                      - verified
+                      - github_name
+                    properties:
+                      username:
+                        type: string
+                      verified:
+                        type: boolean
+                      github_name:
+                        type: string
+                        nullable: true
   '401':
     $ref: ../../../components/responses.yaml#/UnauthorizedError
 security: []

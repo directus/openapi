@@ -16,7 +16,7 @@ requestBody:
             format: uuid
             example: 8cbb43fe-4cdf-4991-8352-c461779cec02
 responses:
-  '200':
+  '204':
     description: Extension reinstalled successfully.
   '401':
     $ref: ../../../../components/responses.yaml#/UnauthorizedError
