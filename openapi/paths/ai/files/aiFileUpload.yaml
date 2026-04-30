@@ -32,10 +32,34 @@ responses:
       application/json:
         schema:
           type: object
+          required:
+            - provider
+            - fileId
+            - filename
+            - mimeType
+            - sizeBytes
+            - expiresAt
           properties:
-            data:
-              type: object
-              description: Provider-specific file reference returned after upload.
+            provider:
+              type: string
+              enum:
+                - openai
+                - anthropic
+                - google
+            fileId:
+              type: string
+              description: Provider-issued identifier for the uploaded file.
+            filename:
+              type: string
+            mimeType:
+              type: string
+            sizeBytes:
+              type: integer
+            expiresAt:
+              type: string
+              format: date-time
+              nullable: true
+              description: When the provider will expire the file. Null if it does not expire.
   '403':
     $ref: ../../../components/responses.yaml#/UnauthorizedError
 security: []

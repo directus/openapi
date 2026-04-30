@@ -216,7 +216,7 @@ Deep:
               type: integer
             _search:
               type: string
-            _group:
+            _groupBy:
               type: array
               items:
                 type: string
@@ -246,7 +246,7 @@ Alias:
 Group:
   description: >-
     Grouping allows for running the aggregation functions based on a shared value. Accepts an array of field names.
-  name: group
+  name: groupBy
   in: query
   required: false
   explode: false

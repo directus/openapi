@@ -21,7 +21,7 @@ requestBody:
             type: string
             example: 1.2.3
 responses:
-  '200':
+  '204':
     description: Extension installed successfully.
   '401':
     $ref: ../../../../components/responses.yaml#/UnauthorizedError

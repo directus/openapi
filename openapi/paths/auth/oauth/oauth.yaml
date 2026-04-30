@@ -4,6 +4,13 @@ tags:
 - Authentication
 operationId: oauth
 description: List all the configured auth providers.
+parameters:
+- name: sessionOnly
+  in: query
+  description: When set, returns only providers compatible with session mode.
+  required: false
+  schema:
+    type: boolean
 responses:
   '200':
     description: Successful request
@@ -12,23 +19,26 @@ responses:
         schema:
           type: object
           properties:
-            public:
-              type: boolean
             data:
-              type: object
-              properties:
-                name:
-                  type: string
-                  example: google
-                label:
-                  type: string
-                  example: Google
-                driver:
-                  type: string
-                  example: openid
-                icon:
-                  type: string
-                  example: google
+              type: array
+              items:
+                type: object
+                properties:
+                  name:
+                    type: string
+                    example: google
+                  label:
+                    type: string
+                    example: Google
+                  driver:
+                    type: string
+                    example: openid
+                  icon:
+                    type: string
+                    example: google
+            disableDefault:
+              type: boolean
+              description: Whether the default email/password login is disabled.
   '401':
     $ref: ../../../components/responses.yaml#/UnauthorizedError
 x-codeSamples:
