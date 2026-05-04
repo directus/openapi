@@ -2,12 +2,18 @@ summary: Import Data from File
 description: Import multiple records from a JSON or CSV file into a collection.
 operationId: import
 parameters:
-- description: Collection identifier
-  in: path
-  name: collection
-  required: true
-  schema:
-    type: string
+  - description: Collection identifier
+    in: path
+    name: collection
+    required: true
+    schema:
+      type: string
+  - description: Run import in the background. Request will finish before import is complete.
+    in: query
+    name: background
+    required: false
+    schema:
+      type: boolean
 requestBody:
   content:
     multipart/form-data:
@@ -18,7 +24,7 @@ requestBody:
             type: string
             format: binary
 responses:
-  '200':
+  "200":
     description: Successful request
   '403':
     $ref: ../../../../components/responses.yaml#/ForbiddenError
@@ -39,7 +45,7 @@ responses:
                   type: string
 security: []
 tags:
-- Utilities
+  - Utilities
 x-codeSamples:
   - label: Directus SDK
     lang: JavaScript
