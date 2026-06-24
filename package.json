@@ -1,9 +1,9 @@
 {
 	"name": "@directus/openapi",
 	"private": false,
-	"version": "0.3.0",
+	"version": "0.3.1",
 	"description": "OpenAPI Specification of the Directus API",
-	"homepage": "https://directus.io",
+	"homepage": "https://directus.com",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/directus/openapi.git"
