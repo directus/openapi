@@ -1,7 +1,8 @@
 summary: Apply Schema Difference
-description: Update the instance's schema by passing the diff previously retrieved
-  via `/schema/diff` endpoint in the JSON request body or a JSON/YAML file. This endpoint
-  is only available to admin users.
+description: |
+  Update the instance's schema by passing the diff previously retrieved via `/schema/diff` endpoint in the JSON request body or a JSON/YAML file. This endpoint is only available to admin users.
+
+  Only the operations in the diff are applied, so a diff from a partial snapshot leaves everything outside its scope untouched. The `hash` is always checked against the full schema.
 operationId: schemaApply
 parameters:
 - name: force

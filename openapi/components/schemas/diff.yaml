@@ -29,6 +29,19 @@ properties:
               type: array
               items:
                 type: object
+      systemFields:
+        type: array
+        items:
+          type: object
+          properties:
+            collection:
+              type: string
+            field:
+              type: string
+            diff:
+              type: array
+              items:
+                type: object
       relations:
         type: array
         items:
