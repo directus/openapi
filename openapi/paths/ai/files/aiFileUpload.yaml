@@ -1,0 +1,52 @@
+summary: Upload File for AI
+description: >-
+  Upload a file to an AI provider for use in subsequent AI requests.
+  Requires `AI_ENABLED=true` and app-level authentication.
+  Supported providers are `openai`, `anthropic`, and `google`. Maximum file size is 50 MB.
+operationId: aiFileUpload
+requestBody:
+  required: true
+  content:
+    multipart/form-data:
+      schema:
+        type: object
+        required:
+          - file
+          - provider
+        properties:
+          file:
+            description: The file to upload.
+            type: string
+            format: binary
+          provider:
+            description: Provider to upload the file to.
+            type: string
+            enum:
+              - openai
+              - anthropic
+              - google
+responses:
+  '200':
+    description: Successful request
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            data:
+              type: object
+              description: Provider-specific file reference returned after upload.
+  '403':
+    $ref: ../../../components/responses.yaml#/UnauthorizedError
+security: []
+tags:
+  - AI
+x-codeSamples:
+  - label: Directus SDK
+    lang: JavaScript
+    source: |
+      // Not supported in Directus SDK
+  - label: GraphQL
+    lang: GraphQL
+    source: |
+      // Not supported in GraphQL

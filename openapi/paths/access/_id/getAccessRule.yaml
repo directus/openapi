@@ -1,0 +1,33 @@
+summary: Retrieve an Access Rule
+description: Retrieve a single access rule by unique identifier.
+operationId: getAccessRule
+parameters:
+- $ref: ../../../components/parameters.yaml#/UUId
+- $ref: ../../../components/parameters.yaml#/Fields
+- $ref: ../../../components/parameters.yaml#/Meta
+responses:
+  '200':
+    description: Successful request
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            data:
+              $ref: ../../../components/schemas/access.yaml
+  '401':
+    $ref: ../../../components/responses.yaml#/UnauthorizedError
+  '404':
+    $ref: ../../../components/responses.yaml#/NotFoundError
+security: []
+tags:
+- Access
+x-codeSamples:
+- label: Directus SDK
+  lang: JavaScript
+  source: |
+    // Not supported in Directus SDK
+- label: GraphQL
+  lang: GraphQL
+  source: |
+    // Not supported in GraphQL

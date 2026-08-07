@@ -1,0 +1,109 @@
+summary: AI Chat
+description: >-
+  Send messages to an AI language model and receive a streamed response.
+  Requires `AI_ENABLED=true` and app-level authentication.
+  Streamed as Server-Sent Events.
+operationId: aiChat
+requestBody:
+  required: true
+  content:
+    application/json:
+      schema:
+        type: object
+        required:
+          - provider
+          - model
+          - messages
+          - tools
+        properties:
+          provider:
+            description: AI provider to use.
+            type: string
+            enum:
+              - openai
+              - anthropic
+              - google
+              - openai-compatible
+          model:
+            description: Model ID for the selected provider.
+            type: string
+          messages:
+            description: Conversation history. Must contain at least one message.
+            type: array
+            items:
+              type: object
+          tools:
+            description: >-
+              List of tools available to the model.
+              Each entry is either a built-in tool name string or a custom tool definition object.
+            type: array
+            items:
+              oneOf:
+                - type: string
+                - type: object
+                  required:
+                    - name
+                    - description
+                    - inputSchema
+                  properties:
+                    name:
+                      type: string
+                    description:
+                      type: string
+                    inputSchema:
+                      type: object
+                      description: JSON Schema 7 definition for the tool input.
+          toolApprovals:
+            description: Per-tool approval mode.
+            type: object
+            additionalProperties:
+              type: string
+              enum:
+                - always
+                - ask
+                - disabled
+          context:
+            description: Contextual information for the session.
+            type: object
+            properties:
+              attachments:
+                description: Up to 10 context attachments (items, visual elements, or prompts).
+                type: array
+                maxItems: 10
+                items:
+                  type: object
+              page:
+                description: Current page context from the Data Studio.
+                type: object
+                properties:
+                  path:
+                    type: string
+                  collection:
+                    type: string
+                  item:
+                    oneOf:
+                      - type: string
+                      - type: integer
+                  module:
+                    type: string
+responses:
+  '200':
+    description: Successful request
+    content:
+      text/event-stream:
+        schema:
+          type: string
+  '403':
+    $ref: ../../../components/responses.yaml#/UnauthorizedError
+security: []
+tags:
+  - AI
+x-codeSamples:
+  - label: Directus SDK
+    lang: JavaScript
+    source: |
+      // Not supported in Directus SDK
+  - label: GraphQL
+    lang: GraphQL
+    source: |
+      // Not supported in GraphQL

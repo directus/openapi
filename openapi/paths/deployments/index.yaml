@@ -1,0 +1,4 @@
+get:
+  $ref: getDeployments.yaml
+post:
+  $ref: createDeployment.yaml

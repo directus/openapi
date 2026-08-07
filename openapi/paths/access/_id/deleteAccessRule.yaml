@@ -1,0 +1,24 @@
+summary: Delete an Access Rule
+description: Delete an existing access rule.
+operationId: deleteAccessRule
+responses:
+  '204':
+    description: The resource was deleted successfully.
+  '401':
+    $ref: ../../../components/responses.yaml#/UnauthorizedError
+  '404':
+    $ref: ../../../components/responses.yaml#/NotFoundError
+security: []
+tags:
+- Access
+parameters:
+- $ref: ../../../components/parameters.yaml#/UUId
+x-codeSamples:
+- label: Directus SDK
+  lang: JavaScript
+  source: |
+    // Not supported in Directus SDK
+- label: GraphQL
+  lang: GraphQL
+  source: |
+    // Not supported in GraphQL

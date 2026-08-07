@@ -9,7 +9,7 @@ requestBody:
     application/json:
       schema:
         anyOf:
-        - $ref: ../../../components/schemas/Comments.yaml
+        - $ref: ../../../components/schemas/comments.yaml
 responses:
   '200':
     content:
@@ -18,7 +18,7 @@ responses:
           type: object
           properties:
             data:
-              $ref: ../../../components/schemas/Activity.yaml
+              $ref: ../../../components/schemas/activity.yaml
     description: Successful request
   '401':
     $ref: ../../../components/responses.yaml#/UnauthorizedError

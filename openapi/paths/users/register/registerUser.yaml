@@ -30,7 +30,7 @@ requestBody:
             description: 'Provide a custom verification url which the link in the email will lead to. The verification token will be passed as a parameter. Note: You need to configure the USER_REGISTER_URL_ALLOW_LIST environment variable to enable this feature.'
 responses:
   '204':
-    description: Successful request
+    description: Regardless of whether the registration was successful or not, the Directus API will always respond with an empty 204 response. This is to mitigate potentially leaking the identity of registered users.
   '401':
     $ref: ../../../components/responses.yaml#/UnauthorizedError
   '404':

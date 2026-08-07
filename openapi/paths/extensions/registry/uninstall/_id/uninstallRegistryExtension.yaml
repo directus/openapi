@@ -1,0 +1,24 @@
+summary: Uninstall Extension from Registry
+description: Uninstall a registry-installed extension by its unique identifier. Admin only.
+operationId: uninstallRegistryExtension
+parameters:
+- $ref: ../../../../../components/parameters.yaml#/UUId
+responses:
+  '204':
+    description: No Content
+  '401':
+    $ref: ../../../../../components/responses.yaml#/UnauthorizedError
+  '404':
+    $ref: ../../../../../components/responses.yaml#/NotFoundError
+security: []
+tags:
+- Extensions
+x-codeSamples:
+- label: Directus SDK
+  lang: JavaScript
+  source: |
+    // Not supported in Directus SDK
+- label: GraphQL
+  lang: GraphQL
+  source: |
+    // Not supported in GraphQL

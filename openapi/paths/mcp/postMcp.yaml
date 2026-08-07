@@ -1,0 +1,37 @@
+summary: MCP Endpoint (POST)
+description: >-
+  Model Context Protocol (MCP) endpoint accepting JSON-RPC 2.0 messages via POST.
+  Requires `MCP_ENABLED=true` and `mcp_enabled: true` in project settings.
+  Supported methods are `tools/list`, `tools/call`, `prompts/list`, `prompts/get`, and `notifications/initialized`.
+operationId: postMcp
+requestBody:
+  required: true
+  content:
+    application/json:
+      schema:
+        $ref: ../../components/schemas/jsonrpc-request.yaml
+responses:
+  '200':
+    description: Successful JSON-RPC response.
+    content:
+      application/json:
+        schema:
+          $ref: ../../components/schemas/jsonrpc-response.yaml
+  '202':
+    description: Notification acknowledged (no response body).
+  '403':
+    $ref: ../../components/responses.yaml#/UnauthorizedError
+  '405':
+    description: Request does not accept `application/json`.
+security: []
+tags:
+  - MCP
+x-codeSamples:
+  - label: Directus SDK
+    lang: JavaScript
+    source: |
+      // Not supported in Directus SDK
+  - label: GraphQL
+    lang: GraphQL
+    source: |
+      // Not supported in GraphQL

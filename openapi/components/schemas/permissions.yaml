@@ -41,5 +41,5 @@ properties:
     format: uuid
     type: string
     oneOf:
-      - $ref: Policies.yaml
+      - $ref: policies.yaml
 x-collection: directus_permissions

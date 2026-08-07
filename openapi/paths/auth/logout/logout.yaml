@@ -48,7 +48,7 @@ x-codeSamples:
     const result = await client.logout();
 
     // logout http request
-    const result = await client.request(logout(refresh_token));
+    const result = await client.request(logout({ refresh_token }));
 - label: GraphQL
   lang: GraphQL
   source: |

@@ -1,9 +1,36 @@
 summary: Retrieve Schema Snapshot
-description: Retrieve the current schema. This endpoint is only available to admin
-  users.
+description: |
+  Retrieve the current schema. This endpoint is only available to admin users.
+
+  Returns a full snapshot (version `1`) by default. Pass `includeCollections` or `excludeCollections` to scope it to a subset of collections, which returns a partial snapshot (version `2`).
 operationId: schemaSnapshot
 parameters:
 - $ref: ../../../components/parameters.yaml#/Export
+- name: includeCollections
+  description: |
+    Restrict the snapshot to these collections. Unknown names are ignored. Mutually exclusive with `excludeCollections`.
+  in: query
+  required: false
+  explode: false
+  schema:
+    type: array
+    items:
+      type: string
+  example:
+  - articles
+  - authors
+- name: excludeCollections
+  description: |
+    Snapshot every collection except these. Mutually exclusive with `includeCollections`.
+  in: query
+  required: false
+  explode: false
+  schema:
+    type: array
+    items:
+      type: string
+  example:
+  - articles
 responses:
   '200':
     description: Successful request
@@ -11,13 +38,13 @@ responses:
       application/json:
         schema:
           type: object
-          properties:
-            data:
-              $ref: ../../../components/schemas/Schema.yaml
+          $ref: ../../../components/schemas/schema.yaml
       text/yaml:
         schema:
           type: string
           format: binary
+  '400':
+    $ref: ../../../components/responses.yaml#/BadRequestError
   '403':
     $ref: ../../../components/responses.yaml#/UnauthorizedError
 security: []
@@ -32,6 +59,11 @@ x-codeSamples:
     const client = createDirectus('directus_project_url').with(rest());
 
     const result = await client.request(schemaSnapshot());
+
+    // Partial snapshot
+    const partial = await client.request(
+      schemaSnapshot({ includeCollections: ['articles', 'authors'] })
+    );
 - label: GraphQL
   lang: GraphQL
   source: |

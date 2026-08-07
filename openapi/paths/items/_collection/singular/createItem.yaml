@@ -1,4 +1,4 @@
-summary: Create an item
+summary: Create an Item
 description: Create a new item in the given collection.
 operationId: createItem
 parameters:
@@ -9,8 +9,7 @@ requestBody:
   content:
     application/json:
       schema:
-        anyOf:
-        - $ref: ../../../../components/schemas/items.yaml
+        $ref: ../../../../components/schemas/items.yaml
 responses:
   '200':
     description: Successful request

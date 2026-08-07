@@ -35,3 +35,12 @@ responses:
 security: []
 tags:
 - Authentication
+x-codeSamples:
+  - label: Directus SDK
+    lang: JavaScript
+    source: |
+      // Not supported in Directus SDK
+  - label: GraphQL
+    lang: GraphQL
+    source: |
+      // Not supported in GraphQL

@@ -20,6 +20,23 @@ requestBody:
 responses:
   '200':
     description: Successful request
+  '403':
+    $ref: ../../../../components/responses.yaml#/ForbiddenError
+  '415':
+    description: "Error: Unsupported media type."
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            error:
+              type: object
+              properties:
+                code:
+                  type: integer
+                  format: int64
+                message:
+                  type: string
 security: []
 tags:
 - Utilities

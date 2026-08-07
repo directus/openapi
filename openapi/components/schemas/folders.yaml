@@ -21,6 +21,6 @@ properties:
       }
     type: string
     oneOf:
-      - $ref: Folders.yaml
+      - $ref: folders.yaml
     nullable: true
 x-collection: directus_folders

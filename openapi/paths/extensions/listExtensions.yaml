@@ -11,7 +11,7 @@ responses:
             data:
               type: array
               items:
-                $ref: ../../components/schemas/Extensions.yaml
+                $ref: ../../components/schemas/extensions.yaml
     description: Successful request
   '401':
     $ref: ../../components/responses.yaml#/UnauthorizedError

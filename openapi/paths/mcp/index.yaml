@@ -1,0 +1,4 @@
+get:
+  $ref: getMcp.yaml
+post:
+  $ref: postMcp.yaml

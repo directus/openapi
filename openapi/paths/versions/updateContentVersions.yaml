@@ -20,7 +20,7 @@ requestBody:
         properties:
           data:
             anyOf:
-            - $ref: ../../components/schemas/Versions.yaml
+            - $ref: ../../components/schemas/versions.yaml
           keys:
             type: array
             items:
@@ -36,7 +36,7 @@ responses:
             data:
               type: array
               items:
-                $ref: ../../components/schemas/Versions.yaml
+                $ref: ../../components/schemas/versions.yaml
             meta:
               $ref: ../../components/schemas/x-metadata.yaml
   '401':

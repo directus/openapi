@@ -1,0 +1,51 @@
+summary: Get TUS Upload Status
+description: >-
+  Returns the current byte offset of a TUS upload session. Use the offset to resume an interrupted upload.
+  Requires `TUS_ENABLED=true`.
+operationId: getTusUploadStatus
+parameters:
+- name: id
+  in: path
+  description: TUS upload session identifier.
+  required: true
+  schema:
+    type: string
+- name: Tus-Resumable
+  in: header
+  description: TUS protocol version. Must be `1.0.0`.
+  required: true
+  schema:
+    type: string
+    enum:
+      - 1.0.0
+responses:
+  '200':
+    description: Upload status retrieved.
+    headers:
+      Upload-Offset:
+        description: Bytes uploaded so far.
+        schema:
+          type: integer
+      Upload-Length:
+        description: Total size of the file in bytes.
+        schema:
+          type: integer
+      Tus-Resumable:
+        schema:
+          type: string
+  '401':
+    $ref: ../../../../components/responses.yaml#/UnauthorizedError
+  '404':
+    $ref: ../../../../components/responses.yaml#/NotFoundError
+security: []
+tags:
+- Files
+x-codeSamples:
+- label: Directus SDK
+  lang: JavaScript
+  source: |
+    // Not supported in Directus SDK
+- label: GraphQL
+  lang: GraphQL
+  source: |
+    // Not supported in GraphQL

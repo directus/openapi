@@ -21,7 +21,7 @@ responses:
             data:
               type: array
               items:
-                $ref: ../../components/schemas/Roles.yaml
+                $ref: ../../components/schemas/roles.yaml
             meta:
               $ref: ../../components/schemas/x-metadata.yaml
   '401':

@@ -1,0 +1,4 @@
+get:
+  $ref: getDeploymentProjects.yaml
+patch:
+  $ref: updateDeploymentProjects.yaml

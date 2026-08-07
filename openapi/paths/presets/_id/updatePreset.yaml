@@ -72,7 +72,7 @@ responses:
           type: object
           properties:
             data:
-              $ref: ../../../components/schemas/Presets.yaml
+              $ref: ../../../components/schemas/presets.yaml
   '401':
     $ref: ../../../components/responses.yaml#/UnauthorizedError
 x-codeSamples:

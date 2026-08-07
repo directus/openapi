@@ -1,4 +1,4 @@
-summary: Delete an item
+summary: Delete an Item
 description: Delete an existing item.
 operationId: deleteItem
 parameters:

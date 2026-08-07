@@ -12,18 +12,21 @@ requestBody:
   content:
     application/json:
       schema:
+        type: object
         properties:
           format:
             type: string
-            description: 'What file format to save the export to. One of `csv`, `xml`,`json`'
+            description: 'What file format to save the export to. One of `csv`, `csv_utf8`, `xml`, `json`, `yaml`'
             enum:
               - csv
+              - csv_utf8
               - xml
               - json
+              - yaml
           query:
-            $ref: ../../../../components/schemas/Query.yaml
+            $ref: ../../../../components/schemas/query.yaml
           file:
-            $ref: ../../../../components/schemas/Files.yaml
+            $ref: ../../../../components/schemas/files.yaml
         required:
         - format
         - query
@@ -31,6 +34,10 @@ requestBody:
 responses:
   '200':
     description: Successful request
+  '400':
+    $ref: ../../../../components/responses.yaml#/BadRequestError
+  '403':
+    $ref: ../../../../components/responses.yaml#/ForbiddenError
 security: []
 tags:
 - Utilities

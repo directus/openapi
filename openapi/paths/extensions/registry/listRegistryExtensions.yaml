@@ -1,0 +1,36 @@
+summary: List Registry Extensions
+description: Search the Directus extension marketplace registry. Admin only.
+operationId: listRegistryExtensions
+parameters:
+- $ref: ../../../components/parameters.yaml#/Search
+- $ref: ../../../components/parameters.yaml#/Limit
+- $ref: ../../../components/parameters.yaml#/Offset
+- $ref: ../../../components/parameters.yaml#/Sort
+- $ref: ../../../components/parameters.yaml#/Filter
+responses:
+  '200':
+    description: Successful request
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            data:
+              type: array
+              items:
+                type: object
+                description: Registry extension listing.
+  '401':
+    $ref: ../../../components/responses.yaml#/UnauthorizedError
+security: []
+tags:
+- Extensions
+x-codeSamples:
+- label: Directus SDK
+  lang: JavaScript
+  source: |
+    // Not supported in Directus SDK
+- label: GraphQL
+  lang: GraphQL
+  source: |
+    // Not supported in GraphQL

@@ -1,0 +1,91 @@
+summary: Set Up Translations
+description: >-
+  Scaffold a translations collection, languages collection, fields, and relations for a given collection.
+  Admin only.
+operationId: generateTranslations
+requestBody:
+  required: true
+  content:
+    application/json:
+      schema:
+        type: object
+        required:
+          - collection
+          - fields
+        properties:
+          collection:
+            description: Collection to enable translations on.
+            type: string
+            example: articles
+          fields:
+            description: One or more field names to create on the translations collection.
+            type: array
+            minItems: 1
+            items:
+              type: string
+            example:
+              - title
+              - body
+          translationsCollection:
+            description: Name for the translations collection. Defaults to `{collection}_translations`.
+            type: string
+            example: articles_translations
+          languagesCollection:
+            description: Name of the languages collection to use or create. Defaults to `languages`.
+            type: string
+            example: languages
+          parentFkField:
+            description: Foreign key field on the translations collection pointing to the parent. Defaults to `{collection}_id`.
+            type: string
+            example: articles_id
+          languageFkField:
+            description: Foreign key field on the translations collection pointing to the language. Defaults to `languages_code`.
+            type: string
+            example: languages_code
+          createLanguagesCollection:
+            description: Create the languages collection if it does not exist. Defaults to `true`.
+            type: boolean
+            default: true
+          seedLanguages:
+            description: Seed the languages collection with default language entries. Defaults to `true`.
+            type: boolean
+            default: true
+responses:
+  '200':
+    description: Successful request
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            data:
+              type: object
+              properties:
+                created:
+                  description: Whether a new translations collection was created.
+                  type: boolean
+                translationsCollection:
+                  description: Name of the translations collection.
+                  type: string
+                languagesCollection:
+                  description: Name of the languages collection (only present when a new translations collection was created).
+                  type: string
+                fields:
+                  description: Names of the fields created on the translations collection.
+                  type: array
+                  items:
+                    type: string
+  '401':
+    $ref: ../../../../components/responses.yaml#/UnauthorizedError
+security: []
+tags:
+- Utilities
+x-codeSamples:
+- label: Directus SDK
+  lang: JavaScript
+  source: |
+    // Not supported in Directus SDK
+- label: GraphQL
+  lang: GraphQL
+  source: |
+    // Not supported in GraphQL

@@ -1,0 +1,28 @@
+type: object
+description: A JSON-RPC 2.0 response message.
+required:
+  - jsonrpc
+properties:
+  jsonrpc:
+    description: JSON-RPC protocol version. Always `"2.0"`.
+    type: string
+    enum:
+      - '2.0'
+  id:
+    description: Echoes the `id` from the corresponding request.
+    oneOf:
+      - type: string
+      - type: integer
+  result:
+    description: Method-specific result. Present on success.
+    type: object
+  error:
+    description: Error details. Present on failure.
+    type: object
+    properties:
+      code:
+        type: integer
+      message:
+        type: string
+      data:
+        type: object

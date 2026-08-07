@@ -1,0 +1,36 @@
+summary: Delete Deployment Configuration
+description: Delete a deployment provider configuration by provider name.
+operationId: deleteDeployment
+parameters:
+- name: provider
+  in: path
+  description: The deployment provider name (e.g. `vercel`, `netlify`).
+  required: true
+  schema:
+    type: string
+    enum:
+      - vercel
+      - netlify
+responses:
+  '204':
+    description: No Content
+  '401':
+    $ref: ../../../components/responses.yaml#/UnauthorizedError
+  '404':
+    $ref: ../../../components/responses.yaml#/NotFoundError
+security: []
+tags:
+- Deployments
+x-codeSamples:
+- label: Directus SDK
+  lang: JavaScript
+  source: |
+    import { createDirectus, rest, deleteDeployment } from '@directus/sdk';
+
+    const client = createDirectus('directus_project_url').with(rest());
+
+    await client.request(deleteDeployment('vercel'));
+- label: GraphQL
+  lang: GraphQL
+  source: |
+    // Not supported in GraphQL

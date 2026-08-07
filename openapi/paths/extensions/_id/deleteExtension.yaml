@@ -1,0 +1,24 @@
+summary: Delete an Extension
+description: Delete an installed extension by its unique identifier.
+operationId: deleteExtension
+parameters:
+- $ref: ../../../components/parameters.yaml#/UUId
+responses:
+  '204':
+    description: No Content
+  '401':
+    $ref: ../../../components/responses.yaml#/UnauthorizedError
+  '404':
+    $ref: ../../../components/responses.yaml#/NotFoundError
+security: []
+tags:
+- Extensions
+x-codeSamples:
+- label: Directus SDK
+  lang: JavaScript
+  source: |
+    // Not supported in Directus SDK
+- label: GraphQL
+  lang: GraphQL
+  source: |
+    // Not supported in GraphQL

@@ -19,7 +19,7 @@ responses:
           type: object
           properties:
             data:
-              $ref: ../../../components/schemas/Translations.yaml
+              $ref: ../../../components/schemas/translations.yaml
   '401':
     $ref: ../../../components/responses.yaml#/UnauthorizedError
   '404':

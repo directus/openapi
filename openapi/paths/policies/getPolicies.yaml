@@ -22,7 +22,7 @@ responses:
             data:
               type: array
               items:
-                $ref: ../../components/schemas/Policies.yaml
+                $ref: ../../components/schemas/policies.yaml
             meta:
               $ref: ../../components/schemas/x-metadata.yaml
   '401':

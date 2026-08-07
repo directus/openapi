@@ -1,0 +1,86 @@
+summary: Trigger Deployment
+description: Trigger a new deployment for a tracked project.
+operationId: triggerDeployment
+parameters:
+- name: provider
+  in: path
+  description: The deployment provider name (e.g. `vercel`, `netlify`).
+  required: true
+  schema:
+    type: string
+    enum:
+      - vercel
+      - netlify
+- name: id
+  in: path
+  description: Unique identifier of the tracked project.
+  required: true
+  schema:
+    type: string
+    format: uuid
+requestBody:
+  content:
+    application/json:
+      schema:
+        type: object
+        properties:
+          preview:
+            description: When `true`, trigger a preview deployment instead of production.
+            type: boolean
+            default: false
+          clear_cache:
+            description: When `true`, clears the provider's build cache before deploying.
+            type: boolean
+            default: true
+responses:
+  '200':
+    description: Successful request
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            data:
+              type: object
+              properties:
+                deployment_id:
+                  description: Provider-side deployment identifier.
+                  type: string
+                  example: dpl_abc123
+                status:
+                  type: string
+                  enum:
+                    - building
+                    - ready
+                    - error
+                    - canceled
+                  example: building
+                url:
+                  type: string
+                  nullable: true
+                  example: https://my-directus-app.vercel.app
+                created_at:
+                  type: string
+                  format: date-time
+  '401':
+    $ref: ../../../../../../components/responses.yaml#/UnauthorizedError
+  '404':
+    $ref: ../../../../../../components/responses.yaml#/NotFoundError
+security: []
+tags:
+- Deployments
+x-codeSamples:
+- label: Directus SDK
+  lang: JavaScript
+  source: |
+    import { createDirectus, rest, triggerDeployment } from '@directus/sdk';
+
+    const client = createDirectus('directus_project_url').with(rest());
+
+    const result = await client.request(
+      triggerDeployment('vercel', '8cbb43fe-4cdf-4991-8352-c461779cec02')
+    );
+- label: GraphQL
+  lang: GraphQL
+  source: |
+    // Not supported in GraphQL

@@ -2,6 +2,10 @@ type: object
 properties:
   version:
     type: integer
+    description: '`1` for a full snapshot, `2` for a partial snapshot.'
+    enum:
+    - 1
+    - 2
     example: 1
   directus:
     type: string
@@ -10,12 +14,27 @@ properties:
   collections:
     type: array
     items:
-      $ref: Collections.yaml
+      $ref: collections.yaml
   fields:
     type: array
     items:
-      $ref: Fields.yaml
+      $ref: fields.yaml
+  systemFields:
+    type: array
+    description: Indexes defined on system fields.
+    items:
+      type: object
+      properties:
+        collection:
+          type: string
+        field:
+          type: string
+        schema:
+          type: object
+          properties:
+            is_indexed:
+              type: boolean
   relations:
     type: array
     items:
-      $ref: Relations.yaml
+      $ref: relations.yaml

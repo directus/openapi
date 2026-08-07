@@ -66,7 +66,7 @@ properties:
     nullable: true
     type: integer
     oneOf:
-      - $ref: Fields.yaml
+      - $ref: fields.yaml
   # validation:
   #   nullable: true
   validation_message:

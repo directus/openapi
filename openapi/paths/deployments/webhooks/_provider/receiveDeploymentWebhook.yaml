@@ -1,0 +1,51 @@
+summary: Receive Deployment Webhook
+description: >-
+  Public endpoint that receives webhook events from a deployment provider (e.g. Vercel, Netlify).
+  Payloads are verified using a provider-specific signature before being processed.
+  This endpoint does not require authentication - it is called by the deployment provider.
+operationId: receiveDeploymentWebhook
+parameters:
+- name: provider
+  in: path
+  description: The deployment provider name (e.g. `vercel`, `netlify`).
+  required: true
+  schema:
+    type: string
+    enum:
+      - vercel
+      - netlify
+- name: token
+  in: query
+  description: Optional token used by providers that pass secrets as query parameters instead of request headers.
+  required: false
+  schema:
+    type: string
+requestBody:
+  description: Raw webhook payload from the provider. Format is provider-specific.
+  content:
+    application/json:
+      schema:
+        type: object
+responses:
+  '200':
+    description: Webhook successfully received and processed.
+  '400':
+    description: Missing or malformed request body.
+  '401':
+    description: Webhook signature verification failed.
+  '404':
+    description: Provider not configured or project not tracked.
+  '410':
+    description: Project is no longer tracked (signals provider to stop sending events).
+security: []
+tags:
+- Deployments
+x-codeSamples:
+- label: Directus SDK
+  lang: JavaScript
+  source: |
+    // Not supported in Directus SDK
+- label: GraphQL
+  lang: GraphQL
+  source: |
+    // Not supported in GraphQL

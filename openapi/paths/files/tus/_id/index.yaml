@@ -1,0 +1,6 @@
+patch:
+  $ref: uploadTusChunk.yaml
+delete:
+  $ref: deleteTusUpload.yaml
+head:
+  $ref: getTusUploadStatus.yaml

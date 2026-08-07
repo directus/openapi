@@ -1,4 +1,4 @@
-summary: Update an item
+summary: Update an Item
 description: Update an existing item.
 operationId: updateItem
 parameters:
@@ -15,8 +15,7 @@ requestBody:
   content:
     application/json:
       schema:
-        anyOf:
-        - $ref: ../../../../components/schemas/Items.yaml
+        $ref: ../../../../components/schemas/items.yaml
 responses:
   '200':
     description: Successful request
@@ -26,7 +25,7 @@ responses:
           type: object
           properties:
             data:
-              $ref: ../../../../components/schemas/Items.yaml
+              $ref: ../../../../components/schemas/items.yaml
   '401':
     $ref: ../../../../components/responses.yaml#/UnauthorizedError
   '404':
