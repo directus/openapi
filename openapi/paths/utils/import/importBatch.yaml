@@ -80,20 +80,30 @@ responses:
                         type: array
                         description: Primary keys of pre-existing records that were matched and updated.
                         items:
-                          type: string
+                          oneOf:
+                            - type: string
+                            - type: integer
                       new:
                         type: array
                         description: Primary keys of newly created records.
                         items:
-                          type: string
+                          oneOf:
+                            - type: string
+                            - type: integer
                       deleted:
                         type: array
                         description: Primary keys of records that were deleted (only when `dangerouslyAllowDelete` is set).
                         items:
-                          type: string
+                          oneOf:
+                            - type: string
+                            - type: integer
                       mapped:
                         type: object
                         description: Provided primary key -> new primary key, for records whose key was remapped.
+                        additionalProperties:
+                          oneOf:
+                            - type: string
+                            - type: integer
   '403':
     $ref: ../../../components/responses.yaml#/ForbiddenError
   '415':
