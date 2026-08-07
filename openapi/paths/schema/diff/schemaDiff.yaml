@@ -5,6 +5,8 @@ description: |
   Alternatively, upload a JSON or YAML schema file.
 
   Does not allow different Directus versions and database vendors by default. You can opt in to bypass these checks by passing the `force` query parameter.
+
+  Accepts partial snapshots, in which case the diff is scoped to the collections the snapshot references.
 operationId: schemaDiff
 parameters:
 - name: force
@@ -13,6 +15,17 @@ parameters:
   required: false
   schema:
     type: boolean
+- name: mode
+  description: |
+    `mirror` (default) returns all operations. `merge` returns an additive diff that excludes deletions.
+  in: query
+  required: false
+  schema:
+    type: string
+    enum:
+    - merge
+    - mirror
+    default: mirror
 requestBody:
   required: true
   content:
@@ -104,6 +117,8 @@ x-codeSamples:
     			},
     		],
     		relations: [],
+    	}, {
+    		mode: 'merge',
     	})
     );
 
