@@ -1,0 +1,82 @@
+summary: Get Registry Extension
+description: Read a single extension from the Directus extension marketplace registry.
+operationId: getRegistryExtension
+parameters:
+- $ref: ../../../../../components/parameters.yaml#/UUId
+responses:
+  '200':
+    description: Successful request
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            data:
+              type: object
+              description: Registry extension details.
+              properties:
+                id:
+                  type: string
+                  format: uuid
+                  description: Unique identifier for the registry extension.
+                name:
+                  type: string
+                  description: Extension name.
+                description:
+                  type: string
+                  nullable: true
+                  description: Extension description.
+                total_downloads:
+                  type: integer
+                  description: Total number of downloads.
+                verified:
+                  type: boolean
+                  description: Whether the extension is verified.
+                type:
+                  type: string
+                  description: Extension type.
+                last_updated:
+                  type: string
+                  format: date-time
+                  description: Last update timestamp.
+                host_version:
+                  type: string
+                  description: Minimum compatible Directus version.
+                sandbox:
+                  type: boolean
+                  description: Whether the extension runs in a sandbox.
+                license:
+                  type: string
+                  nullable: true
+                  description: Extension license.
+                publisher:
+                  type: object
+                  description: Publisher account details.
+                  properties:
+                    username:
+                      type: string
+                    verified:
+                      type: boolean
+                    github_name:
+                      type: string
+                      nullable: true
+  '401':
+    $ref: ../../../../../components/responses.yaml#/UnauthorizedError
+  '404':
+    $ref: ../../../../../components/responses.yaml#/NotFoundError
+security: []
+tags:
+- Extensions
+x-codeSamples:
+  - label: Directus SDK
+    lang: JavaScript
+    source: |
+      import { createDirectus, rest, readRegistryExtension } from '@directus/sdk';
+
+      const client = createDirectus('directus_project_url').with(rest());
+
+      const result = await client.request(readRegistryExtension('extension_id'));
+  - label: GraphQL
+    lang: GraphQL
+    source: |
+      // Not supported in GraphQL
