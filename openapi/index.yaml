@@ -257,6 +257,8 @@ paths:
     $ref: paths/utils/cache/clear/index.yaml
   "/utils/export/{collection}":
     $ref: paths/utils/export/_collection/index.yaml
+  "/utils/import":
+    $ref: paths/utils/import/index.yaml
   "/utils/import/{collection}":
     $ref: paths/utils/import/_collection/index.yaml
   "/utils/random/string":
