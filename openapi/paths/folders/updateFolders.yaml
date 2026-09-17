@@ -2,7 +2,7 @@ summary: Update Multiple Folders
 description: |
   Update multiple folders at the same time.
 
-  Any files in these folders will be moved to the root folder.
+  Only administrators can update folders of a `type` other than `files`.
 security: []
 tags:
 - Folders

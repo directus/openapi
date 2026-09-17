@@ -1,5 +1,8 @@
 summary: Delete a Folder
-description: Delete an existing folder. Any files in this folder will be moved to the root folder.
+description: |
+  Delete an existing folder. Any files or flows in this folder will be moved to the root folder.
+
+  Only administrators can delete folders of a `type` other than `files`.
 operationId: deleteFolder
 responses:
   '204':

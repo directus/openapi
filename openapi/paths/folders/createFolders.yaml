@@ -1,5 +1,8 @@
 summary: Create Multiple Folders
-description: Create multiple new (virtual) folders.
+description: |
+  Create multiple new (virtual) folders.
+
+  Only administrators can create folders of a `type` other than `files`.
 operationId: createFolders
 parameters:
 - $ref: ../../components/parameters.yaml#/Fields

@@ -62,6 +62,13 @@ properties:
     oneOf:
       - type: string
       - $ref: users.yaml
+  folder:
+    description: Unique identifier of the folder the flow is in. `null` when the flow lives at the root.
+    example: 0cf0e03d-4364-45df-b77b-ca61f61869d2
+    type: string
+    oneOf:
+      - $ref: folders.yaml
+    nullable: true
   operations:
     nullable: true
     type: array

@@ -23,4 +23,14 @@ properties:
     oneOf:
       - $ref: folders.yaml
     nullable: true
+  type:
+    description: >-
+      The type of items the folder organizes. One of `files` (file library) or `flows`. Only administrators can read or
+      manage folders of a type other than `files`.
+    type: string
+    example: files
+    default: files
+    enum:
+      - files
+      - flows
 x-collection: directus_folders

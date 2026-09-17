@@ -1,5 +1,8 @@
 summary: Retrieve a Folder
-description: List an existing folder by primary key.
+description: |
+  List an existing folder by primary key.
+
+  Non-administrators can only retrieve file library folders (`type` of `files`).
 operationId: getFolder
 parameters:
 - $ref: ../../../components/parameters.yaml#/UUId

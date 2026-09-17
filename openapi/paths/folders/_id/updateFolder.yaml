@@ -1,5 +1,8 @@
 summary: Update a Folder
-description: Update an existing folder.
+description: |
+  Update an existing folder.
+
+  Only administrators can update folders of a `type` other than `files`.
 operationId: updateFolder
 parameters:
 - $ref: ../../../components/parameters.yaml#/UUId

@@ -2,7 +2,9 @@ summary: Delete Multiple Folders
 description: |
   Delete multiple existing folders.
 
-  Any files in these folders will be moved to the root folder.
+  Any files or flows in these folders will be moved to the root folder.
+
+  Only administrators can delete folders of a `type` other than `files`.
 operationId: deleteFolders
 requestBody:
   description: An array of folder primary keys.

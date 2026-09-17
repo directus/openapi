@@ -1,5 +1,8 @@
 summary: List Folders
-description: List all folders that exist in Directus.
+description: |
+  List all folders that exist in Directus.
+
+  Non-administrators only receive file library folders (`type` of `files`).
 operationId: getFolders
 parameters:
 - $ref: ../../components/parameters.yaml#/Fields
