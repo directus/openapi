@@ -24,9 +24,7 @@ properties:
       - $ref: folders.yaml
     nullable: true
   type:
-    description: >-
-      The type of items the folder organizes. One of `files` (file library) or `flows`. Only administrators can read or
-      manage folders of a type other than `files`.
+    description: The type of folder. One of `files` (file library) or `flows`.
     type: string
     example: files
     default: files
