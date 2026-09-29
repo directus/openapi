@@ -16,6 +16,11 @@ properties:
     nullable: true
     description: How items in this collection should be displayed when viewed relationally in the Data Studio.
     type: string
+  preview_url:
+    nullable: true
+    description: URL template used for Live Preview. Supports the `{{$version}}` and `{{$preview_base_url}}` variables and any field in the collection, such as `{{$preview_base_url}}/blog/{{slug}}`.
+    example: https://example.com/blog/{{slug}}
+    type: string
   hidden:
     nullable: false
     description: Whether or not this collection is hidden in the Data Studio.
