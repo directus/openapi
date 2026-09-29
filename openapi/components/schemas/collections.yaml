@@ -8,6 +8,12 @@ properties:
     nullable: true
     description: Icon displayed in the Data Studio when working with this collection.
     type: string
+  color:
+    nullable: true
+    description: Color of the collection's icon in the Data Studio.
+    type: string
+    format: hexcode
+    example: '#6644FF'
   note:
     nullable: true
     description: Short description displayed in the Data Studio.
@@ -15,6 +21,11 @@ properties:
   display_template:
     nullable: true
     description: How items in this collection should be displayed when viewed relationally in the Data Studio.
+    type: string
+  preview_url:
+    nullable: true
+    description: URL template used for Live Preview. Supports the `{{$version}}` and `{{$preview_base_url}}` variables and any field in the collection, such as `{{$preview_base_url}}/blog/{{slug}}`.
+    example: https://example.com/blog/{{slug}}
     type: string
   hidden:
     nullable: false
@@ -73,4 +84,17 @@ properties:
     nullable: false
     description: Whether or not Content Versioning is enabled for this collection.
     type: boolean
+  autosave_revision_interval:
+    nullable: true
+    description: How often, in seconds, auto-saving a content version creates a new revision. Only applies when `versioning` is enabled and `accountability` is `all`. When `null`, the `AUTOSAVE_REVISION_INTERVAL` environment variable is used.
+    type: number
+    example: 300
+  status:
+    nullable: false
+    description: Whether the collection is active. Inactive collections cannot be read or written through the API and return a `COLLECTION_INACTIVE` error. One of `active`, `inactive`.
+    type: string
+    enum:
+      - active
+      - inactive
+    example: active
 x-collection: directus_collections
