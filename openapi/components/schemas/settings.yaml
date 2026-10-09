@@ -46,7 +46,7 @@ properties:
     example: null
     nullable: true
   preview_base_url:
-    description: Base URL used for Live Preview.
+    description: "Base URL for Live Preview. Replaces the `{{$preview_base_url}}` variable in a collection's `preview_url`. A trailing slash is ignored."
     type: string
     example: https://example.com
     nullable: true
