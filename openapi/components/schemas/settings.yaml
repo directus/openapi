@@ -45,6 +45,11 @@ properties:
     type: string
     example: null
     nullable: true
+  preview_base_url:
+    description: "Base URL for Live Preview. Replaces the `{{$preview_base_url}}` variable in a collection's `preview_url`. A trailing slash is ignored."
+    type: string
+    example: https://example.com
+    nullable: true
   auth_login_attempts:
     description: Allowed authentication login attempts before the user's status is set to blocked.
     type: integer
