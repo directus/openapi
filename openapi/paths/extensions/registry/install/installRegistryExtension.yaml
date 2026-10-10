@@ -32,7 +32,11 @@ x-codeSamples:
 - label: Directus SDK
   lang: JavaScript
   source: |
-    // Not supported in Directus SDK
+    import { createDirectus, rest, installRegistryExtension } from '@directus/sdk';
+
+    const client = createDirectus('directus_project_url').with(rest());
+
+    await client.request(installRegistryExtension('extension_id', '1.2.3'));
 - label: GraphQL
   lang: GraphQL
   source: |
