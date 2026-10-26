@@ -95,6 +95,10 @@ paths:
     $ref: paths/extensions/registry/install/index.yaml
   "/extensions/registry/reinstall":
     $ref: paths/extensions/registry/reinstall/index.yaml
+  "/extensions/registry/account/{id}":
+    $ref: paths/extensions/registry/account/_id/index.yaml
+  "/extensions/registry/extension/{id}":
+    $ref: paths/extensions/registry/extension/_id/index.yaml
   "/extensions/registry/uninstall/{id}":
     $ref: paths/extensions/registry/uninstall/_id/index.yaml
   "/fields":
