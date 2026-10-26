@@ -22,7 +22,7 @@ responses:
               items:
                 $ref: ../../components/schemas/users.yaml
             meta:
-              $ref: ../../components/schemas/x-metadata.yaml
+              $ref: ../../components/schemas/metadata.yaml
   '401':
     $ref: ../../components/responses.yaml#/UnauthorizedError
   '404':

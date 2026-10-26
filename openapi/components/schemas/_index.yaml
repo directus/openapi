@@ -1,5 +1,3 @@
-x-metadata:
-  $ref: x-metadata.yaml
 Access:
   $ref: access.yaml
 Activity:
@@ -30,6 +28,8 @@ JsonRpcRequest:
   $ref: jsonrpc-request.yaml
 JsonRpcResponse:
   $ref: jsonrpc-response.yaml
+Metadata:
+  $ref: metadata.yaml
 Notifications:
   $ref: notifications.yaml
 Operations:
